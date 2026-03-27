@@ -2,7 +2,6 @@
 {
 	font-family: 'Inter';
 	src: url('/sevenwiki/Inter-Regular.woff2') format('woff2');
-	font-weight: 400 700;
 	font-display: swap;
 }
 
@@ -14,7 +13,6 @@
 {
 	font-family: 'JetBrains Mono';
 	src: url('/sevenwiki/JetBrainsMono-Regular.woff2') format('woff2');
-	font-weight: 400;
 	font-display: swap;
 }
 
@@ -334,7 +332,7 @@ h1, h2, h3, h4, h5, h6
 {
 	position: relative;
 	color: var(--TextColor2);
-	font-weight: 600;
+	font-weight: 500;
 	scroll-margin-top: calc(var(--HeaderHeight) + var(--DefaultGap));
 }
 
