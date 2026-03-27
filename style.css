@@ -1,0 +1,1141 @@
+:root
+{
+	/* Accents */
+	--PrimaryColor: #3C96E1;
+	--InvertedPrimaryColor: oklch(from var(--PrimaryColor) l c calc(h + 180));
+	--ContrastColor: var(--InvertedPrimaryColor);
+	--FocusColor: var(--InvertedPrimaryColor);
+	--ErrorColor: #D11616;
+
+	/* Borders */
+	--BorderColor0: color-mix(in oklab, var(--PrimaryColor) 2%, #303030);
+	--BorderColor1: color-mix(in oklab, var(--PrimaryColor) 4%, #3C3C3C);
+	--BorderColor2: color-mix(in oklab, var(--PrimaryColor) 8%, #5B5B5B);
+
+	/* Scrollbars */
+	--ThumbColor: color-mix(in oklab, var(--PrimaryColor) 4%, #555);
+	--ThumbActiveColor: color-mix(in oklab, var(--PrimaryColor) 5%, #666);
+
+	/* Backgrounds */
+	--BackColor0: color-mix(in oklab, var(--PrimaryColor) 1%, #101010);
+	--BackColor1: color-mix(in oklab, var(--PrimaryColor) 1%, #202020);
+	--BackColor2: color-mix(in oklab, var(--PrimaryColor) 2%, #262626);
+	--BackColor3: color-mix(in oklab, var(--PrimaryColor) 3%, #2D2D2D);
+
+	/* Text */
+	--TextColor0: color-mix(in oklab, var(--ContrastColor) 1%, #888);
+	--TextColor1: color-mix(in oklab, var(--ContrastColor) 2%, #CCC);
+	--TextColor2: color-mix(in oklab, var(--ContrastColor) 3%, #EEE);
+	--LinkInterfaceColor: #688BA8;
+	--LinkColor: #648CC8;
+	
+	/* Sizes */
+	--BorderSize: 2px;
+	--ScrollbarSize: 14px;
+	--ThinScrollbarSize: 10px;
+	--PanelsWidth: 200px;
+	--HeaderHeight: 60px;
+	--DefaultGap: 1.5rem;
+	--MaxContentWidth: 1360px;
+	
+	/* Font */
+	--FontSize: 16px;
+	--SmallFontSize: .9rem;
+	--FontFamily: Inter;
+	--MonospaceFontFamily: 'JetBrains Mono', monospace;
+
+	/* Other */
+	--Radius0: 2px;
+	--Radius1: 4px;
+	--Radius2: 6px;
+	--TransitionSpeed: .2s;
+	--ShadowColor: #0003;
+	--Shadow: 0 0 4px 2px var(--ShadowColor);
+
+	/* Presets */
+	--Border0: var(--BorderSize) solid var(--BorderColor0);
+	--Border1: var(--BorderSize) solid var(--BorderColor1);
+	--Border2: var(--BorderSize) solid var(--BorderColor2);
+	--BackGradient: linear-gradient(var(--BackColor1) 64px, var(--BackColor0) 256px);
+	--MaxPageWidth: calc(var(--MaxContentWidth) + (var(--PanelsWidth) * 2));
+}
+
+
+
+
+
+*
+{
+	box-sizing: border-box;
+	outline: none;
+	color-scheme: dark;
+}
+
+
+
+
+
+html
+{
+	background: var(--BackGradient);
+	color: var(--TextColor1);
+	font-size: var(--FontSize);
+	font-family: var(--FontFamily);
+	scroll-behavior: smooth;
+	text-size-adjust: 100%;
+	
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+
+
+
+body
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--DefaultGap);
+	margin: 0 auto;
+	overflow-x: hidden;
+}
+
+
+
+
+
+::-webkit-scrollbar
+{
+	width: var(--ScrollbarSize);
+	height: var(--ScrollbarSize);
+	background: var(--BackColor1);
+}
+
+
+
+
+
+aside::-webkit-scrollbar
+{
+	width: var(--ThinScrollbarSize);
+	height: var(--ThinScrollbarSize);
+	background: transparent;
+}
+
+
+
+
+
+::-webkit-scrollbar-corner
+{
+	background: var(--BackColor1);
+}
+
+
+
+
+
+aside::-webkit-scrollbar-thumb
+{
+	border: 2px solid transparent;
+	background: transparent;
+	background-clip: padding-box;
+}
+
+
+
+
+
+::-webkit-scrollbar-thumb
+{
+	border: 3px solid transparent;
+	border-radius: calc(var(--ScrollbarSize) / 2);
+	background: var(--ThumbColor);
+	background-clip: padding-box;
+}
+
+
+
+
+
+aside:hover::-webkit-scrollbar-thumb
+{
+	border: 2px solid transparent;
+	border-radius: calc(var(--ScrollbarSize) / 2);
+	background: var(--ThumbColor);
+	background-clip: padding-box;
+}
+
+
+
+
+
+::-webkit-scrollbar-thumb:hover,
+aside:hover::-webkit-scrollbar-thumb:hover
+{
+	background: var(--ThumbActiveColor);
+	background-clip: padding-box;
+}
+
+
+
+
+
+::selection
+{
+	background-color: color-mix(in oklab, var(--PrimaryColor) 40%, transparent);
+	color: var(--TextColor2);
+}
+
+
+
+
+
+a::selection
+{
+	background-color: color-mix(in oklab, var(--PrimaryColor) 60%, transparent);
+}
+
+
+
+
+
+::target-text
+{
+	background-color: color-mix(in oklab, var(--ContrastColor) 40%, transparent);
+	color: var(--TextColor2);
+}
+
+
+
+
+
+a:any-link
+{
+	--color: var(--LinkInterfaceColor);
+	
+	color: var(--color);
+	text-decoration: none;
+	transition: color var(--TransitionSpeed);
+}
+
+
+
+
+
+a:any-link svg
+{
+	transition: fill var(--TransitionSpeed);
+	fill: var(--color);
+}
+
+
+
+
+
+@media (hover: hover)
+{
+	a:hover
+	{
+		color: color-mix(in oklab, #FFF 8%, var(--color));
+		text-decoration: underline;
+	}
+	
+	
+	
+	
+	
+	a:hover svg
+	{
+		fill: color-mix(in oklab, #FFF 8%, var(--color));
+	}
+	
+	
+	
+	
+	
+	.Button:hover
+	{
+		background: var(--BackColor3);
+		border-color: var(--BorderColor2);
+		cursor: pointer;
+	}
+	
+	
+	
+	
+	
+	.Dropdown:hover
+	{
+		color: var(--TextColor2);
+		cursor: pointer;
+	}
+}
+
+
+
+
+
+a:active
+{
+	color: color-mix(in oklab, #000 12%, var(--color));
+}
+
+
+
+
+
+a:active svg
+{
+	fill: color-mix(in oklab, #000 12%, var(--color));
+}
+
+
+
+
+
+button
+{
+	font: inherit;
+}
+
+
+
+
+
+h1, h2, h3, h4, h5, h6
+{
+	position: relative;
+	color: var(--TextColor2);
+	font-weight: 600;
+	scroll-margin-top: calc(var(--HeaderHeight) + var(--DefaultGap));
+}
+
+
+
+
+
+h1, h2
+{
+	padding-bottom: .5rem;
+}
+
+
+
+
+
+h1:after, h2:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: var(--BorderSize);
+    width: 100%;
+    background-color: var(--BorderColor1);
+    border-radius: var(--BorderSize);
+	box-shadow: 0 0 4px 0px var(--ShadowColor);
+}
+
+
+
+
+
+hr
+{
+	height: var(--BorderSize);
+	border: 0;
+	border-radius: var(--BorderSize);
+	background-color: var(--BorderColor1);
+	box-shadow: 0 0 4px 0px var(--ShadowColor);
+}
+
+
+
+
+
+h1
+{
+	margin: 3rem 0 1rem;
+	font-size: 1.75rem;
+}
+
+
+
+
+
+h2
+{
+	margin: 2.75rem 0 .75rem;
+	font-size: 1.5rem;
+}
+
+
+
+
+
+h3
+{
+	margin: 2.5rem 0 .5rem;
+	font-size: 1.25rem;
+}
+
+
+
+
+
+h4
+{
+	margin: 2.25rem 0 .25rem;
+	font-size: 1rem;
+}
+
+
+
+
+
+h5
+{
+	margin: 2rem 0 .25rem;
+	font-size: 1rem;
+}
+
+
+
+
+
+h6
+{
+	margin: 1.75rem 0 .25rem;
+	font-size: 1rem;
+}
+
+
+
+
+
+p, ul, ol, blockquote
+{
+	margin-block: .75rem;
+}
+
+
+
+
+
+ul, ol
+{
+	margin-inline-start: 2.5rem;
+	padding: 0;
+}
+
+
+
+
+
+ul
+{
+	list-style-type: disc;
+}
+
+
+
+
+
+li > ul, li > ol
+{
+	margin-inline-start: 2rem;
+	margin-top: .25rem;
+}
+
+
+
+
+
+svg
+{
+	flex-shrink: 0;
+	fill: var(--TextColor2);
+}
+
+
+
+
+
+code, kbd, pre, samp
+{
+	font-family: var(--MonospaceFontFamily);
+	font-variant-ligatures: none;
+	font-size: .95rem;
+	text-rendering: optimizeLegibility;
+}
+
+
+
+
+
+code
+{
+	padding: 1px .3rem;
+	border-radius: var(--Radius1);
+	background-color: #0003;
+	box-decoration-break: clone;
+}
+
+
+
+
+
+pre
+{
+	counter-reset: line-number;
+	padding: .8rem .9rem;
+	white-space: pre-wrap;
+	overflow-x: hidden;
+	word-wrap: break-word;
+	border-radius: 6px;
+	background-color: #0005;
+	border: var(--Border1);
+	box-shadow: inset 0 0 2px 2px var(--ShadowColor);
+	tab-size: 4;
+	overflow-wrap: anywhere;
+}
+
+
+
+
+
+kbd
+{
+	display: inline-block;
+	margin: 0 2px;
+	padding: 1px 4px;
+	border: var(--Border1);
+	border-radius: var(--Radius1);
+	background-color: var(--BackColor3);
+	color: var(--TextColor2);
+	line-height: 1;
+	font-size: var(--SmallFontSize);
+	white-space: nowrap;
+	box-shadow: 0 2px 0 var(--BorderColor1), 0 2px 4px 0px var(--ShadowColor);
+	position: relative;
+    top: -2px;
+}
+
+
+
+
+
+kbd:active
+{
+	top: 0;
+	box-shadow: 0 0 0 var(--BorderColor1);
+}
+
+
+
+
+
+blockquote
+{
+	position: relative;
+	margin-inline: 0;
+	padding: 1.25rem 1.5rem .75rem;
+	border-inline-start: calc(var(--BorderSize) * 2) solid var(--BorderColor1);
+	border-radius: var(--Radius1);
+	background-color: #0002;
+	color: var(--TextColor2);
+	font-style: italic;
+}
+
+
+
+
+
+blockquote::before
+{
+	content: '';
+	position: absolute;
+	top: -.5rem;
+	left: .75rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: var(--BorderColor1);
+	border-radius: var(--Radius1);
+	box-shadow: var(--Shadow);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M19.3 4.6c.3-.2.5-.2.8.1.2.3.4.5.5.6.1.2 0 .4-.1.5-2 1.3-4.4 4.2-4.6 5.2-.1 1 .9.7 2.5 1.5 1.7.8 3 3.6.7 5.7-2.2 2.2-6.7-.2-6-5.2.4-3.2 2.5-6 6.2-8.4Zm-9.9 0c.3-.2.5-.2.7.1.3.3.5.5.5.6.2.2.1.4 0 .5C8.5 7.1 6.2 10 6 11c-.1 1 .9.7 2.5 1.5s3 3.6.7 5.7C7 20.4 2.5 18 3.2 13c.4-3.2 2.5-6 6.2-8.4Z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1.25rem;
+}
+
+
+
+
+
+blockquote::after
+{
+	content: '';
+	position: absolute;
+	bottom: -.5rem;
+	right: .75rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: var(--BorderColor1);
+	border-radius: var(--Radius1);
+	box-shadow: var(--Shadow);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M14.6 19.4c3.7-2.4 5.8-5.2 6.2-8.4.7-5-3.8-7.4-6-5.2-2.3 2.1-.9 4.9.7 5.7S18.1 12 18 13c-.2 1-2.5 3.9-4.6 5.2-.1.1-.2.3 0 .5 0 .1.2.3.5.6.2.3.4.3.7.1Zm-9.9 0c3.7-2.4 5.8-5.2 6.2-8.4.7-5-3.8-7.4-6-5.2-2.3 2.1-1 4.9.7 5.7 1.6.8 2.6.5 2.5 1.5-.2 1-2.6 3.9-4.6 5.2-.1.1-.2.3-.1.5.1.1.3.3.5.6.3.3.5.3.8.1Z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1.25rem;
+}
+
+
+
+
+
+blockquote cite
+{
+    display: block;
+    font-size: .85rem;
+    font-style: normal;
+    opacity: .75;
+}
+
+
+
+
+
+blockquote cite:before
+{
+	content: '—';
+    margin-inline-end: .5rem;
+	font-size: .85rem;
+    opacity: .75;
+}
+
+
+
+
+
+input:placeholder-shown
+{
+	user-select: none;
+}
+
+
+
+
+
+fill
+{
+	display: block;
+	flex: 1;
+	pointer-events: none;
+}
+
+
+
+
+
+.InterfaceContainer
+{
+	position: fixed;
+	z-index: 1000;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: space-between;
+	width: 100%;
+	max-width: var(--MaxPageWidth);
+	height: 100dvh;
+	pointer-events: none;
+	user-select: none;
+}
+
+
+
+
+
+.InterfaceContainer .Logo
+{
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+	--color: var(--PrimaryColor);
+	font-size: 20px;
+	text-decoration: none;
+	filter: drop-shadow(0 0 2px #0009);
+}
+
+
+
+
+
+header div,
+header button,
+header a,
+aside
+{
+	pointer-events: all;
+}
+
+
+
+
+
+header
+{
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	width: 100%;
+	height: var(--HeaderHeight);
+	padding: .5rem var(--DefaultGap) calc(.5rem + var(--BorderSize));
+}
+
+
+
+
+
+.Button
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	min-height: 32px;
+	padding: 0 4px;
+	border: var(--Border1);
+	border-radius: var(--Radius1);
+	background: var(--BackColor2);
+	transition-property: border-color, background-color;
+	transition-duration: var(--TransitionSpeed);
+	user-select: none;
+}
+
+
+
+
+
+.Button:active
+{
+	border: var(--Border0);
+	background: var(--BackColor1);
+}
+
+
+
+
+
+aside
+{
+	display: flex;
+	flex-direction: column;
+	gap: .35rem;
+	min-width: var(--PanelsWidth);
+	width: var(--PanelsWidth);
+	max-width: var(--PanelsWidth);
+	max-height: calc(100dvh - var(--HeaderHeight));
+	padding: var(--DefaultGap) var(--DefaultGap) .75rem;
+	font-size: var(--SmallFontSize);
+	overflow-x: hidden;
+	overflow-y: auto;
+	overflow-wrap: anywhere;
+}
+
+
+
+
+
+aside[popover]
+{
+	display: revert;
+}
+
+
+
+
+
+aside :first-child
+{
+	margin-top: 0;
+}
+
+
+
+
+
+aside h2,
+aside h3
+{
+	margin: 1rem 0 .5rem 0;
+	font-size: .9rem;
+	color: var(--TextColor2);
+	font-weight: normal;
+}
+
+
+
+
+
+#NavigationList
+{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+}
+
+
+
+
+
+.CustomBackdrop
+{
+	position: fixed;
+    z-index: -1;
+	border: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #0006;
+    backdrop-filter: blur(2px);
+}
+
+
+
+
+
+.NavigationContent
+{
+	height: 100%;
+	width: fit-content;
+	padding: 8px 10px;
+	border-inline-end: var(--Border1);
+	border-radius: 0;
+	background: var(--BackColor1);
+}
+
+
+
+
+
+.HeaderBackground
+{
+	position: sticky;
+    top: 0;
+	z-index: 999;
+	width: 100%;
+	height: var(--HeaderHeight);
+	border-bottom: var(--Border1);
+	background-color: var(--BackColor1);
+	background-image: repeating-linear-gradient(315deg, transparent, transparent 3px, #FFFFFF05 4px, #FFFFFF05 7px, transparent 8px);
+	box-shadow: var(--Shadow);
+}
+
+
+
+
+
+.WebsiteMessage
+{
+	width: stretch;
+	max-width: var(--MaxContentWidth);
+	margin-inline: var(--DefaultGap);
+	padding: .8rem 1rem;
+	border: var(--BorderSize) solid color-mix(in srgb, var(--FocusColor), transparent 77%);
+	border-radius: var(--Radius2);
+	background: color-mix(in srgb, var(--FocusColor), transparent 88%);
+	box-shadow: var(--Shadow);
+}
+
+
+
+
+
+main
+{
+	width: stretch;
+	max-width: var(--MaxContentWidth);
+}
+
+
+
+
+
+.PageControlContainer
+{
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: flex-end;
+	gap: .5rem;
+	padding: 0 var(--Radius2);
+	font-size: var(--SmallFontSize);
+	user-select: none;
+}
+
+
+
+
+
+.PageControlContainer > div
+{
+	min-width: fit-content;
+	padding: .75rem .6rem;
+}
+
+
+
+
+
+.Dropdown
+{
+	display: flex;
+	align-items: center;
+	gap: .3rem;
+	color: var(--TextColor1);
+	user-select: none;
+	transition: color var(--TransitionSpeed);
+}
+
+
+
+
+
+.Dropdown:active
+{
+	color: var(--TextColor1);
+}
+
+
+
+
+
+.Dropdown:after
+{
+	content: '⌄';
+	position: relative;
+	top: -2px;
+	padding: 0 1px;
+	font-weight: bold;
+}
+
+
+
+
+
+.Dropdown.Button
+{
+	transition-property: border-color, background-color, color;
+	transition-duration: var(--TransitionSpeed);
+}
+
+
+
+
+
+[popover]
+{
+	padding: 4px;
+	border: var(--Border2);
+	border-radius: var(--Radius2);
+	background: var(--BackColor2);
+	box-shadow: 0 0px 10px #0009;
+}
+
+
+
+
+
+[popovertarget="LanguageList"]
+{
+	anchor-name: --LanguageAnchor;
+}
+
+
+
+
+
+#LanguageList
+{
+	margin: 0;
+	position-anchor: --LanguageAnchor;
+	top: calc(anchor(bottom) + 6px);
+	left: auto;
+	right: anchor(right);
+	min-width: anchor-size(width);
+}
+
+
+
+
+
+.List
+{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
+
+.List > a
+{
+	padding: 3px 6px;
+	border: var(--BorderSize) solid transparent;
+	color: var(--TextColor1);
+	text-decoration: none;
+	border-radius: var(--Radius1);
+	transition-property: background, border-color, color;
+	transition-duration: var(--TransitionSpeed);
+}
+
+
+
+
+
+.List > a:hover
+{
+	border-color: var(--BorderColor1);
+	background: var(--BackColor3);
+	color: var(--TextColor2);
+}
+
+
+
+
+
+article
+{
+	position: relative;
+	z-index: 0;
+	padding: 2rem;
+	border-block: var(--Border1);
+	background: var(--BackColor2);
+	line-height: 1.5rem;
+	box-shadow: var(--Shadow);
+	overflow-wrap: anywhere;
+}
+
+
+
+
+
+article > :first-child
+{
+	margin-block-start: 0;
+}
+
+
+
+
+
+article > :last-child
+{
+	margin-block-end: 0;
+}
+
+
+
+
+
+article a:any-link
+{
+	--color: var(--LinkColor);
+}
+
+
+
+
+
+footer
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: var(--DefaultGap);
+	color: var(--TextColor0);
+	font-size: var(--SmallFontSize);
+	overflow-wrap: anywhere;
+}
+
+
+
+
+
+footer p
+{
+	margin: 0;
+}
+
+
+
+
+
+@media (min-width: 1201px)
+{
+	.HideOnLarge
+	{
+		display: none !important;
+	}
+	
+	
+	
+	
+	
+	.WebsiteMessage
+	{
+		margin-inline: var(--PanelsWidth);
+	}
+	
+	
+	
+	
+	
+	main
+	{
+		margin-inline: var(--PanelsWidth);
+	}
+	
+	
+	
+	
+	
+	article
+	{
+		border: var(--Border1);
+		border-radius: var(--Radius2);
+	}
+}
+
+
+
+
+
+@media (min-width: 801px) and (max-width: 1200px)
+{
+	.HideOnMedium
+	{
+		display: none !important;
+	}
+}
+
+
+
+
+
+@media (max-width: 800px)
+{
+	.HideOnSmall
+	{
+		display: none !important;
+	}
+}
