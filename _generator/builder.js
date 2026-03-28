@@ -1,21 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
+const ROOT_DIR = path.join(__dirname, '..');
 
-
-const CONFIG = {
+const CONFIG =
+{
 	siteName: "sevenwiki",
-	templatePath: "_base.html",
+	templatePath: path.join(__dirname, 'template.html'), 
 	contentFileName: "_article.txt",
 	globalsFileName: "_globals.json",
 	interfaceFileName: "_interface.json"
 };
 
-
-
 const baseTemplate = fs.readFileSync(CONFIG.templatePath, 'utf-8');
-
-
 
 function buildStatic(dir)
 {
@@ -25,8 +22,8 @@ function buildStatic(dir)
 	{
 		const fullPath = path.join(dir, file);
 		
-		if (file.startsWith('_') && file !== CONFIG.contentFileName) return;
-		if (file.startsWith('.')) return;
+		if ((file.startsWith('_') && file !== CONFIG.contentFileName) || file.startsWith('.'))
+			return;
 		
 		if (fs.statSync(fullPath).isDirectory())
 		{
@@ -34,11 +31,12 @@ function buildStatic(dir)
 		}
 		else if (file === CONFIG.contentFileName)
 		{
-			const pathParts = fullPath.split(path.sep).filter(p => p !== '.' && p !== '');
-			const currentLang = pathParts[0];
+			const relativePath = path.relative(ROOT_DIR, fullPath);
+			const pathParts = relativePath.split(path.sep);
+			const currentLang = pathParts[0]; 
 			const pageName = path.basename(dir);
 			
-			const interfacePath = path.join(currentLang, CONFIG.interfaceFileName);
+			const interfacePath = path.join(ROOT_DIR, currentLang, CONFIG.interfaceFileName);
 			let translations = {};
 			
 			if (fs.existsSync(interfacePath))
@@ -66,23 +64,20 @@ function buildStatic(dir)
 										.replace(/{{LANG}}/g, currentLang)
 										.replace(/{{PAGENAME}}/g, pageName);
 			
-			
 			Object.keys(allVars).forEach(key =>
 			{
 				const regex = new RegExp(`{{${key}}}`, 'g');
 				finalHtml = finalHtml.replace(regex, allVars[key]);
 			});
-
-			const outputPath = path.join(dir, 'index.html');
-			fs.writeFileSync(outputPath, finalHtml);
 			
-			console.log(`[${currentLang}] Build success: ${outputPath}`);
+			const outputPath = path.join(dir, 'index.html');
+			
+			fs.writeFileSync(outputPath, finalHtml);
+			console.log(`[${currentLang}] Built: ${pageName}`);
 		}
 	});
 }
 
-
-
 console.log("Starting Build System...");
-buildStatic('.');
+buildStatic(ROOT_DIR);
 console.log("Build finished");
