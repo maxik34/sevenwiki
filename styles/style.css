@@ -884,8 +884,17 @@ summary::before
 	transform: rotate(-90deg);
 	font-weight: bold;
 	position: relative;
-	left: -2px;
+	inset-inline-start: -2px;
 	color: var(--PrimaryColor);
+}
+
+
+
+
+
+[dir="rtl"] summary::before
+{
+	transform: rotate(90deg);
 }
 
 
@@ -903,7 +912,7 @@ details[open] > summary
 
 details[open] > summary::before
 {
-	left: 0;
+	inset-inline-start: 0;
 	top: -2px;
 	transform: rotate(0deg);
 }
@@ -1158,7 +1167,7 @@ aside h3
 
 .WebsiteMessage
 {
-	width: stretch;
+	width: -webkit-fill-available;
 	max-width: var(--MaxContentWidth);
 	margin-inline: var(--DefaultGap);
 	padding: .8rem 1rem;
@@ -1175,7 +1184,7 @@ aside h3
 
 main
 {
-	width: stretch;
+	width: -webkit-fill-available;
 	max-width: var(--MaxContentWidth);
 }
 
@@ -1281,8 +1290,8 @@ main
 	margin: 0;
 	position-anchor: --LanguageAnchor;
 	top: calc(anchor(bottom) + 6px);
-	left: auto;
-	right: anchor(right);
+	inset-inline-start: auto;
+	inset-inline-end: anchor(end);
 	min-width: anchor-size(width);
 }
 
