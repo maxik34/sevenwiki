@@ -831,6 +831,19 @@ sub { bottom: -.3em; }
 
 
 
+img
+{
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: var(--DefaultGap) auto;
+	box-shadow: var(--Shadow);
+}
+
+
+
+
+
 details
 {
 	margin-block: 1rem;
@@ -1461,30 +1474,4 @@ footer p
 	{
 		display: none !important;
 	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-img
-{
-	display: block;
-	max-width: 100%;
-	height: auto;
-	margin: var(--DefaultGap) auto;
-	box-shadow: var(--Shadow);
 }
