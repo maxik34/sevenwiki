@@ -68,7 +68,7 @@
 {
 	box-sizing: border-box;
 	outline: none;
-	color-scheme: dark;
+	color-scheme: dark only;
 }
 
 
@@ -107,77 +107,80 @@ body
 
 
 
-::-webkit-scrollbar
+@media (pointer: fine)
 {
-	width: var(--ScrollbarSize);
-	height: var(--ScrollbarSize);
-	background: var(--BackColor1);
-}
+	::-webkit-scrollbar
+	{
+		width: var(--ScrollbarSize);
+		height: var(--ScrollbarSize);
+		background: var(--BackColor1);
+	}
 
 
 
 
 
-aside::-webkit-scrollbar
-{
-	width: var(--ThinScrollbarSize);
-	height: var(--ThinScrollbarSize);
-	background: transparent;
-}
+	aside::-webkit-scrollbar
+	{
+		width: var(--ThinScrollbarSize);
+		height: var(--ThinScrollbarSize);
+		background: transparent;
+	}
 
 
 
 
 
-::-webkit-scrollbar-corner
-{
-	background: var(--BackColor1);
-}
+	::-webkit-scrollbar-corner
+	{
+		background: var(--BackColor1);
+	}
 
 
 
 
 
-aside::-webkit-scrollbar-thumb
-{
-	border: 2px solid transparent;
-	background: transparent;
-	background-clip: padding-box;
-}
+	aside::-webkit-scrollbar-thumb
+	{
+		border: 2px solid transparent;
+		background: transparent;
+		background-clip: padding-box;
+	}
 
 
 
 
 
-::-webkit-scrollbar-thumb
-{
-	border: 3px solid transparent;
-	border-radius: calc(var(--ScrollbarSize) / 2);
-	background: var(--ThumbColor);
-	background-clip: padding-box;
-}
+	::-webkit-scrollbar-thumb
+	{
+		border: 3px solid transparent;
+		border-radius: calc(var(--ScrollbarSize) / 2);
+		background: var(--ThumbColor);
+		background-clip: padding-box;
+	}
 
 
 
 
 
-aside:hover::-webkit-scrollbar-thumb
-{
-	border: 2px solid transparent;
-	border-radius: calc(var(--ScrollbarSize) / 2);
-	background: var(--ThumbColor);
-	background-clip: padding-box;
-}
+	aside:hover::-webkit-scrollbar-thumb
+	{
+		border: 2px solid transparent;
+		border-radius: calc(var(--ScrollbarSize) / 2);
+		background: var(--ThumbColor);
+		background-clip: padding-box;
+	}
 
 
 
 
 
-::-webkit-scrollbar-thumb:hover,
-aside:hover::-webkit-scrollbar-thumb:hover
-{
-	background: var(--ThumbActiveColor);
-	background-clip: padding-box;
+	::-webkit-scrollbar-thumb:hover,
+	aside:hover::-webkit-scrollbar-thumb:hover
+	{
+		background: var(--ThumbActiveColor);
+		background-clip: padding-box;
+	}
 }
 
 
