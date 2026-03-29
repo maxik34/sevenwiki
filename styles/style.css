@@ -1201,7 +1201,6 @@ main
 
 .PageControlContainer > div
 {
-	min-width: fit-content;
 	padding: .75rem .6rem;
 }
 
