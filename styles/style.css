@@ -2,7 +2,7 @@
 {
 	/* Accents */
 	--PrimaryColor: #3C96E1;
-	--InvertedPrimaryColor: oklch(from var(--PrimaryColor) l c calc(h + 180));
+	--InvertedPrimaryColor: #C87D0F;
 	--ContrastColor: var(--InvertedPrimaryColor);
 	--FocusColor: var(--InvertedPrimaryColor);
 	--ErrorColor: #D11616;
@@ -287,6 +287,24 @@ a:any-link svg
 	summary:hover
 	{
 		background-color: var(--BackColor3);
+	}
+
+
+
+
+
+	tr:hover
+	{
+		background-color: var(--BackColor2);
+	}
+
+
+
+
+
+	tr:hover td
+	{
+		border-color: var(--BorderColor1);
 	}
 }
 
@@ -717,24 +735,6 @@ tr
 	background-color: var(--BackColor1);
 	transition-property: background-color, border-color;
 	transition-duration: var(--TransitionSpeed);
-}
-
-
-
-
-
-tr:hover
-{
-	background-color: var(--BackColor2);
-}
-
-
-
-
-
-tr:hover td
-{
-	border-color: var(--BorderColor1);
 }
 
 
@@ -1484,5 +1484,14 @@ footer p
 	.HideOnSmall
 	{
 		display: none !important;
+	}
+	
+	
+	
+	
+	
+	article
+	{
+		padding: 1.5rem 1rem;
 	}
 }
