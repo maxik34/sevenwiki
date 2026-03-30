@@ -31,10 +31,10 @@ function buildStatic(dir)
 		}
 		else if (file === CONFIG.contentFileName)
 		{
-			const relativePath = path.relative(ROOT_DIR, fullPath);
+			const relativePath = path.relative(ROOT_DIR, dir);
 			const pathParts = relativePath.split(path.sep);
-			const currentLang = pathParts[0]; 
-			const pageName = path.basename(dir);
+			const currentLang = pathParts.shift();
+			const pageName = pathParts.join('/');
 			
 			const interfacePath = path.join(ROOT_DIR, currentLang, CONFIG.interfaceFileName);
 			let translations = {};
@@ -57,12 +57,12 @@ function buildStatic(dir)
 				articleContent = articleContent.replace(regex, allVars[key]);
 			});
 			
-			articleContent = articleContent.replace(/{{PAGENAME}}/g, pageName);
+			articleContent = articleContent.replace(/{{FULLPAGENAME}}/g, pageName);
 			
 			let finalHtml = baseTemplate.replace(/{{ARTICLE}}/g, articleContent)
 										.replace(/{{SITE}}/g, CONFIG.siteName)
 										.replace(/{{LANG}}/g, currentLang)
-										.replace(/{{PAGENAME}}/g, pageName);
+										.replace(/{{FULLPAGENAME}}/g, pageName);
 			
 			Object.keys(allVars).forEach(key =>
 			{

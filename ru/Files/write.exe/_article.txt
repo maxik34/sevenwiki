@@ -1,0 +1,116 @@
+<h1>write.exe</h1>
+<p><img src="/sevenwiki/icons/write-16.png"> <samp>write.exe</samp> — это устаревший исполняемый файл, служащий обёрткой для приложения WordPad. Он выглядит как самостоятельная программа, однако его основной задачей является обеспечение обратной совместимости.</p>
+
+
+<h2>Сведения о файле</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Путь к файлу</th>
+			<th>Архитектура</th>
+			<th>Версия</th>
+			<th>Размер файла</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><samp>%WinDir%\write.exe</samp> <br> <samp class="subtext">C:\Windows\write.exe</samp></td>
+			<td>64-бит</td>
+			<td><samp>6.1.7600.16385</samp></td>
+			<td><samp>10 КБ</samp> <br> <samp class="subtext">10 240 байт</samp></td>
+		</tr>
+		<tr>
+			<td><samp>%WinDir%\System32\write.exe</samp> <br> <samp class="subtext">C:\Windows\System32\write.exe</samp></td>
+			<td>64-бит</td>
+			<td><samp>6.1.7600.16385</samp></td>
+			<td><samp>10 КБ</samp> <br> <samp class="subtext">10 240 байт</samp></td>
+		</tr>
+		<tr>
+			<td><samp>%WinDir%\SysWOW64\write.exe</samp> <br> <samp class="subtext">C:\Windows\SysWOW64\write.exe</samp></td>
+			<td>32-бит</td>
+			<td><samp>6.1.7600.16385</samp></td>
+			<td><samp>9 КБ</samp> <br> <samp class="subtext">9 216 байт</samp></td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h2>Логика запуска и перенаправление</h2>
+<p>Процесс выполнения <samp>write.exe</samp> зависит от того, как именно вводится команда в интерфейсе Windows. Система чередует использование исполняемого файла и механизм реестра App Paths.</p>
+
+
+<h3>Прямой запуск</h3>
+<p>При запуске файла напрямую (или через консоль), программа использует функцию <code>ShellExecuteW</code> для вызова <code>wordpad.exe</code>, что приводит к запуску программы, указанной в реестре по пути:</p>
+
+<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WORDPAD.EXE</pre>
+
+
+<h3>Меню «Пуск»</h3>
+<p><code>write</code> и <code>write.exe</code> запускают исполняемый файл (прямой запуск), однако использование <code>write.</code> запускает программу, указанную в реестре по пути:</p>
+
+<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WRITE.EXE</pre>
+
+
+<h3>Диалог «Выполнить» (<kbd>Win</kbd>+<kbd>R</kbd>)</h3>
+<p>Работает зеркально меню «Пуск»: <code>write</code> и <code>write.exe</code> используют механизм App Paths, в то время как <code>write.</code> запускает исполняемый файл.</p>
+
+
+<h3>Адресная строка проводника</h3>
+<p>Все варианты (<code>write</code>, <code>write.exe</code> и <code>write.</code>) запускают исполняемый файл.</p>
+
+
+<h2>Зависимости</h2>
+<details>
+	<summary>kernel32.dll</summary>
+	<div>
+		<ul class="Mono Columns-2">
+			<li>GetCurrentProcess</li>
+			<li>GetCurrentProcessId</li>
+			<li>GetCurrentThreadId</li>
+			<li>GetModuleHandleW</li>
+			<li>GetStartupInfoW</li>
+			<li>GetSystemTimeAsFileTime</li>
+			<li>GetTickCount</li>
+			<li>HeapSetInformation</li>
+			<li>QueryPerformanceCounter</li>
+			<li>RtlCaptureContext</li>
+			<li>RtlLookupFunctionEntry</li>
+			<li>RtlVirtualUnwind</li>
+			<li>SetUnhandledExceptionFilter</li>
+			<li>Sleep</li>
+			<li>TerminateProcess</li>
+			<li>UnhandledExceptionFilter</li>
+		</ul>
+	</div>
+</details>
+
+<details>
+	<summary>msvcrt.dll</summary>
+	<div>
+		<ul class="Mono Columns-2">
+			<li>__C_specific_handler</li>
+			<li>__set_app_type</li>
+			<li>__setusermatherr</li>
+			<li>__wgetmainargs</li>
+			<li>_amsg_exit</li>
+			<li>_cexit</li>
+			<li>_commode</li>
+			<li>_exit</li>
+			<li>_fmode</li>
+			<li>_initterm</li>
+			<li>_wcmdln</li>
+			<li>_XcptFilter</li>
+			<li>exit</li>
+			<li>terminate</li>
+		</ul>
+	</div>
+</details>
+
+<details>
+	<summary>shell32.dll</summary>
+	<div>
+		<ul class="Mono">
+			<li>ShellExecuteW</li>
+		</ul>
+	</div>
+</details>

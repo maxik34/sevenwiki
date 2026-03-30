@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="color-scheme" content="dark only">
+		<title>Seven Wiki</title>
+		<script>
+			function Redirect()
+			{
+				const supportedLanguages = ['en', 'ru']; 
+				const defaultLang = 'en';
+				const userLang = navigator.language.substring(0, 2).toLowerCase();
+				const targetLang = supportedLanguages.includes(userLang) ? userLang : defaultLang;
+				
+				window.location.replace(`/sevenwiki/${targetLang}/Main_Page`);
+			};
+			
+			Redirect();
+		</script>
+		<noscript>
+			<meta http-equiv="refresh" content="0; url=/sevenwiki/en/Main_Page">
+		</noscript>
+	</head>
+	<body>
+		<p>Redirecting to <a href="/sevenwiki/en/Main_Page">Main Page</a>...</p>
+	</body>
+</html>
