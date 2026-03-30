@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="color-scheme" content="dark only">
+		<link rel="stylesheet" href="/sevenwiki/styles/fonts.css">
+		<link rel="stylesheet" href="/sevenwiki/styles/style.css">
+		<title>404 – Seven Wiki</title>
+		<script>
+			function LowercaseRedirect()
+			{
+				const fullPath = window.location.pathname;
+				const marker = '/sevenwiki/';
+				const markerIndex = fullPath.toLowerCase().indexOf(marker);
+				
+				if (markerIndex !== -1)
+				{
+					const prefix = fullPath.substring(0, markerIndex + marker.length);
+					const tail = fullPath.substring(markerIndex + marker.length);
+					
+					if (/[A-Z]/.test(tail)) {
+						const newPath = prefix + tail.toLowerCase();
+						window.location.replace(newPath);
+						return;
+					}
+				}
+			};
+			
+			LowercaseRedirect();
+		</script>
+	</head>
+	<body>
+		<div style="text-align:center">
+			<h1>404</h1>
+			<p>Page not found</p>
+			<p><a href="/sevenwiki/en/main_page">Go to Main Page</a></p>
+		</div>
+	</body>
+</html>

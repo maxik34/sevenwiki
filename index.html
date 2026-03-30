@@ -12,16 +12,16 @@
 				const userLang = navigator.language.substring(0, 2).toLowerCase();
 				const targetLang = supportedLanguages.includes(userLang) ? userLang : defaultLang;
 				
-				window.location.replace(`/sevenwiki/${targetLang}/Main_Page`);
+				window.location.replace(`/sevenwiki/${targetLang}/main_page`);
 			};
 			
 			Redirect();
 		</script>
 		<noscript>
-			<meta http-equiv="refresh" content="0; url=/sevenwiki/en/Main_Page">
+			<meta http-equiv="refresh" content="0; url=/sevenwiki/en/main_page">
 		</noscript>
 	</head>
 	<body>
-		<p>Redirecting to <a href="/sevenwiki/en/Main_Page">Main Page</a>...</p>
+		<p>Redirecting to <a href="/sevenwiki/en/main_page">Main Page</a>...</p>
 	</body>
 </html>
