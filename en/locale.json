@@ -1,0 +1,20 @@
+{
+	"LANG": "en",
+	"LANGNAME": "English",
+	
+	"UI":
+	{
+		"NAVIGATION": "Navigation",
+		"NAVIGATIONLIST": "<a href='/sevenwiki/en/files'>Files</a>",
+		"CONTENTS": "Contents",
+		"CONTENTSLIST": "Content List",
+		
+		"NOTRANSLATION": "This page has not yet been translated, the English version is displayed",
+		"BREADCRUMBS": "Breadcrumbs",
+		"CATEGORIES": "Categories: ",
+		"WIP": "(placeholder)",
+		
+		"FOOTER": "<p>© 2026. {{SITENAME}} is an independent fan resource. Content is available under the <a class='External' href='https://creativecommons.org/licenses/by-sa/4.0/deed.en' target='_blank' rel='noopener'>CC BY-SA 4.0</a> license.</p><p>Microsoft, Windows, Windows 7, and related logos are registered trademarks of <a class='External' href='https://www.microsoft.com/en-us' target='_blank' rel='noopener'>Microsoft Corporation</a>. This website is not an official Microsoft resource and is in no way affiliated with the corporation. All instructions are provided \"as is\" at your own risk.</p>",
+		"GITHUB": "GitHub repository"
+	}
+}

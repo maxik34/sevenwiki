@@ -4,22 +4,22 @@
 	<meta charset="UTF-8">
 	<meta name="color-scheme" content="dark only">
 	<meta name="robots" content="noindex, nofollow">
-	<link rel="icon" type="image/x-icon" href="/sevenwiki/favicon.ico">
-	<title>Seven Wiki</title>
+	<link rel="icon" type="image/x-icon" href="/{{BASEURL}}/favicon.ico">
+	<title>{{SITENAME}}</title>
 	
 	<script>
 		(function()
 		{
 			const Supported = ['en', 'ru'];
 			const UserLang = navigator.language.substring(0, 2).toLowerCase();
-			const TargetLang = Supported.includes(UserLang) ? UserLang : 'en';
+			const TargetLang = Supported.includes(UserLang) ? UserLang : '{{DEFAULTLANG}}';
 			
-			window.location.replace(`/sevenwiki/${TargetLang}/main_page`);
+			window.location.replace(`/{{BASEURL}}/${TargetLang}/{{MAINPAGE}}`);
 		})();
 	</script>
 	
 	<noscript>
-		<meta http-equiv="refresh" content="0; url=/sevenwiki/en/main_page">
+		<meta http-equiv="refresh" content="0; url=/{{BASEURL}}/{{DEFAULTLANG}}/{{MAINPAGE}}">
 	</noscript>
 </head>
 <body></body>

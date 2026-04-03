@@ -1,0 +1,7 @@
+{
+	"BASEURL": "sevenwiki",
+	"SITENAME": "Seven Wiki",
+	"DEFAULTLANG": "en",
+	"DIR": "ltr",
+	"MAINPAGE": "main_page"
+}

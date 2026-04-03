@@ -1,4 +1,4 @@
 <h1>Категория файлов</h1>
-<ul class="Columns-2">
+<ul class="Columns">
 	<li><a href="./write.exe">write.exe</a></li>
 </ul>

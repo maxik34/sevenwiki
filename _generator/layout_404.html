@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="color-scheme" content="dark only">
 	<meta name="robots" content="noindex, nofollow">
-	<link rel="icon" type="image/x-icon" href="/sevenwiki/favicon.ico">
-	<title>Seven Wiki</title>
+	<link rel="icon" type="image/x-icon" href="/{{BASEURL}}/favicon.ico">
+	<title>{{SITENAME}}</title>
 	
 	<script>
 		(function()
 		{
 			const path = window.location.pathname;
-			const base = '/sevenwiki/';
+			const base = '/{{BASEURL}}/';
 			const baseIndex = path.toLowerCase().indexOf(base.toLowerCase());
 			
 			if (baseIndex !== -1)
@@ -32,7 +32,7 @@
 	<div style="text-align:center">
 		<h1>404</h1>
 		<p>Page not found</p>
-		<p><a href="/sevenwiki/en/main_page">Go to Main Page</a></p>
+		<p><a href="/{{BASEURL}}/{{DEFAULTLANG}}/{{MAINPAGE}}">Go to Main Page</a></p>
 	</div>
 </body>
 </html>

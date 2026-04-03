@@ -1,5 +1,5 @@
 <h1>write.exe</h1>
-<p><img src="/sevenwiki/icons/write-16.png"> <samp>write.exe</samp> is a legacy executable file that serves as a wrapper for the WordPad application. While it appears as a standalone program, its primary purpose is to maintain backward compatibility.</p>
+<p><img src="/{{BASEURL}}/icons/write-16.png"> <samp>write.exe</samp> is a legacy executable file that serves as a wrapper for the WordPad application. While it appears as a standalone program, its primary purpose is to maintain backward compatibility.</p>
 
 
 <h2>File Details</h2>
@@ -14,22 +14,22 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td><samp>%WinDir%\write.exe</samp> <br> <samp class="subtext">C:\Windows\write.exe</samp></td>
+			<td class="Mono">%WinDir%\write.exe <br> <span class="Subtext">C:\Windows\write.exe</span></td>
 			<td>64-bit</td>
-			<td><samp>6.1.7600.16385</samp></td>
-			<td><samp>10 KB</samp> <br> <samp class="subtext">10,240 bytes</samp></td>
+			<td class="Mono">6.1.7600.16385</td>
+			<td class="Mono">10 KB <br> <span class="Subtext">10,240 bytes</span></td>
 		</tr>
 		<tr>
-			<td><samp>%WinDir%\System32\write.exe</samp> <br> <samp class="subtext">C:\Windows\System32\write.exe</samp></td>
+			<td class="Mono">%WinDir%\System32\write.exe <br> <span class="Subtext">C:\Windows\System32\write.exe</span></td>
 			<td>64-bit</td>
-			<td><samp>6.1.7600.16385</samp></td>
-			<td><samp>10 KB</samp> <br> <samp class="subtext">10,240 bytes</samp></td>
+			<td class="Mono">6.1.7600.16385</td>
+			<td class="Mono">10 KB <br> <span class="Subtext">10,240 bytes</span></td>
 		</tr>
 		<tr>
-			<td><samp>%WinDir%\SysWOW64\write.exe</samp> <br> <samp class="subtext">C:\Windows\SysWOW64\write.exe</samp></td>
+			<td class="Mono">%WinDir%\SysWOW64\write.exe <br> <span class="Subtext">C:\Windows\SysWOW64\write.exe</span></td>
 			<td>32-bit</td>
-			<td><samp>6.1.7600.16385</samp></td>
-			<td><samp>9 KB</samp> <br> <samp class="subtext">9,216 bytes</samp></td>
+			<td class="Mono">6.1.7600.16385</td>
+			<td class="Mono">9 KB <br> <span class="Subtext">9,216 bytes</span></td>
 		</tr>
 	</tbody>
 </table>
@@ -42,13 +42,19 @@
 <h3>Direct Execution</h3>
 <p>When running the binary file directly (or via Console), the program uses the <code>ShellExecuteW</code> function to call <code>wordpad.exe</code>, which launches the program specified in the registry path:</p>
 
-<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WORDPAD.EXE</pre>
+<div class="pre">
+	<div>Windows Registry</div>
+	<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WORDPAD.EXE</pre>
+</div>
 
 
 <h3>Start Menu</h3>
 <p><code>write</code> and <code>write.exe</code> launches the binary (Direct Execution), however, using <code>write.</code> launches the program specified in the registry path:</p>
 
-<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WRITE.EXE</pre>
+<div class="pre">
+	<div>Windows Registry</div>
+	<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WRITE.EXE</pre>
+</div>
 
 
 <h3>Run Dialog</h3>
@@ -63,7 +69,7 @@
 <details>
 	<summary>kernel32.dll</summary>
 	<div>
-		<ul class="Mono Columns-2">
+		<ul class="Mono Columns">
 			<li>GetCurrentProcess</li>
 			<li>GetCurrentProcessId</li>
 			<li>GetCurrentThreadId</li>
@@ -87,7 +93,7 @@
 <details>
 	<summary>msvcrt.dll</summary>
 	<div>
-		<ul class="Mono Columns-2">
+		<ul class="Mono Columns">
 			<li>__C_specific_handler</li>
 			<li>__set_app_type</li>
 			<li>__setusermatherr</li>

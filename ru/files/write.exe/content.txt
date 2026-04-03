@@ -1,5 +1,5 @@
 <h1>write.exe</h1>
-<p><img src="/sevenwiki/icons/write-16.png"> <samp>write.exe</samp> — это устаревший исполняемый файл, служащий обёрткой для приложения WordPad. Он выглядит как самостоятельная программа, однако его основной задачей является обеспечение обратной совместимости.</p>
+<p><img src="/{{BASEURL}}/icons/write-16.png"> <samp>write.exe</samp> — это устаревший исполняемый файл, служащий обёрткой для приложения WordPad. Он выглядит как самостоятельная программа, однако его основной задачей является обеспечение обратной совместимости.</p>
 
 
 <h2>Сведения о файле</h2>
@@ -14,22 +14,22 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td><samp>%WinDir%\write.exe</samp> <br> <samp class="subtext">C:\Windows\write.exe</samp></td>
+			<td class="Mono">%WinDir%\write.exe <br> <span class="Subtext">C:\Windows\write.exe</span></td>
 			<td>64-бит</td>
-			<td><samp>6.1.7600.16385</samp></td>
-			<td><samp>10 КБ</samp> <br> <samp class="subtext">10 240 байт</samp></td>
+			<td class="Mono">6.1.7600.16385</td>
+			<td class="Mono">10 КБ <br> <span class="Subtext">10 240 байт</span></td>
 		</tr>
 		<tr>
-			<td><samp>%WinDir%\System32\write.exe</samp> <br> <samp class="subtext">C:\Windows\System32\write.exe</samp></td>
+			<td class="Mono">%WinDir%\System32\write.exe <br> <span class="Subtext">C:\Windows\System32\write.exe</span></td>
 			<td>64-бит</td>
-			<td><samp>6.1.7600.16385</samp></td>
-			<td><samp>10 КБ</samp> <br> <samp class="subtext">10 240 байт</samp></td>
+			<td class="Mono">6.1.7600.16385</td>
+			<td class="Mono">10 КБ <br> <span class="Subtext">10 240 байт</span></td>
 		</tr>
 		<tr>
-			<td><samp>%WinDir%\SysWOW64\write.exe</samp> <br> <samp class="subtext">C:\Windows\SysWOW64\write.exe</samp></td>
+			<td class="Mono">%WinDir%\SysWOW64\write.exe <br> <span class="Subtext">C:\Windows\SysWOW64\write.exe</span></td>
 			<td>32-бит</td>
-			<td><samp>6.1.7600.16385</samp></td>
-			<td><samp>9 КБ</samp> <br> <samp class="subtext">9 216 байт</samp></td>
+			<td class="Mono">6.1.7600.16385</td>
+			<td class="Mono">9 КБ <br> <span class="Subtext">9 216 байт</span></td>
 		</tr>
 	</tbody>
 </table>
@@ -42,13 +42,19 @@
 <h3>Прямой запуск</h3>
 <p>При запуске файла напрямую (или через консоль), программа использует функцию <code>ShellExecuteW</code> для вызова <code>wordpad.exe</code>, что приводит к запуску программы, указанной в реестре по пути:</p>
 
-<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WORDPAD.EXE</pre>
+<div class="pre">
+	<div>Реестр Windows</div>
+	<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WORDPAD.EXE</pre>
+</div>
 
 
 <h3>Меню «Пуск»</h3>
 <p><code>write</code> и <code>write.exe</code> запускают исполняемый файл (прямой запуск), однако использование <code>write.</code> запускает программу, указанную в реестре по пути:</p>
 
-<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WRITE.EXE</pre>
+<div class="pre">
+	<div>Реестр Windows</div>
+	<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WRITE.EXE</pre>
+</div>
 
 
 <h3>Диалог «Выполнить»</h3>
@@ -63,7 +69,7 @@
 <details>
 	<summary>kernel32.dll</summary>
 	<div>
-		<ul class="Mono Columns-2">
+		<ul class="Mono Columns">
 			<li>GetCurrentProcess</li>
 			<li>GetCurrentProcessId</li>
 			<li>GetCurrentThreadId</li>
@@ -87,7 +93,7 @@
 <details>
 	<summary>msvcrt.dll</summary>
 	<div>
-		<ul class="Mono Columns-2">
+		<ul class="Mono Columns">
 			<li>__C_specific_handler</li>
 			<li>__set_app_type</li>
 			<li>__setusermatherr</li>
