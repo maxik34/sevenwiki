@@ -5,9 +5,9 @@
 	"UI":
 	{
 		"NAVIGATION": "Навигация",
-		"NAVIGATIONLIST": "<a href='/sevenwiki/ru/files'>Файлы</a>",
+		"NAVIGATIONLIST": "<a href='/{{BASEURL}}/{{LANG}}/updates'>Обновления</a> <a href='/{{BASEURL}}/{{LANG}}/files'>Файлы</a>",
 		"CONTENTS": "Содержание",
-		"CONTENTSLIST": "Содержимое страницы",
+		"CONTENTSLIST": "<span>Содержимое страницы</span>",
 		
 		"NOTRANSLATION": "Страница ещё не переведена, отображена версия на английском",
 		"CATEGORIES": "Категории: ",

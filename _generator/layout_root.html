@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="color-scheme" content="dark only">
-	<meta name="robots" content="noindex, nofollow">
-	<link rel="icon" type="image/x-icon" href="/{{BASEURL}}/favicon.ico">
-	<title>{{SITENAME}}</title>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="dark only">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/{{BASEURL}}/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/{{BASEURL}}/favicon.svg">
+<title>{{SITENAME}}</title>
+<script>
+(function()
+{
+	const Supported = ['en', 'ru'];
+	const UserLang = navigator.language.substring(0, 2).toLowerCase();
+	const TargetLang = Supported.includes(UserLang) ? UserLang : '{{DEFAULTLANG}}';
 	
-	<script>
-		(function()
-		{
-			const Supported = ['en', 'ru'];
-			const UserLang = navigator.language.substring(0, 2).toLowerCase();
-			const TargetLang = Supported.includes(UserLang) ? UserLang : '{{DEFAULTLANG}}';
-			
-			window.location.replace(`/{{BASEURL}}/${TargetLang}/{{MAINPAGE}}`);
-		})();
-	</script>
-	
-	<noscript>
-		<meta http-equiv="refresh" content="0; url=/{{BASEURL}}/{{DEFAULTLANG}}/{{MAINPAGE}}">
-	</noscript>
+	window.location.replace(`/{{BASEURL}}/${TargetLang}/{{MAINPAGE}}`);
+})();
+</script>
+<noscript>
+<meta http-equiv="refresh" content="0; url=/{{BASEURL}}/{{DEFAULTLANG}}/{{MAINPAGE}}">
+</noscript>
 </head>
 <body></body>
 </html>

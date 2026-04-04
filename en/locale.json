@@ -5,9 +5,9 @@
 	"UI":
 	{
 		"NAVIGATION": "Navigation",
-		"NAVIGATIONLIST": "<a href='/sevenwiki/en/files'>Files</a>",
+		"NAVIGATIONLIST": "<a href='/{{BASEURL}}/{{LANG}}/updates'>Updates</a> <a href='/{{BASEURL}}/{{LANG}}/files'>Files</a>",
 		"CONTENTS": "Contents",
-		"CONTENTSLIST": "Content List",
+		"CONTENTSLIST": "<span>Content List</span>",
 		
 		"NOTRANSLATION": "This page has not yet been translated, the English version is displayed",
 		"BREADCRUMBS": "Breadcrumbs",

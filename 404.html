@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="color-scheme" content="dark only">
-	<meta name="robots" content="noindex, nofollow">
-	<link rel="icon" type="image/x-icon" href="/sevenwiki/favicon.ico">
-	<title>Seven Wiki</title>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="dark only">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/sevenwiki/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/sevenwiki/favicon.svg">
+<title>Seven Wiki</title>
+<script>
+(function()
+{
+	const path = window.location.pathname;
+	const base = '/sevenwiki/';
+	const baseIndex = path.toLowerCase().indexOf(base.toLowerCase());
 	
-	<script>
-		(function()
+	if (baseIndex !== -1)
+	{
+		const prefix = path.substring(0, baseIndex + base.length);
+		const tail = path.substring(baseIndex + base.length);
+		
+		if (/[A-Z]/.test(tail))
 		{
-			const path = window.location.pathname;
-			const base = '/sevenwiki/';
-			const baseIndex = path.toLowerCase().indexOf(base.toLowerCase());
-			
-			if (baseIndex !== -1)
-			{
-				const prefix = path.substring(0, baseIndex + base.length);
-				const tail = path.substring(baseIndex + base.length);
-				
-				if (/[A-Z]/.test(tail))
-				{
-					window.location.replace(prefix + tail.toLowerCase());
-					return;
-				}
-			}
-		})();
-	</script>
+			window.location.replace(prefix + tail.toLowerCase());
+			return;
+		}
+	}
+})();
+</script>
 </head>
 <body>
-	<div style="text-align:center">
-		<h1>404</h1>
-		<p>Page not found</p>
-		<p><a href="/sevenwiki/en/main_page">Go to Main Page</a></p>
-	</div>
+<div style="text-align:center">
+<h1>404</h1>
+<p>Page not found</p>
+<p><a href="/sevenwiki/en/main_page">Go to Main Page</a></p>
+</div>
 </body>
 </html>

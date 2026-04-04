@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="color-scheme" content="dark only">
-	<meta name="robots" content="noindex, nofollow">
-	<link rel="icon" type="image/x-icon" href="/sevenwiki/favicon.ico">
-	<title>Seven Wiki</title>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="dark only">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/sevenwiki/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/sevenwiki/favicon.svg">
+<title>Seven Wiki</title>
+<script>
+(function()
+{
+	const Supported = ['en', 'ru'];
+	const UserLang = navigator.language.substring(0, 2).toLowerCase();
+	const TargetLang = Supported.includes(UserLang) ? UserLang : 'en';
 	
-	<script>
-		(function()
-		{
-			const Supported = ['en', 'ru'];
-			const UserLang = navigator.language.substring(0, 2).toLowerCase();
-			const TargetLang = Supported.includes(UserLang) ? UserLang : 'en';
-			
-			window.location.replace(`/sevenwiki/${TargetLang}/main_page`);
-		})();
-	</script>
-	
-	<noscript>
-		<meta http-equiv="refresh" content="0; url=/sevenwiki/en/main_page">
-	</noscript>
+	window.location.replace(`/sevenwiki/${TargetLang}/main_page`);
+})();
+</script>
+<noscript>
+<meta http-equiv="refresh" content="0; url=/sevenwiki/en/main_page">
+</noscript>
 </head>
 <body></body>
 </html>

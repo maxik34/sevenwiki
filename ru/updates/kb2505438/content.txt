@@ -1,0 +1,44 @@
+<h1>Обновление KB2505438</h1>
+<p>Выпущено 22 марта 2011 года, улучшает взаимодействие DirectWrite API с системной службой кэширования шрифтов.</p>
+
+<h2>Сведения об обновлении</h2>
+<table class="Fixed">
+	<thead>
+		<tr>
+			<th>Целевая ОС и архитектура</th>
+			<th>Размер</th>
+			<th>SHA-1</th>
+			<th>UpdateID</th>
+			<th>Прямая ссылка</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Windows 7 <br> <span class="Subtext">64-бит</span></td>
+			<td class="Mono">1,68 МБ <br> <span class="Subtext">1 768 589 байт</span></td>
+			<td class="Mono">Bo2dYOEDyQRLGGxd09n12pyerZg=</td>
+			<td class="Mono">071adfe6-d0ac-4600-a7b0-45d90c648bdd</td>
+			<td><a class="External" href="https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/03/windows6.1-kb2505438-x64_068d9d60e103c9044b186c5dd3d9f5da9c9ead98.msu">Скачать .msu</a></td>
+		</tr>
+		<tr>
+			<td>Windows Server 2008 R2 <br> <span class="Subtext">64-бит</span></td>
+			<td class="Mono">1,68 МБ <br> <span class="Subtext">1 768 589 байт</span></td>
+			<td class="Mono">Bo2dYOEDyQRLGGxd09n12pyerZg=</td>
+			<td class="Mono">7a69e2be-7ad1-48f4-a190-c71990ee0db1</td>
+			<td><a class="External" href="https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/03/windows6.1-kb2505438-x64_068d9d60e103c9044b186c5dd3d9f5da9c9ead98.msu">Скачать .msu</a></td>
+		</tr>
+		<tr>
+			<td>Windows 7 <br> <span class="Subtext">32-бит</span></td>
+			<td class="Mono">926 КБ <br> <span class="Subtext">948 786 байт</span></td>
+			<td class="Mono">GjoUQxzOVfrP3pqjdn+/Ij6qOOU=</td>
+			<td class="Mono">7dc986c8-f48b-45d5-b56f-16c13cfa82aa</td>
+			<td><a class="External" href="https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/03/windows6.1-kb2505438-x86_1a3a14431cce55facfde9aa3767fbf223eaa38e5.msu">Скачать .msu</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Ссылки</h2>
+<ul>
+	<li><a class="External" href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB2505438">KB2505438 в каталоге центра обновлений Майкрософт</a></li>
+	<li><a class="External" href="https://support.microsoft.com/kb/2505438">Официальная статья обновления</a></li>
+</ul>

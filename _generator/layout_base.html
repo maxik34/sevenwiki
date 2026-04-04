@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{LANG}}" dir="{{DIR}}">
 <head>
-	<meta charset="UTF-8">
-	<meta name="color-scheme" content="dark only">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{{_ROBOTS}}
-	{{_CANONICAL}}
-	<link rel="stylesheet" href="/{{BASEURL}}/styles/fonts.css">
-	<link rel="stylesheet" href="/{{BASEURL}}/styles/style.css">
-	<link rel="icon" type="image/x-icon" href="/{{BASEURL}}/favicon.ico">
-	<title>{{PAGE.TITLE}} – {{SITENAME}}</title>
-	{{_DESCRIPTION}}
+<meta charset="UTF-8">
+<meta name="color-scheme" content="dark only">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{_ROBOTS}}
+{{_CANONICAL}}
+<link rel="stylesheet" href="/{{BASEURL}}/styles/fonts.css">
+<link rel="stylesheet" href="/{{BASEURL}}/styles/style.css">
+<link rel="icon" href="/{{BASEURL}}/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/{{BASEURL}}/favicon.svg">
+<title>{{PAGE.TITLE}} – {{SITENAME}}</title>
+{{_DESCRIPTION}}
 </head>
 <body>
 	<div class="UILayout">
 		<div class="HeaderBackground"></div>
-		
 		<div class="UIWrapper">
 			<header>
 				<button class="Button HideOnLarge" popovertarget="NavigationList"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M3 6A1 1 0 003 2 1 1 0 003 6m0 6A1 1 0 003 8a1 1 0 000 4m0 6a1 1 0 000-4 1 1 0 000 4M7 3H19V5H7ZM7 9H19v2H7Zm0 6H19v2H7Z"/></svg></button>
@@ -30,7 +30,7 @@
 				<div class="Fill"></div>
 				
 				<button class="Dropdown Button" popovertarget="LangList">
-					<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M18.68 16.94 15.17 8.42a.86.86 90 00-1.59 0l-3.52 8.52a.86.86 90 101.59.65l.72-1.73h4.01l.72 1.73a.86.86 90 00.79.54.86.86 90 00.79-1.19Zm-5.6-2.8L14.38 11l1.29 3.14Zm-2.62-.74a.86.86 90 00-.19-1.2c-.01-.01-.58-.44-1.42-1.36 1.54-2.1 2.42-4.48 2.78-5.61h1.26a.86.86 90 000-1.71H8.36V2.73a.86.86 90 00-1.72 0v.79H2.11a.86.86 90 000 1.71h7.7c-.37 1.06-1.05 2.72-2.1 4.24C6.49 7.84 6.03 6.79 6.03 6.78a.86.86 90 00-1.59.66c.02.06.57 1.34 2.07 3.28.03.05.07.09.1.14-1.53 1.73-3.03 2.8-3.66 3.15a.86.86 90 10.82 1.51c.08-.05 1.9-1.05 3.97-3.34.88.94 1.48 1.38 1.52 1.41a.86.86 90 001.2-.2Z"/></svg>
+					<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M18.68 16.94 15.17 8.42a.86.86 90 00-1.59 0l-3.52 8.52a.86.86 90 101.59.65l.72-1.73h4.01l.72 1.73a.86.86 90 00.79.54.86.86 90 00.79-1.19Zm-5.6-2.8L14.38 11l1.29 3.14Zm-2.62-.74a.86.86 90 00-.19-1.2c-.01-.01-.57-.4-1.42-1.36C10.4 8.7 11.3 6.4 11.63 5.23h1.26a.86.86 90 000-1.71H8.36V2.73a.86.86 90 00-1.72 0v.79H2.11a.86.86 90 000 1.71h7.7C9.4 6.3 8.8 7.9 7.71 9.47 6.49 7.84 6.03 6.79 6.03 6.78a.86.86 90 00-1.59.66C4.5 7.6 5 8.8 6.61 10.86 5.1 12.6 3.6 13.7 2.95 14.01a.86.86 90 10.82 1.51c.08-.05 1.93-1.12 3.97-3.34.86.92 1.48 1.38 1.52 1.41a.86.86 90 001.2-.2Z"/></svg>
 					<span class="HideOnSmall">{{LANGNAME}}</span>
 				</button>
 				
@@ -39,30 +39,23 @@
 					<a href="/{{BASEURL}}/ru/{{FULLPAGENAME}}">Русский</a>
 				</div>
 			</header>
-			
 			<aside class="HideOnSmall HideOnMedium" role="navigation">
 				<h2>{{UI.NAVIGATION}}</h2>
 				{{UI.NAVIGATIONLIST}}
 			</aside>
-			
 			<aside class="HideOnSmall HideOnMedium" role="navigation">
 				<h2>{{UI.CONTENTS}}</h2>
 				{{UI.CONTENTSLIST}} {{UI.WIP}}
 			</aside>
 		</div>
 	</div>
-	
 	<main>
 		{{_NOTRANSLATION}}
-		
 		<div class="PageBreadcrumbs"><span>{{UI.BREADCRUMBS}}</span><span>{{UI.WIP}}</span></div>
-		
 		<article>
 			{{_PAGECONTENT}}
 		</article>
-		
 		<div class="PageCategories">{{UI.CATEGORIES}} {{UI.WIP}}</div>
-		
 		<footer>
 			{{UI.FOOTER}}
 			<p><a href="https://github.com/maxik34/sevenwiki">{{UI.GITHUB}}</a></p>

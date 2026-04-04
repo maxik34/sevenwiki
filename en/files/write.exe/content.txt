@@ -67,7 +67,7 @@
 
 <h2>Dependencies</h2>
 <details>
-	<summary>kernel32.dll</summary>
+	<summary><span>kernel32.dll</span></summary>
 	<div>
 		<ul class="Mono Columns">
 			<li>GetCurrentProcess</li>
@@ -91,7 +91,7 @@
 </details>
 
 <details>
-	<summary>msvcrt.dll</summary>
+	<summary><span>msvcrt.dll</span></summary>
 	<div>
 		<ul class="Mono Columns">
 			<li>__C_specific_handler</li>
@@ -113,7 +113,7 @@
 </details>
 
 <details>
-	<summary>shell32.dll</summary>
+	<summary><span>shell32.dll</span></summary>
 	<div>
 		<ul class="Mono">
 			<li>ShellExecuteW</li>
