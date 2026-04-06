@@ -1,5 +1,5 @@
 <h1>write.exe</h1>
-<p><img src="/{{BASEURL}}/icons/write-16.png"> <samp>write.exe</samp> is a legacy executable file that serves as a wrapper for the WordPad application. While it appears as a standalone program, its primary purpose is to maintain backward compatibility.</p>
+<p><img src="{{ROOT}}/icons/write-16.png"> <samp>write.exe</samp> is a legacy executable file that serves as a wrapper for the WordPad application. While it appears as a standalone program, its primary purpose is to maintain backward compatibility.</p>
 
 
 <h2>File Details</h2>
