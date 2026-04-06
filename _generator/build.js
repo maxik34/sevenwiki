@@ -66,11 +66,8 @@ function renderPage(lang, pagePath, localeData, isFallback = false)
 	html = html.replace('{{_ROBOTS}}', data.noindex === "1" ? '<meta name="robots" content="noindex, nofollow">' : '');
 	html = html.replace('{{_DESCRIPTION}}', (data.PAGE && data.PAGE.DESCRIPTION) ? `<meta name="description" content="${data.PAGE.DESCRIPTION}">` : '');
 
-	const noTranslationTag = isFallback ? `<div class="PageNotice">{{UI.NOTRANSLATION}}</div>` : '';
-	html = html.replace('{{_NOTRANSLATION}}', noTranslationTag);
-
-	const canonicalUrl = isFallback ? `/${SETTINGS.BASEURL}/${SETTINGS.DEFAULTLANG}/${pagePath}/` : `/${SETTINGS.BASEURL}/${lang}/${pagePath}/`;
-	html = html.replace('{{_CANONICAL}}', `<link rel="canonical" href="${canonicalUrl}">`);
+	html = html.replace('{{_NOTRANSLATION}}', isFallback ? `<div class="PageNotice">{{UI.NOTRANSLATION}}</div>` : '');
+	html = html.replace('{{_CANONICAL}}', isFallback ? `${SETTINGS.DEFAULTLANG}/${pagePath}/` : `${lang}/${pagePath}/`);
 
 	const replaceTemplates = (text) =>
 	{

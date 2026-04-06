@@ -1,5 +1,6 @@
 {
-	"BASEURL": "sevenwiki",
+	"BASEURL": "https://maxik34.github.io",
+	"ROOT": "/sevenwiki",
 	"SITENAME": "Seven Wiki",
 	"DEFAULTLANG": "en",
 	"DIR": "ltr",

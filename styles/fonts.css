@@ -7,10 +7,6 @@
 	src: url("Inter-Variable.woff2") format("woff2");
 }
 
-
-
-
-
 @font-face
 {
 	font-family: Inter;
@@ -20,10 +16,6 @@
 	src: url("Inter-Variable-Italic.woff2") format("woff2");
 }
 
-
-
-
-
 @font-face
 {
 	font-family: 'JetBrains Mono';
@@ -32,10 +24,6 @@
 	font-display: swap;
 	src: url("JetBrainsMono-Variable.ttf") format("truetype");
 }
-
-
-
-
 
 @font-face
 {

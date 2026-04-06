@@ -5,7 +5,7 @@
 	"UI":
 	{
 		"NAVIGATION": "Navigation",
-		"NAVIGATIONLIST": "<a href='/{{BASEURL}}/{{LANG}}/updates'>Updates</a> <a href='/{{BASEURL}}/{{LANG}}/files'>Files</a>",
+		"NAVIGATIONLIST": "<a href='{{ROOT}}/{{LANG}}/updates'>Updates</a> <a href='{{ROOT}}/{{LANG}}/files'>Files</a>",
 		"CONTENTS": "Contents",
 		"CONTENTSLIST": "<span>Content List</span>",
 		
@@ -15,6 +15,12 @@
 		"WIP": "(placeholder)",
 		
 		"FOOTER": "<p>© 2026. {{SITENAME}} is an independent fan resource. Content is available under the <a class='External' href='https://creativecommons.org/licenses/by-sa/4.0/deed.en' target='_blank' rel='noopener'>CC BY-SA 4.0</a> license.</p><p>Microsoft, Windows, Windows 7, and related logos are registered trademarks of <a class='External' href='https://www.microsoft.com/en-us' target='_blank' rel='noopener'>Microsoft Corporation</a>. This website is not an official Microsoft resource and is in no way affiliated with the corporation. All instructions are provided \"as is\" at your own risk.</p>",
-		"GITHUB": "GitHub repository"
+		"GITHUB": "GitHub repository",
+		
+		"ARIA":
+		{
+			"NAVBUTTON": "Open navigation menu",
+			"LANGBUTTON": "Change language"
+		}
 	}
 }

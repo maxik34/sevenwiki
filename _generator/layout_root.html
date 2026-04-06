@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="color-scheme" content="dark only">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="/{{BASEURL}}/favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="/{{BASEURL}}/favicon.svg">
+<link rel="icon" href="{{ROOT}}/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="{{ROOT}}/favicon.svg">
 <title>{{SITENAME}}</title>
 <script>
 (function()
@@ -14,11 +14,11 @@
 	const UserLang = navigator.language.substring(0, 2).toLowerCase();
 	const TargetLang = Supported.includes(UserLang) ? UserLang : '{{DEFAULTLANG}}';
 	
-	window.location.replace(`/{{BASEURL}}/${TargetLang}/{{MAINPAGE}}`);
+	window.location.replace(`{{ROOT}}/${TargetLang}/{{MAINPAGE}}`);
 })();
 </script>
 <noscript>
-<meta http-equiv="refresh" content="0; url=/{{BASEURL}}/{{DEFAULTLANG}}/{{MAINPAGE}}">
+<meta http-equiv="refresh" content="0; url={{ROOT}}/{{DEFAULTLANG}}/{{MAINPAGE}}">
 </noscript>
 </head>
 <body></body>

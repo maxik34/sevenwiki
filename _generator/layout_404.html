@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="color-scheme" content="dark only">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="/{{BASEURL}}/favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="/{{BASEURL}}/favicon.svg">
+<link rel="icon" href="{{ROOT}}/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="{{ROOT}}/favicon.svg">
 <title>{{SITENAME}}</title>
 <script>
 (function()
 {
 	const path = window.location.pathname;
-	const base = '/{{BASEURL}}/';
+	const base = '{{ROOT}}/';
 	const baseIndex = path.toLowerCase().indexOf(base.toLowerCase());
 	
 	if (baseIndex !== -1)
@@ -32,7 +32,7 @@
 <div style="text-align:center">
 <h1>404</h1>
 <p>Page not found</p>
-<p><a href="/{{BASEURL}}/{{DEFAULTLANG}}/{{MAINPAGE}}">Go to Main Page</a></p>
+<p><a href="{{ROOT}}/{{DEFAULTLANG}}/{{MAINPAGE}}">Go to Main Page</a></p>
 </div>
 </body>
 </html>
