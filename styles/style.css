@@ -1,4 +1,4 @@
-:root
+﻿:root
 {
 	/* Accents */
 	--PrimaryColor: #3C96E1;
@@ -75,6 +75,8 @@ html
 
 body
 {
+	display: flex;
+	justify-content: center;
 	margin: 0;
 	container-type: inline-size;
 	inline-size: 100%;
@@ -327,7 +329,7 @@ h1, h2, h3, h4, h5, h6
 	position: relative;
 	color: var(--TextColor2);
 	font-weight: 500;
-	line-height: normal;
+	line-height: 1.5;
 }
 
 h1, h2
@@ -872,7 +874,7 @@ img
 .PageBreadcrumbs
 {
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	flex-wrap: wrap;
 	gap: .5rem;
 	padding-block: .75rem;
@@ -903,6 +905,10 @@ img
 
 [popover]
 {
+	position: fixed;
+	inset: 0px;
+    width: fit-content;
+    height: fit-content;
 	margin: 0;
 	border: var(--Border2);
 	border-radius: var(--Radius2);
