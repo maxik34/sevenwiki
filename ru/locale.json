@@ -13,13 +13,14 @@
 		"CATEGORIES": "Категории: ",
 		"WIP": "(заглушка)",
 		
-		"FOOTER": "<p>© 2026. {{SITENAME}} — независимый фанатский ресурс. Содержимое доступно по лицензии <a class='External' href='https://creativecommons.org/licenses/by-sa/4.0/deed.ru' target='_blank' rel='noopener'>CC BY-SA 4.0</a>.</p><p>Microsoft, Windows, Windows 7 и сопутствующие логотипы являются зарегистрированными товарными знаками <a class='External' href='https://www.microsoft.com/ru-ru' target='_blank' rel='noopener'>Microsoft Corporation</a>. Данный сайт не является официальным ресурсом Microsoft и никак не связан с корпорацией. Все инструкции предоставляются «как есть» на ваш страх и риск.</p>",
+		"FOOTER": "<p>© 2026. {{SITENAME}} — независимый фанатский ресурс. Содержимое доступно по лицензии <a class='External' href='https://creativecommons.org/licenses/by-sa/4.0/deed.ru' rel='noopener'>CC BY-SA 4.0</a>.</p><p>Microsoft, Windows, Windows 7 и сопутствующие логотипы являются зарегистрированными товарными знаками <a class='External' href='https://www.microsoft.com/ru-ru' rel='noopener'>Microsoft Corporation</a>. Данный сайт не является официальным ресурсом Microsoft и никак не связан с корпорацией. Все инструкции предоставляются «как есть» на ваш страх и риск.</p>",
 		"GITHUB": "GitHub репозиторий",
 		
 		"ARIA":
 		{
-			"NAVBUTTON": "Открыть меню навигации",
-			"LANGBUTTON": "Изменить язык"
+			"NAVBUTTON": "Меню навигации",
+			"NAVBUTTONCLOSE": "Закрыть меню навигации",
+			"LANGBUTTON": "{{LANGNAME}}, изменить язык"
 		}
 	}
 }
