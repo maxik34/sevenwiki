@@ -14,11 +14,11 @@
 	const UserLang = navigator.language.substring(0, 2).toLowerCase();
 	const TargetLang = Supported.includes(UserLang) ? UserLang : 'en';
 	
-	window.location.replace(`/sevenwiki/${TargetLang}/main_page`);
+	window.location.replace(`/sevenwiki/${TargetLang}/main-page`);
 })();
 </script>
 <noscript>
-<meta http-equiv="refresh" content="0; url=/sevenwiki/en/main_page">
+<meta http-equiv="refresh" content="0; url=/sevenwiki/en/main-page">
 </noscript>
 </head>
 <body></body>
