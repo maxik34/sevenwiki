@@ -22,7 +22,7 @@
 	font-style: normal;
 	font-weight: 100 800;
 	font-display: swap;
-	src: url("JetBrainsMono-Variable.ttf") format("truetype");
+	src: url("JetBrainsMono-Variable.woff2") format("woff2");
 }
 
 @font-face
@@ -31,7 +31,7 @@
 	font-style: italic;
 	font-weight: 100 800;
 	font-display: swap;
-	src: url("JetBrainsMono-Variable-Italic.ttf") format("truetype");
+	src: url("JetBrainsMono-Variable-Italic.woff2") format("woff2");
 }
 
 
@@ -137,7 +137,7 @@ body
 
 ::selection
 {
-	background-color: color-mix(in oklab, var(--PrimaryColor) 40%, #0000);
+	background-color: color-mix(in oklab, var(--PrimaryColor) 45%, #0000);
 	color: var(--TextColor2);
 }
 
@@ -145,7 +145,7 @@ body
 {
 	margin-inline: -2px;
 	padding-inline: 2px;
-	background-color: color-mix(in oklab, var(--ContrastColor) 40%, #0000);
+	background-color: color-mix(in oklab, var(--ContrastColor) 45%, #0000);
 	color: var(--TextColor2);
 }
 
@@ -160,6 +160,12 @@ body
 	outline: var(--BorderSize) solid var(--FocusColor);
 	outline-offset: 1px;
 	border-radius: var(--Radius0);
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+    :root { --TransitionSpeed: 0s; }
+    html { scroll-behavior: auto; }
 }
 
 
@@ -284,7 +290,7 @@ nav h2, nav h3
 main
 {
 	margin-block-start: calc(var(--HeaderBlockSize) + 1.5rem);
-	inline-size: -webkit-fill-available;
+	inline-size: stretch;
 	max-inline-size: var(--MaxContentInlineSize);
 }
 
@@ -506,7 +512,7 @@ code
 	position: absolute;
 	inset-block-end: 0;
 	inset-inline-start: 0;
-	inline-size: -webkit-fill-available;
+	inline-size: stretch;
 	margin-inline: .45rem;
 	block-size: var(--BorderSize);
 	border-radius: var(--BorderSize);
@@ -749,7 +755,7 @@ blockquote
 	background-color: #0002;
 	color: var(--TextColor2);
 	font-style: italic;
-	box-Shadow: inset var(--Shadow);
+	box-shadow: inset var(--Shadow);
 }
 
 blockquote cite
@@ -915,7 +921,7 @@ img
 
 .PageNotice
 {
-	inline-size: -webkit-fill-available;
+	inline-size: stretch;
 	padding-block: .9rem;
 	padding-inline: 1rem;
 	overflow-wrap: anywhere;

@@ -63,7 +63,7 @@ function renderPage(lang, pagePath, localeData, isFallback = false)
 	let html = layoutBase;
 
 	html = html.replace('{{_PAGECONTENT}}', pageContent);
-	html = html.replace('{{_ROBOTS}}', data.noindex === "1" ? '<meta name="robots" content="noindex, nofollow">' : '');
+	html = html.replace('{{_ROBOTS}}', !!data.noindex ? '<meta name="robots" content="noindex, nofollow">' : '');
 	html = html.replace('{{_DESCRIPTION}}', (data.PAGE && data.PAGE.DESCRIPTION) ? `<meta name="description" content="${data.PAGE.DESCRIPTION}">` : '');
 
 	html = html.replace('{{_NOTRANSLATION}}', isFallback ? `<div class="PageNotice">{{UI.NOTRANSLATION}}</div>` : '');
