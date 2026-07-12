@@ -25,16 +25,22 @@ jobs:
 
       - name: Clean up repository before deploy
         run: |
-          rm -rf .github builder.js LICENSE readme.md
+          rm -rf builder.js LICENSE readme.md
           find . -type f \( -name "*.json" -o -name "*.txt" \) -delete
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Minify CSS
+        run: |
+          npx esbuild style.css --minify --allow-overwrite --outfile=style.css
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+          exclude: |
+            .github/**
 
       - name: Deploy to GitHub Pages
         id: deployment
