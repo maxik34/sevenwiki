@@ -36,11 +36,9 @@ jobs:
           npx esbuild style.css --minify --allow-overwrite --outfile=style.css
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: '.'
-          exclude: |
-            .github/**
 
       - name: Deploy to GitHub Pages
         id: deployment
