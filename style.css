@@ -492,7 +492,7 @@ sub
 
 a:any-link
 {
-	--color: #688BA8;
+	--color: #6C91AF;
 	border-radius: 0.125rem;
 	
 	@media not print
