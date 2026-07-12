@@ -1,0 +1,122 @@
+<h1>write.exe</h1>
+<p><samp>write.exe</samp> is a legacy executable file that serves as a wrapper for the WordPad application. While it appears as a standalone program, its primary purpose is to maintain backward compatibility.</p>
+
+
+<h2>File Details</h2>
+<table>
+	<thead>
+		<tr>
+			<th>File Path</th>
+			<th>Architecture</th>
+			<th>Version</th>
+			<th>File Size</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="mono">%WinDir%\write.exe <br> <span class="subtext">C:\Windows\write.exe</span></td>
+			<td>64-bit</td>
+			<td class="mono">6.1.7600.16385</td>
+			<td class="mono">10 KB <br> <span class="subtext">10,240 bytes</span></td>
+		</tr>
+		<tr>
+			<td class="mono">%WinDir%\System32\write.exe <br> <span class="subtext">C:\Windows\System32\write.exe</span></td>
+			<td>64-bit</td>
+			<td class="mono">6.1.7600.16385</td>
+			<td class="mono">10 KB <br> <span class="subtext">10,240 bytes</span></td>
+		</tr>
+		<tr>
+			<td class="mono">%WinDir%\SysWOW64\write.exe <br> <span class="subtext">C:\Windows\SysWOW64\write.exe</span></td>
+			<td>32-bit</td>
+			<td class="mono">6.1.7600.16385</td>
+			<td class="mono">9 KB <br> <span class="subtext">9,216 bytes</span></td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h2>Launch Behavior and Redirection</h2>
+<p>The execution flow of <samp>write.exe</samp> depends on how the command is entered in the Windows interface. The system alternates between using the physical binary and the App Paths registry aliases.</p>
+
+
+<h3>Direct Execution</h3>
+<p>When running the binary file directly (or via Console), the program uses the <code>ShellExecuteW</code> function to call <code>wordpad.exe</code>, which launches the program specified in the registry path:</p>
+
+<div class="pre">
+	<div>Windows Registry</div>
+	<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WORDPAD.EXE</pre>
+</div>
+
+
+<h3>Start Menu</h3>
+<p><code>write</code> and <code>write.exe</code> launches the binary (Direct Execution), however, using <code>write.</code> launches the program specified in the registry path:</p>
+
+<div class="pre">
+	<div>Windows Registry</div>
+	<pre>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\WRITE.EXE</pre>
+</div>
+
+
+<h3>Run Dialog</h3>
+<p>Behaves as the inverse of the Start Menu: <code>write</code> and <code>write.exe</code> use the App Paths registry alias, while <code>write.</code> launches the binary.</p>
+
+
+<h3>Explorer Address Bar</h3>
+<p>All variations (<code>write</code>, <code>write.exe</code> and <code>write.</code>) launch the binary.</p>
+
+
+<h2>Dependencies</h2>
+<details>
+	<summary>kernel32.dll</summary>
+	<div>
+		<ul class="mono columns">
+			<li>GetCurrentProcess</li>
+			<li>GetCurrentProcessId</li>
+			<li>GetCurrentThreadId</li>
+			<li>GetModuleHandleW</li>
+			<li>GetStartupInfoW</li>
+			<li>GetSystemTimeAsFileTime</li>
+			<li>GetTickCount</li>
+			<li>HeapSetInformation</li>
+			<li>QueryPerformanceCounter</li>
+			<li>RtlCaptureContext</li>
+			<li>RtlLookupFunctionEntry</li>
+			<li>RtlVirtualUnwind</li>
+			<li>SetUnhandledExceptionFilter</li>
+			<li>Sleep</li>
+			<li>TerminateProcess</li>
+			<li>UnhandledExceptionFilter</li>
+		</ul>
+	</div>
+</details>
+
+<details>
+	<summary>msvcrt.dll</summary>
+	<div>
+		<ul class="mono columns">
+			<li>__C_specific_handler</li>
+			<li>__set_app_type</li>
+			<li>__setusermatherr</li>
+			<li>__wgetmainargs</li>
+			<li>_amsg_exit</li>
+			<li>_cexit</li>
+			<li>_commode</li>
+			<li>_exit</li>
+			<li>_fmode</li>
+			<li>_initterm</li>
+			<li>_wcmdln</li>
+			<li>_XcptFilter</li>
+			<li>exit</li>
+			<li>terminate</li>
+		</ul>
+	</div>
+</details>
+
+<details>
+	<summary>shell32.dll</summary>
+	<div>
+		<ul class="mono">
+			<li>ShellExecuteW</li>
+		</ul>
+	</div>
+</details>

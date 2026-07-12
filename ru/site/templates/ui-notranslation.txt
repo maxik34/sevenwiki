@@ -1,0 +1,3 @@
+{{#if: {{#var:notranslation}} }}
+<div class="notice" lang="ru">Эта страница ещё не переведена. Отображается английская версия.</div>
+{{#endif}}

@@ -1,0 +1,5 @@
+{{#if: {{#var:title}} }}
+{{#var:title}}
+{{#else}}
+{{#var:pagename}}
+{{#endif}}

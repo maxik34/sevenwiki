@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="dark only">
+<meta name="robots" content="noindex, nofollow">
+<title>{{#var:sitename}}</title>
+<link rel="icon" href="data:," sizes="any">
+<link rel="icon" href="{{#var:root}}/icon.svg" type="image/svg+xml">
+<script>
+(function()
+{
+	const Supported = {{#langslist}};
+	const UserLang = navigator.language.substring(0, 2).toLowerCase();
+	const TargetLang = Supported.includes(UserLang) ? UserLang : '{{#var:defaultlang}}';
+	
+	window.location.replace(`{{#var:root}}/${TargetLang}/{{#var:mainpage}}/`);
+})();
+</script>
+<noscript>
+<meta http-equiv="refresh" content="0; url={{#var:root}}/{{#var:defaultlang}}/{{#var:mainpage}}/">
+</noscript>
+</head><body></body>
+</html>

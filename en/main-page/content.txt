@@ -1,7 +1,8 @@
-<h1>Welcome to the {{SITENAME}}</h1>
+<h1>Welcome to the {{#var:sitename}}</h1>
 <p>This is an independent fan-project dedicated to the detailed study of Windows 7. It contains technical details about the system's design, modifications, and history.</p>
 
-<p>The project is still under development, and many elements on the site are just stubs.</p>
+<h2>Some Notes</h2>
+<p>Right now, the site is in its early stages, so it is currently more of a concept than a wiki. I think once I implement search, a new site builder, and a decent number of articles, it can be considered a wiki. In the meantime, I hope you like the site's style; I decided to rely on my own style rather than the Aero style—after all, this is a technical wiki, not one focused on aesthetics (though who knows…).</p>
 
 <h2>Main (future) sections</h2>
 <ul>

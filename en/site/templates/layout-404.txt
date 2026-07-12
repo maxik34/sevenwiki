@@ -3,14 +3,14 @@
 <meta charset="UTF-8">
 <meta name="color-scheme" content="dark only">
 <meta name="robots" content="noindex, nofollow">
-<title>Seven Wiki</title>
+<title>{{#var:sitename}}</title>
 <link rel="icon" href="data:," sizes="any">
-<link rel="icon" href="/sevenwiki/icon.svg" type="image/svg+xml">
+<link rel="icon" href="{{#var:root}}/icon.svg" type="image/svg+xml">
 <script>
 (function()
 {
 	const path = window.location.pathname;
-	const base = '/sevenwiki/';
+	const base = '{{#var:root}}/';
 	const baseIndex = path.toLowerCase().indexOf(base.toLowerCase());
 	
 	if (baseIndex !== -1)
@@ -31,7 +31,7 @@
 <div style="text-align:center">
 <h1>404</h1>
 <p>Page not found</p>
-<p><a href="/sevenwiki/en/main-page">Go to Main Page</a></p>
+<p><a href="{{#var:root}}/{{#var:defaultlang}}/{{#var:mainpage}}">Go to Main Page</a></p>
 </div>
 </body>
 </html>
