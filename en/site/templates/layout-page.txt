@@ -46,8 +46,8 @@
 				</div>
 			</header>
 			
-			<dialog id="menu" class="block-trim s-hide m-hide">
-				<h2>
+			<dialog role="navigation" id="menu" class="block-trim s-hide m-hide" aria-label="{{ui-navigation}}">
+				<h2 aria-label="{{ui-navigation}}">
 					<button class="button" command="close" commandfor="menu" aria-label="{{ui-menu-close}}">
 						<svg viewBox="0 0 20 20" width="1.25rem" height="1.25rem" aria-hidden="true"><path d="M3 1l7 7 7-7 2 2-7 7 7 7-2 2-7-7-7 7-2-2 7-7L1 3Z"/></svg>
 					</button>
@@ -56,7 +56,7 @@
 				{{navigation}}
 			</dialog>
 			
-			<aside id="toc" class="block-trim s-hide m-hide">
+			<aside id="toc" class="block-trim s-hide m-hide" aria-label="{{ui-toc}}">
 				<h2>{{ui-contents}}</h2>
 				{{#toc}}
 			</aside>
@@ -72,11 +72,11 @@
 				{{#page}}
 			</article>
 			
-			<nav id="categories">
+			<nav id="categories" aria-label="{{ui-page-categories}}">
 				{{ui-categories}} {{#categories}}
 			</nav>
 			
-			<footer class="block-trim">
+			<footer role="contentinfo" class="block-trim">
 				{{ui-footer}}
 			</footer>
 		</main>

@@ -68,55 +68,49 @@
 <h2>Зависимости</h2>
 <details>
 	<summary>kernel32.dll</summary>
-	<div>
-		<ul class="mono columns">
-			<li>GetCurrentProcess</li>
-			<li>GetCurrentProcessId</li>
-			<li>GetCurrentThreadId</li>
-			<li>GetModuleHandleW</li>
-			<li>GetStartupInfoW</li>
-			<li>GetSystemTimeAsFileTime</li>
-			<li>GetTickCount</li>
-			<li>HeapSetInformation</li>
-			<li>QueryPerformanceCounter</li>
-			<li>RtlCaptureContext</li>
-			<li>RtlLookupFunctionEntry</li>
-			<li>RtlVirtualUnwind</li>
-			<li>SetUnhandledExceptionFilter</li>
-			<li>Sleep</li>
-			<li>TerminateProcess</li>
-			<li>UnhandledExceptionFilter</li>
-		</ul>
-	</div>
+	<ul class="mono columns">
+		<li>GetCurrentProcess</li>
+		<li>GetCurrentProcessId</li>
+		<li>GetCurrentThreadId</li>
+		<li>GetModuleHandleW</li>
+		<li>GetStartupInfoW</li>
+		<li>GetSystemTimeAsFileTime</li>
+		<li>GetTickCount</li>
+		<li>HeapSetInformation</li>
+		<li>QueryPerformanceCounter</li>
+		<li>RtlCaptureContext</li>
+		<li>RtlLookupFunctionEntry</li>
+		<li>RtlVirtualUnwind</li>
+		<li>SetUnhandledExceptionFilter</li>
+		<li>Sleep</li>
+		<li>TerminateProcess</li>
+		<li>UnhandledExceptionFilter</li>
+	</ul>
 </details>
 
 <details>
 	<summary>msvcrt.dll</summary>
-	<div>
-		<ul class="mono columns">
-			<li>__C_specific_handler</li>
-			<li>__set_app_type</li>
-			<li>__setusermatherr</li>
-			<li>__wgetmainargs</li>
-			<li>_amsg_exit</li>
-			<li>_cexit</li>
-			<li>_commode</li>
-			<li>_exit</li>
-			<li>_fmode</li>
-			<li>_initterm</li>
-			<li>_wcmdln</li>
-			<li>_XcptFilter</li>
-			<li>exit</li>
-			<li>terminate</li>
-		</ul>
-	</div>
+	<ul class="mono columns">
+		<li>__C_specific_handler</li>
+		<li>__set_app_type</li>
+		<li>__setusermatherr</li>
+		<li>__wgetmainargs</li>
+		<li>_amsg_exit</li>
+		<li>_cexit</li>
+		<li>_commode</li>
+		<li>_exit</li>
+		<li>_fmode</li>
+		<li>_initterm</li>
+		<li>_wcmdln</li>
+		<li>_XcptFilter</li>
+		<li>exit</li>
+		<li>terminate</li>
+	</ul>
 </details>
 
 <details>
 	<summary>shell32.dll</summary>
-	<div>
-		<ul class="mono">
-			<li>ShellExecuteW</li>
-		</ul>
-	</div>
+	<ul class="mono">
+		<li>ShellExecuteW</li>
+	</ul>
 </details>
