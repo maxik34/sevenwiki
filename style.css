@@ -52,7 +52,7 @@ html
 	--contrast-color: #D98204;
 	
 	--header-block: 3.75rem;
-	--panel-inline: 13.5rem;
+	--panel-inline: 14rem;
 	--ui-gap: 1.5rem;
 	--main-gap: 0;
 	--site-max-inline: calc((var(--panel-inline) * 2) + 80rem);
@@ -1007,7 +1007,6 @@ ul, .block-trim
 	{
 		margin-block-end: 0.25rem;
 		font-size: inherit;
-		font-weight: 400;
 	}
 	
 	h3
