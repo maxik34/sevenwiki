@@ -1,7 +1,7 @@
 @font-face
 {
 	font-family: 'Inter';
-	src: url('inter.woff2') format('woff2');
+	src: url('/sevenwiki/inter.woff2') format('woff2');
 	font-weight: 100 900;
 	font-style: normal;
 	font-display: swap;
@@ -10,7 +10,7 @@
 @font-face
 {
 	font-family: 'Inter';
-	src: url('inter-italic.woff2') format('woff2');
+	src: url('/sevenwiki/inter-italic.woff2') format('woff2');
 	font-weight: 100 900;
 	font-style: italic;
 	font-display: swap;
@@ -19,7 +19,7 @@
 @font-face
 {
 	font-family: 'JetBrains Mono';
-	src: url('jetbrainsmono.woff2') format('woff2');
+	src: url('/sevenwiki/jetbrainsmono.woff2') format('woff2');
 	font-weight: 100 800;
 	font-style: normal;
 	font-display: swap;
@@ -28,7 +28,7 @@
 @font-face
 {
 	font-family: 'JetBrains Mono';
-	src: url('jetbrainsmono-italic.woff2') format('woff2');
+	src: url('/sevenwiki/jetbrainsmono-italic.woff2') format('woff2');
 	font-weight: 100 800;
 	font-style: italic;
 	font-display: swap;
@@ -129,7 +129,7 @@ html
 		overflow: hidden;
 	}
 	
-	@media (prefers-reduced-motion: reduce)
+	@media (prefers-reduced-motion: reduce), (update: slow)
 	{
 		--transition-speed: 0s;
 		scroll-behavior: auto;
@@ -223,7 +223,7 @@ article
 	position: relative;
 	box-shadow: var(--shadow);
 	border-block: var(--border-2);
-	padding-inline: 2rem;
+	padding-inline: var(--main-gap);
 	padding-block: 1.75rem;
 	background-color: var(--bg-color-2);
 	
@@ -667,8 +667,7 @@ tr:last-child
 td
 {
 	background-color: var(--bg-color-1);
-	transition-property: border-color, background-color;
-	transition-duration: var(--transition-speed);
+	transition: border-color var(--transition-speed), background-color var(--transition-speed);
 	
 	@media (hover: hover)
 	{
@@ -728,12 +727,25 @@ details
 	}
 }
 
+summary::before, .dropdown::after
+{
+	content: '\2304' / '';
+	position: relative;
+	inset-block-start: -0.125rem;
+	font-weight: 700;
+}
+
 summary
 {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	border: var(--border-2);
+	
+	@media not print
+	{
+		border: var(--border-2);
+	}
+	
 	border-radius: var(--radius-2);
 	padding-inline: 0.7rem;
 	padding-block: 0.6rem;
@@ -746,11 +758,8 @@ summary
 	
 	&::before
 	{
-		content: '\2304' / '';
-		position: relative;
-		display: inline-block;
 		inset-inline-start: -0.125rem;
-		font-weight: 700;
+		inset-block-start: 0;
 		color: var(--primary-color);
 		transform: rotate(-90deg);
 	}
@@ -807,6 +816,12 @@ button
 	justify-content: center;
 	flex-shrink: 0;
 	gap: 0.25rem;
+	min-inline-size: 2.125rem;
+	min-block-size: 2.125rem;
+	border: var(--border-2);
+	border-radius: var(--radius-1);
+	padding-inline: 0.3125rem;
+	background-color: var(--bg-color-2);
 	color: var(--text-color-1);
 	user-select: none;
 	cursor: pointer;
@@ -817,40 +832,9 @@ button
 	{
 		&:hover
 		{
-			color: var(--text-color-2);
-		}
-	}
-	
-	&:active
-	{
-		color: var(--text-color-0);
-	}
-}
-
-.dropdown::after
-{
-	content: '\2304' / '';
-	position: relative;
-	display: inline-block;
-	inset-block-start: -0.125rem;
-	font-weight: 700;
-}
-
-.button
-{
-	min-inline-size: 2.125rem;
-	min-block-size: 2.125rem;
-	border: var(--border-2);
-	border-radius: var(--radius-1);
-	padding-inline: 0.3125rem;
-	background-color: var(--bg-color-2);
-	
-	@media (hover: hover)
-	{
-		&:hover
-		{
 			border-color: var(--border-color-3);
 			background-color: var(--bg-color-3);
+			color: var(--text-color-2);
 		}
 	}
 	
@@ -858,6 +842,7 @@ button
 	{
 		border-color: var(--border-color-1);
 		background-color: var(--bg-color-1);
+		color: var(--text-color-0);
 	}
 }
 
@@ -865,11 +850,11 @@ button
 {
 	column-count: 2;
 	column-gap: 2rem;
-}
-
-.columns li
-{
-	break-inside: avoid-column;
+	
+	li
+	{
+		break-inside: avoid-column;
+	}
 }
 
 ul, .block-trim
@@ -994,8 +979,7 @@ ul, .block-trim
 	inline-size: var(--panel-inline);
 	max-block-size: calc(100dvb - var(--header-block));
 	border: none;
-	overflow-inline: hidden !important;
-	overflow-block: auto !important;
+	overflow-block: auto;
 	scrollbar-width: thin;
 	scroll-behavior: smooth;
 	padding: var(--ui-gap);
@@ -1014,7 +998,7 @@ ul, .block-trim
 		margin-block-start: 1.5rem;
 	}
 	
-	@media (prefers-reduced-motion: reduce)
+	@media (prefers-reduced-motion: reduce), (update: slow)
 	{
 		scroll-behavior: auto;
 	}
@@ -1155,6 +1139,7 @@ ul, .block-trim
 	{
 		border: var(--border-2);
 		border-radius: var(--radius-2);
+		padding-inline: 2rem;
 	}
 	
 	.l-hide
@@ -1168,11 +1153,6 @@ ul, .block-trim
 	body
 	{
 		--main-gap: 1.5rem;
-	}
-	
-	article
-	{
-		padding-inline: var(--main-gap);
 	}
 	
 	.m-hide
@@ -1192,7 +1172,6 @@ ul, .block-trim
 	article
 	{
 		padding-block: 1.25rem;
-		padding-inline: var(--main-gap);
 	}
 	
 	th, td
@@ -1252,8 +1231,8 @@ ul, .block-trim
 	
 	summary::before
 	{
-		inset-inline-start: 0;
-		inset-block-start: -0.125rem;
-		transform: none;
+		inset-inline-start: 0 !important;
+		inset-block-start: -0.125rem !important;
+		transform: none !important;
 	}
 }
