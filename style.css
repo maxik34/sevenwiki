@@ -532,7 +532,7 @@ a:any-link
 		{
 			content: '';
 			position: absolute;
-			inline-size: 0.9em;
+			inline-size: 0.875em;
 			block-size: 1lh;
 			margin-inline-start: 0.2em;
 			background-color: currentColor;
