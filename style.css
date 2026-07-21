@@ -204,6 +204,11 @@ header
 		background-color: var(--bg-color-1);
 		background-image: repeating-linear-gradient(315deg, #0000, #0000 0.1875rem, #FFFFFF05 0.25rem, #FFFFFF05 0.4375rem, #0000 0.5rem);
 	}
+	
+	[popovertarget="lang-list"]
+	{
+		anchor-name: --lang-anchor;
+	}
 }
 
 main
@@ -277,13 +282,16 @@ h1, h2
 	}
 }
 
-:is(h1, h2)::after, hr
+@media not print
 {
-	box-shadow: 0 0 4px 0 var(--overlay-color-1);
-	min-block-size: var(--border-size);
-	border: none;
-	border-radius: var(--border-size);
-	background-color: var(--border-color-2);
+	:is(h1, h2)::after, hr
+	{
+		box-shadow: 0 0 4px 0 var(--overlay-color-1);
+		min-block-size: var(--border-size);
+		border: none;
+		border-radius: var(--border-size);
+		background-color: var(--border-color-2);
+	}
 }
 
 h1
@@ -416,17 +424,20 @@ code
 	padding-block: 0.625rem;
 	color: var(--text-color-0);
 	
-	&::after
+	@media not print
 	{
-		content: '';
-		position: absolute;
-		inset-inline: 0;
-		inset-block-end: 0;
-		margin-inline: 0.5rem;
-		box-shadow: var(--shadow);
-		min-block-size: var(--border-size);
-		border-radius: var(--border-size);
-		background-color: var(--border-color-1);
+		&::after
+		{
+			content: '';
+			position: absolute;
+			inset-inline: 0;
+			inset-block-end: 0;
+			margin-inline: 0.5rem;
+			box-shadow: var(--shadow);
+			min-block-size: var(--border-size);
+			border-radius: var(--border-size);
+			background-color: var(--border-color-1);
+		}
 	}
 }
 
@@ -698,31 +709,30 @@ details
 		margin-block-end: 0;
 	}
 	
-	&:open
+	&:open > summary
 	{
-		> summary
+		border-end-start-radius: 0;
+		border-end-end-radius: 0;
+	}
+	
+	&::details-content
+	{
+		content-visibility: visible;
+		border: var(--border-2);
+		border-block-start: 0;
+		border-end-start-radius: var(--radius-2);
+		border-end-end-radius: var(--radius-2);
+		box-shadow: inset var(--shadow);
+		padding: 1rem;
+		background-color: var(--bg-color-1);
+		font-size: 0.875rem;
+	}
+	
+	@media not print
+	{
+		&:not(:open)::details-content
 		{
-			border-end-start-radius: 0;
-			border-end-end-radius: 0;
-			
-			&::before
-			{
-				inset-inline-start: 0;
-				inset-block-start: -0.125rem;
-				transform: none;
-			}
-		}
-		
-		&::details-content
-		{
-			border: var(--border-2);
-			border-block-start: 0;
-			border-end-start-radius: var(--radius-2);
-			border-end-end-radius: var(--radius-2);
-			box-shadow: inset var(--shadow);
-			padding: 1rem;
-			background-color: var(--bg-color-1);
-			font-size: 0.875rem;
+			display: none;
 		}
 	}
 }
@@ -740,12 +750,7 @@ summary
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	
-	@media not print
-	{
-		border: var(--border-2);
-	}
-	
+	border: var(--border-2);
 	border-radius: var(--radius-2);
 	padding-inline: 0.7rem;
 	padding-block: 0.6rem;
@@ -758,15 +763,22 @@ summary
 	
 	&::before
 	{
-		inset-inline-start: -0.125rem;
-		inset-block-start: 0;
 		color: var(--primary-color);
-		transform: rotate(-90deg);
 	}
 	
-	:dir(rtl) &::before
+	@media not print
 	{
-		transform: rotate(90deg);
+		details:not(:open) > &::before
+		{
+			inset-inline-start: -0.125rem;
+			inset-block-start: 0;
+			transform: rotate(-90deg);
+		}
+		
+		:dir(rtl) details:not(:open) > &::before
+		{
+			transform: rotate(90deg);
+		}
 	}
 	
 	@media (hover: hover)
@@ -916,17 +928,12 @@ ul, .block-trim
 	display: flex;
 	opacity: 0;
 	pointer-events: none;
-}
-
-#a11y:focus-within
-{
-	opacity: 1;
-	pointer-events: auto;
-}
-
-[popovertarget="lang-list"]
-{
-	anchor-name: --lang-anchor;
+	
+	&:focus-within
+	{
+		opacity: 1;
+		pointer-events: auto;
+	}
 }
 
 #lang-list
@@ -1208,7 +1215,7 @@ ul, .block-trim
 
 @media print
 {
-	#ui-layer, #crumbs, :is(h1, h2, .pre > div)::after, #categories, footer
+	#ui-layer, #crumbs, #categories, footer
 	{
 		display: none;
 	}
@@ -1221,18 +1228,5 @@ ul, .block-trim
 	h1, h2, .pre > div
 	{
 		border-block-end: var(--border-1);
-	}
-	
-	details::details-content
-	{
-		display: block !important;
-		content-visibility: visible !important;
-	}
-	
-	summary::before
-	{
-		inset-inline-start: 0 !important;
-		inset-block-start: -0.125rem !important;
-		transform: none !important;
 	}
 }
