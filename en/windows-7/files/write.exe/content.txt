@@ -1,32 +1,59 @@
-<h1>write.exe</h1>
+<h1>write.exe File</h1>
 <p><samp>write.exe</samp> is a legacy executable file that serves as a wrapper for the WordPad application. While it appears as a standalone program, its primary purpose is to maintain backward compatibility.</p>
 
 
 <h2>File Details</h2>
 <table>
+	<caption>64-bit OS Environment</caption>
 	<thead>
 		<tr>
-			<th>File Path</th>
+			<th>Path</th>
 			<th>Architecture</th>
 			<th>Version</th>
-			<th>File Size</th>
+			<th>Size</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td class="mono">%WinDir%\write.exe <br> <small>C:\Windows\write.exe</small></td>
+			<td class="mono">%SystemRoot%\write.exe <br> <small>C:\Windows\write.exe</small></td>
 			<td>64-bit</td>
 			<td class="mono">6.1.7600.16385</td>
 			<td class="mono">10 KB <br> <small>10,240 bytes</small></td>
 		</tr>
 		<tr>
-			<td class="mono">%WinDir%\System32\write.exe <br> <small>C:\Windows\System32\write.exe</small></td>
+			<td class="mono">%SystemRoot%\System32\write.exe <br> <small>C:\Windows\System32\write.exe</small></td>
 			<td>64-bit</td>
 			<td class="mono">6.1.7600.16385</td>
 			<td class="mono">10 KB <br> <small>10,240 bytes</small></td>
 		</tr>
 		<tr>
-			<td class="mono">%WinDir%\SysWOW64\write.exe <br> <small>C:\Windows\SysWOW64\write.exe</small></td>
+			<td class="mono">%SystemRoot%\SysWOW64\write.exe <br> <small>C:\Windows\SysWOW64\write.exe</small></td>
+			<td>32-bit</td>
+			<td class="mono">6.1.7600.16385</td>
+			<td class="mono">9 KB <br> <small>9,216 bytes</small></td>
+		</tr>
+	</tbody>
+</table>
+
+<table>
+	<caption>32-bit OS Environment</caption>
+	<thead>
+		<tr>
+			<th>Path</th>
+			<th>Architecture</th>
+			<th>Version</th>
+			<th>Size</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="mono">%SystemRoot%\write.exe <br> <small>C:\Windows\write.exe</small></td>
+			<td>32-bit</td>
+			<td class="mono">6.1.7600.16385</td>
+			<td class="mono">9 KB <br> <small>9,216 bytes</small></td>
+		</tr>
+		<tr>
+			<td class="mono">%SystemRoot%\System32\write.exe <br> <small>C:\Windows\System32\write.exe</small></td>
 			<td>32-bit</td>
 			<td class="mono">6.1.7600.16385</td>
 			<td class="mono">9 KB <br> <small>9,216 bytes</small></td>

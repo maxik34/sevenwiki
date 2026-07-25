@@ -1,4 +1,5 @@
 <h1>Files Category</h1>
 <ul class="columns">
+	<li><a href="./aero.msstyles/">aero.msstyles</a></li>
 	<li><a href="./write.exe/">write.exe</a></li>
 </ul>

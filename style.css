@@ -18,8 +18,8 @@
 
 @font-face
 {
-	font-family: 'JetBrains Mono';
-	src: url('/sevenwiki/jetbrainsmono.woff2') format('woff2');
+	font-family: 'SevenBrains Mono';
+	src: url('/sevenwiki/sevenbrainsmono.woff2') format('woff2');
 	font-weight: 100 800;
 	font-style: normal;
 	font-display: swap;
@@ -27,8 +27,8 @@
 
 @font-face
 {
-	font-family: 'JetBrains Mono';
-	src: url('/sevenwiki/jetbrainsmono-italic.woff2') format('woff2');
+	font-family: 'SevenBrains Mono';
+	src: url('/sevenwiki/sevenbrainsmono-italic.woff2') format('woff2');
 	font-weight: 100 800;
 	font-style: italic;
 	font-display: swap;
@@ -392,7 +392,7 @@ dt + dt, dd + dd
 
 dt, code, kbd, pre, samp, .mono
 {
-	font-family: 'JetBrains Mono', monospace;
+	font-family: 'SevenBrains Mono', monospace;
 }
 
 code
@@ -625,7 +625,9 @@ table
 
 caption
 {
-	padding: 0.25rem;
+	padding-inline: 0.25rem;
+	padding-block: 0 0.25rem;
+	font-size: 1rem;
 }
 
 th, td
@@ -677,15 +679,16 @@ tr:last-child
 
 td
 {
-	background-color: var(--bg-color-1);
+	--bg: var(--bg-color-1);
+	background-color: var(--bg);
 	transition: border-color var(--transition-speed), background-color var(--transition-speed);
 	
-	@media (hover: hover)
+	@media not print and (hover: hover)
 	{
 		tr:hover &
 		{
-			border-color: var(--border-color-2);
-			background-color: var(--bg-color-2);
+			border-color: color-mix(in oklab, #FFF 15%, var(--bg));
+			background-color: color-mix(in oklab, #FFF 3%, var(--bg));
 		}
 	}
 }
@@ -732,7 +735,9 @@ details
 	{
 		&:not(:open)::details-content
 		{
-			display: none;
+			all: unset;
+			display: block;
+			content-visibility: hidden;
 		}
 	}
 }
@@ -879,6 +884,18 @@ ul, .block-trim
 	> :last-child
 	{
 		margin-block-end: 0;
+	}
+}
+
+.sticky
+{
+	position: sticky;
+	inset-block-start: calc(var(--header-block) + var(--border-size));
+	margin-block: var(--border-size);
+	
+	th
+	{
+		box-shadow: 0 0 0 var(--border-size) var(--bg-color-0);
 	}
 }
 

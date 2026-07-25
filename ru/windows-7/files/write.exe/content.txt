@@ -1,32 +1,59 @@
-<h1>write.exe</h1>
+<h1>Файл write.exe</h1>
 <p><samp>write.exe</samp> — это устаревший исполняемый файл, служащий обёрткой для приложения WordPad. Он выглядит как самостоятельная программа, однако его основной задачей является обеспечение обратной совместимости.</p>
 
 
 <h2>Сведения о файле</h2>
 <table>
+	<caption>64-битная система</caption>
 	<thead>
 		<tr>
-			<th>Путь к файлу</th>
+			<th>Путь</th>
 			<th>Архитектура</th>
 			<th>Версия</th>
-			<th>Размер файла</th>
+			<th>Размер</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td class="mono">%WinDir%\write.exe <br> <small>C:\Windows\write.exe</small></td>
+			<td class="mono">%SystemRoot%\write.exe <br> <small>C:\Windows\write.exe</small></td>
 			<td>64-бит</td>
 			<td class="mono">6.1.7600.16385</td>
 			<td class="mono">10 КБ <br> <small>10 240 байт</small></td>
 		</tr>
 		<tr>
-			<td class="mono">%WinDir%\System32\write.exe <br> <small>C:\Windows\System32\write.exe</small></td>
+			<td class="mono">%SystemRoot%\System32\write.exe <br> <small>C:\Windows\System32\write.exe</small></td>
 			<td>64-бит</td>
 			<td class="mono">6.1.7600.16385</td>
 			<td class="mono">10 КБ <br> <small>10 240 байт</small></td>
 		</tr>
 		<tr>
-			<td class="mono">%WinDir%\SysWOW64\write.exe <br> <small>C:\Windows\SysWOW64\write.exe</small></td>
+			<td class="mono">%SystemRoot%\SysWOW64\write.exe <br> <small>C:\Windows\SysWOW64\write.exe</small></td>
+			<td>32-бит</td>
+			<td class="mono">6.1.7600.16385</td>
+			<td class="mono">9 КБ <br> <small>9 216 байт</small></td>
+		</tr>
+	</tbody>
+</table>
+
+<table>
+	<caption>32-битная система</caption>
+	<thead>
+		<tr>
+			<th>Путь</th>
+			<th>Архитектура</th>
+			<th>Версия</th>
+			<th>Размер</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="mono">%SystemRoot%\write.exe <br> <small>C:\Windows\write.exe</small></td>
+			<td>32-бит</td>
+			<td class="mono">6.1.7600.16385</td>
+			<td class="mono">9 КБ <br> <small>9 216 байт</small></td>
+		</tr>
+		<tr>
+			<td class="mono">%SystemRoot%\System32\write.exe <br> <small>C:\Windows\System32\write.exe</small></td>
 			<td>32-бит</td>
 			<td class="mono">6.1.7600.16385</td>
 			<td class="mono">9 КБ <br> <small>9 216 байт</small></td>
