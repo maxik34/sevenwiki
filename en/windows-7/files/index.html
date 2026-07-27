@@ -20,7 +20,7 @@
 
 <div id="ui-layer">
 <header>
-<button class="button l-hide" command="show-modal" commandfor="menu" aria-label="Open navigation menu">
+<button class="button l-hide" onclick="document.getElementById('menu').showModal()" aria-label="Open navigation menu">
 <svg viewBox="0 0 20 20" width="1.25rem" height="1.25rem" aria-hidden="true"><path d="M3 2A1 1 0 003 6 1 1 0 003 2M3 8a1 1 0 000 4A1 1 0 003 8m0 6a1 1 0 000 4 1 1 0 000-4m16 3V15H7v2Zm0-6V9H7v2Zm0-6V3H7V5Z"/></svg>
 </button>
 
@@ -47,7 +47,7 @@
 </header>
 
 <dialog role="navigation" id="menu" class="block-trim s-hide m-hide" aria-label="Navigation">
-<h2 aria-label="Navigation"><button class="button" command="close" commandfor="menu" aria-label="Close navigation menu">
+<h2 aria-label="Navigation"><button class="button" onclick="document.getElementById('menu').close()" aria-label="Close navigation menu">
 <svg viewBox="0 0 20 20" width="1.25rem" height="1.25rem" aria-hidden="true"><path d="M3 1l7 7 7-7 2 2-7 7 7 7-2 2-7-7-7 7-2-2 7-7L1 3Z"/></svg>
 </button>Navigation</h2>
 <a href="/sevenwiki/en/updates/">Updates</a>
