@@ -229,11 +229,6 @@ article
 	padding-inline: var(--main-gap);
 	padding-block: 1.75rem;
 	background-color: var(--bg-color-2);
-	
-	a
-	{
-		--color: var(--link-color);
-	}
 }
 
 footer
@@ -504,6 +499,12 @@ sub
 a
 {
 	--color: #7197B6;
+	
+	:is(article, #categories, #menu:modal) &
+	{
+		--color: var(--link-color);
+	}
+	
 	border-radius: 0.125rem;
 	
 	@media not print
@@ -1053,7 +1054,7 @@ ul, .block-trim
 		background-color: var(--bg-color-1);
 	}
 	
-	h2:first-child
+	> :first-child
 	{
 		position: fixed;
 		inset-inline: var(--ui-gap);
@@ -1068,9 +1069,8 @@ ul, .block-trim
 		font-size: 1.25rem;
 	}
 	
-	> a
+	a
 	{
-		--color: var(--link-color);
 		border-radius: var(--radius-1);
 		padding-inline: 0.5rem;
 		padding-block: 0.375rem;
@@ -1103,7 +1103,7 @@ ul, .block-trim
 	font-size: 0.875rem;
 	white-space: nowrap;
 	
-	> a:not(:first-child)
+	> :not(:first-child)
 	{
 		position: relative;
 		display: flex;
