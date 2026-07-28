@@ -245,7 +245,6 @@ footer
 h1, h2, h3, h4, h5, h6
 {
 	margin-block-end: 0.25rem;
-	line-height: 1.5;
 	font-size: 1rem;
 	font-weight: 500;
 	color: var(--text-color-2);
@@ -914,6 +913,7 @@ ul, .block-trim
 	border-radius: 0.5rem;
 	padding: 0.25rem;
 	background-color: var(--bg-color-2);
+	user-select: none;
 	
 	> a
 	{
@@ -1106,7 +1106,7 @@ ul, .block-trim
 		{
 			content: '\25B8' / '';
 			position: absolute;
-			inset-inline-start: -0.95rem;
+			inset-inline-start: -0.93rem;
 			line-height: normal;
 			color: var(--text-color-1);
 			pointer-events: none;
