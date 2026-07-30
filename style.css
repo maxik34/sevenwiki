@@ -440,7 +440,7 @@ pre
 	tab-size: 4;
 }
 
-kbd
+kbd > kbd
 {
 	display: inline-block;
 	margin-inline: 0.0625rem;
@@ -998,7 +998,7 @@ ul, .block-trim
 	inline-size: var(--panel-inline);
 	max-block-size: calc(100dvb - var(--header-block));
 	border: none;
-	overflow-block: auto;
+	overflow: auto;
 	scrollbar-width: thin;
 	padding: var(--ui-gap);
 	background-color: #0000;
@@ -1087,8 +1087,7 @@ ul, .block-trim
 	min-block-size: 2.125rem;
 	border: var(--border-1);
 	border-radius: var(--radius-2);
-	overflow-inline: auto;
-	overflow-block: hidden;
+	overflow: auto;
 	scrollbar-width: thin;
 	padding-inline: 0.625rem;
 	padding-block: 0.25rem;
