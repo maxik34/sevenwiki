@@ -598,7 +598,6 @@ blockquote
 
 table
 {
-	--radius: calc(var(--radius-2) / 2.5);
 	inline-size: 100%;
 	box-shadow: var(--shadow);
 	border: var(--border-2);
@@ -628,7 +627,6 @@ caption
 
 th, td
 {
-	border: 0.0625rem solid #0000;
 	padding-inline: 0.9rem;
 	padding-block: 0.8rem;
 	text-align: start;
@@ -645,31 +643,12 @@ th
 	font-weight: 500;
 	hyphens: auto;
 	color: var(--text-color-2);
-}
-
-tr:first-child
-{
-	> :first-child
-	{
-		border-start-start-radius: var(--radius);
-	}
 	
-	> :last-child
+	&.vertical
 	{
-		border-start-end-radius: var(--radius);
-	}
-}
-
-tr:last-child
-{
-	> :first-child
-	{
-		border-end-start-radius: var(--radius);
-	}
-	
-	> :last-child
-	{
-		border-end-end-radius: var(--radius);
+		writing-mode: sideways-lr;
+		block-size: 0;
+		text-align: center;
 	}
 }
 
@@ -682,12 +661,17 @@ td
 
 @media not print
 {
+	thead, tbody, tfoot
+	{
+		outline: var(--border-size) solid var(--bg-color-0);
+		border-radius: calc(var(--radius-2) / 2.5);
+	}
+	
 	@media (hover: hover)
 	{
-		tr:hover > td
+		tr:hover:not(:has(th:hover)) > td
 		{
-			border-color: color-mix(in oklab, #FFF 15%, var(--bg));
-			background-color: color-mix(in oklab, #FFF 3%, var(--bg));
+			background-color: color-mix(in oklab, #FFF 4%, var(--bg));
 		}
 	}
 }
