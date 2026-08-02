@@ -71,7 +71,7 @@ html
 	--bg-color-2: color-mix(in oklab, var(--primary-color) 2%, #262626);
 	--bg-color-3: color-mix(in oklab, var(--primary-color) 3%, #2D2D2D);
 	--overlay-color-1: #0003;
-	--overlay-color-2: #0005;
+	--overlay-color-2: #0004;
 	
 	--text-color-0: color-mix(in oklab, var(--contrast-color) 1%, #888);
 	--text-color-1: color-mix(in oklab, var(--contrast-color) 2%, #CCC);
@@ -649,6 +649,7 @@ th
 		writing-mode: sideways-lr;
 		block-size: 0;
 		text-align: center;
+		letter-spacing: 0.0625rem;
 	}
 }
 
