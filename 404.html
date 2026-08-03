@@ -12,16 +12,28 @@
 	const path = window.location.pathname;
 	const base = '/sevenwiki/';
 	const baseIndex = path.toLowerCase().indexOf(base.toLowerCase());
-	
+
 	if (baseIndex !== -1)
 	{
 		const prefix = path.substring(0, baseIndex + base.length);
 		const tail = path.substring(baseIndex + base.length);
-		
-		if (/[A-Z]/.test(tail))
+
+		try
 		{
-			window.location.replace(prefix + tail.toLowerCase());
-			return;
+			let decodedTail = decodeURIComponent(tail);
+			const cleanedTail = decodedTail.toLowerCase().replace(/[\s,]+/g, '-');
+
+			if (cleanedTail !== tail)
+			{
+				const suffix = window.location.search + window.location.hash;
+
+				window.location.replace(prefix + cleanedTail + suffix);
+				return;
+			}
+		}
+		catch (e)
+		{
+			console.error("URL normalization failed:", e);
 		}
 	}
 })();

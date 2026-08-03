@@ -85,14 +85,14 @@ function NormalizeName(Name, FullPath)
 
 
 
-async function NormalizeWebsite(CurrentDir)
+async function NormalizeWebsite(CurrentDir, First = false)
 {
 	let IsNormalized = false;
 	const Entries = await ReadDirectory(CurrentDir, { withFileTypes: true });
 
 	for (const Entry of Entries)
 	{
-		if (Entry.name === '.git' || Entry.name === '.github' || Entry.name === 'LICENSE')
+		if (First && (Entry.name === '.git' || Entry.name === '.github' || Entry.name === 'LICENSE'))
 			continue;
 
 		const FullOrigName = Path.join(CurrentDir, Entry.name);
@@ -109,7 +109,7 @@ async function NormalizeWebsite(CurrentDir)
 
 	for (const Entry of Entries)
 	{
-		if (!Entry.isDirectory() || Entry.name === '.git' || Entry.name === '.github')
+		if (!Entry.isDirectory() || (First && (Entry.name === '.git' || Entry.name === '.github')))
 			continue;
 
 		const WasNormalized = await NormalizeWebsite(Path.join(CurrentDir, Entry.name));
@@ -153,7 +153,7 @@ async function Init()
 	ConsoleHeader('        Simple Wiki Builder\n');
 	ConsoleHeader('===================================\n');
 	
-	if (await NormalizeWebsite(RootPath))
+	if (await NormalizeWebsite(RootPath, true))
 		ConsoleMessage();
 	
 	const ParsedSiteConfig = await ParseJsonFile(RootPath, SiteConfigFile);
