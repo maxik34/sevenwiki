@@ -78,7 +78,7 @@ html
 	--text-color-2: color-mix(in oklab, var(--contrast-color) 3%, #EEE);
 	
 	--shadow: 0 0 0.25rem 0.125rem var(--overlay-color-1);
-	--transition-speed: 0s;
+	--duration: 0s;
 	
 	@media print
 	{
@@ -125,7 +125,7 @@ html
 	
 	@media (prefers-reduced-motion: no-preference) and (update: fast)
 	{
-		--transition-speed: 0.2s;
+		--duration: 0.2s;
 		scroll-behavior: smooth;
 	}
 }
@@ -455,7 +455,7 @@ kbd > kbd
 	
 	&:not(:active)
 	{
-		box-shadow: 0 0.125rem var(--border-color-1), 0 0.125rem 4px 0 var(--overlay-color-1);
+		box-shadow: 0 0.125rem var(--border-color-1), 0 0.125rem 0.25rem 0 var(--overlay-color-1);
 		transform: translateY(-0.125rem);
 	}
 }
@@ -508,10 +508,9 @@ a
 	}
 	
 	border-radius: 0.125rem;
-	
 	color: var(--color);
 	unicode-bidi: inherit;
-	transition: color var(--transition-speed);
+	transition: color var(--duration);
 	
 	@media (hover: hover)
 	{
@@ -525,6 +524,11 @@ a
 	&:active
 	{
 		color: color-mix(in oklab, #000 12%, var(--color));
+	}
+	
+	&:not([href])
+	{
+		color: var(--text-color-0);
 	}
 }
 
@@ -551,11 +555,6 @@ a
 			transform: scaleX(-1);
 		}
 	}
-}
-
-a:not([href])
-{
-	color: var(--text-color-0);
 }
 
 
@@ -657,7 +656,7 @@ td
 {
 	--bg: var(--bg-color-1);
 	background-color: var(--bg);
-	transition: border-color var(--transition-speed), background-color var(--transition-speed);
+	transition: border-color var(--duration), background-color var(--duration);
 }
 
 @media not print
@@ -747,7 +746,7 @@ summary
 	font-weight: 500;
 	color: var(--text-color-2);
 	cursor: pointer;
-	transition: background-color var(--transition-speed);
+	transition: background-color var(--duration);
 	
 	&::before
 	{
@@ -821,7 +820,7 @@ button
 	user-select: none;
 	cursor: pointer;
 	transition-property: border-color, background-color, color;
-	transition-duration: var(--transition-speed);
+	transition-duration: var(--duration);
 	
 	@media (hover: hover)
 	{
@@ -869,7 +868,7 @@ button
 .sticky
 {
 	position: sticky;
-	inset-block-start: calc(var(--header-block) + var(--border-size));
+	inset-block: calc(var(--header-block) + var(--border-size)) auto;
 	margin-block: var(--border-size);
 	
 	th
@@ -904,11 +903,10 @@ button
 	{
 		--color: var(--text-color-1);
 		border: var(--border-size) solid #0000;
-		border-radius: 0.125rem;
 		padding-inline: 0.5rem;
 		padding-block: 0.25rem;
 		transition-property: border-color, background-color, color;
-		transition-duration: var(--transition-speed);
+		transition-duration: var(--duration);
 		
 		&:hover
 		{
@@ -953,7 +951,7 @@ button
 	justify-content: space-between;
 	z-index: 100;
 	inset-inline: 0;
-	inset-block-start: 0;
+	inset-block: 0 auto;
 	margin-inline: auto;
 	max-inline-size: var(--site-max-inline);
 	user-select: none;
@@ -967,7 +965,7 @@ button
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	margin-inline-end: auto;
+	margin-inline: 0 auto;
 	text-decoration: none;
 	font-size: 1.25rem;
 	filter: drop-shadow(0 0 2px #0009);
@@ -1036,7 +1034,7 @@ button
 	{
 		position: fixed;
 		inset-inline: var(--ui-gap);
-		inset-block-start: 0;
+		inset-block: 0 auto;
 		display: flex;
 		align-items: center;
 		gap: 1rem;
@@ -1053,7 +1051,7 @@ button
 		padding-inline: 0.5rem;
 		padding-block: 0.375rem;
 		background-color: var(--bg-color-2);
-		transition: background-color var(--transition-speed), color var(--transition-speed);
+		transition: background-color var(--duration), color var(--duration);
 		
 		&:hover
 		{
@@ -1094,7 +1092,7 @@ button
 		{
 			content: '\2023' / '';
 			position: absolute;
-			inset-inline-start: -1rem;
+			inset-inline: -1rem auto;
 			color: var(--text-color-1);
 			pointer-events: none;
 		}
