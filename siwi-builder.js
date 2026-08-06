@@ -2,29 +2,30 @@ const Path = require('path');
 const FileSystem = require('fs').promises;
 const RootPath = Path.resolve(__dirname);
 
-const SiteConfigFile = 'site.json';
-const LangConfigFile = 'lang.json';
-const PageConfigFile = 'page.json';
+const SiteVarFile = 'site.json';
+const LangVarFile = 'lang.json';
+const PageVarFile = 'page.json';
 
-const Var =
+const VarName =
 {
 	Root: 'root',
 	DefaultLang: 'defaultlang',
 	Direction: 'dir',
 	SiteName: 'sitename',
 	MainPage: 'mainpage',
-	Lang: 'lang',
 	LangName: 'langname'
 }
 
-const Default =
+const DefaultValue =
 {
-	Lang: 'en',
+	Root: '',
+	DefaultLang: 'en',
 	Direction: 'ltr',
 	MainPage: 'main-page'
 }
 
 let BaseVars = {};
+const LangList = [];
 
 
 
@@ -63,7 +64,7 @@ const Replaces =
 	'а': 'a', 'в': 'b', 'е': 'e', 'з': '3', 'к': 'k', 'м': 'm', 'н': 'h', 'о': 'o', 'р': 'p', 'с': 'c', 'т': 't', 'у': 'y', 'х': 'x',
 	'ѕ': 's', 'і': 'i', 'ј': 'j'
 };
-	
+
 const ReplacesRegex = new RegExp('[' + Object.keys(Replaces).join('') + ']', 'g');
 const InvalidChars = /[^a-z0-9\-\.\_\+]/;
 
@@ -82,9 +83,6 @@ function NormalizeName(Name, FullPath)
 	return Name;
 }
 
-
-
-
 async function NormalizeWebsite(CurrentDir, First = false)
 {
 	let IsNormalized = false;
@@ -102,7 +100,7 @@ async function NormalizeWebsite(CurrentDir, First = false)
 		{
 			await FileSystem.rename(FullOrigName, Path.join(CurrentDir, NormalizedName));
 			Entry.name = NormalizedName;
-			ConsoleWarning('Normalizer: "' + FullOrigName + '" --> "' + Path.join(CurrentDir, NormalizedName) + '".');
+			ConsoleMessage('Autofix: "' + FullOrigName + '" --> "' + Path.join(CurrentDir, NormalizedName) + '"');
 			IsNormalized = true;
 		}
 	}
@@ -124,7 +122,7 @@ async function NormalizeWebsite(CurrentDir, First = false)
 
 async function ParseJsonFile(DirectoryPath, FileName)
 {
-	const FinalPath = Path.join(DirectoryPath, FileName.toLowerCase());
+	const FinalPath = Path.join(DirectoryPath, FileName);
 	
 	try
 	{
@@ -147,25 +145,78 @@ async function ParseJsonFile(DirectoryPath, FileName)
 
 
 
+async function ParseAllLangs()
+{
+	const FilesList = await ReadDirectory(RootPath, { withFileTypes: true });
+	
+	for (const Entry of FilesList)
+	{
+		if (!Entry.isDirectory() || Entry.name === '.git' || Entry.name === '.github')
+			continue;
+		
+		try
+		{
+			const PotentialLangPath = Path.join(RootPath, Entry.name, LangVarFile);
+			await FileSystem.stat(PotentialLangPath);
+		}
+		catch (Error)
+		{
+			if (Error.code === 'ENOENT')
+				continue;
+			
+			ConsoleError('Error checking folder "' + Entry.name + '": ' + Error.message);
+			process.exit(1);
+		}
+		
+		const ParsedLangVars = await ParseJsonFile(Path.join(RootPath, Entry.name), LangVarFile);
+		
+		LangList.push(Entry.name);
+		
+		if (ParsedLangVars.hasOwnProperty(VarName.LangName))
+		{
+			BaseVars = { ...BaseVars, [VarName.LangName + '-' + Entry.name]: ParsedLangVars[VarName.LangName] };
+			ConsoleMessage('Added "' + Entry.name + '" - "' + ParsedLangVars[VarName.LangName] + '"');
+		}
+		else
+		{
+			ConsoleWarning('Added "' + Entry.name + '", but it\'s missing "' + VarName.LangName + '" variable.');
+		}
+	}
+}
+
+
+
+
 async function Init()
 {
 	ConsoleHeader('===================================\n');
 	ConsoleHeader('        Simple Wiki Builder\n');
 	ConsoleHeader('===================================\n');
 	
-	if (await NormalizeWebsite(RootPath, true))
-		ConsoleMessage();
+	ConsoleHeader('Checking the site for invalid names...');
+	await NormalizeWebsite(RootPath, true);
+	ConsoleSuccess('All file and folder names are valid!\n');
 	
-	const ParsedSiteConfig = await ParseJsonFile(RootPath, SiteConfigFile);
-	BaseVars = { [Var.Root]: '', [Var.DefaultLang]: Default.Lang, [Var.Direction]: Default.Direction, [Var.MainPage]: Default.MainPage, ...ParsedSiteConfig };
-	const ParsedLangConfig = await ParseJsonFile(Path.join(RootPath, BaseVars[Var.DefaultLang]), LangConfigFile);
-	BaseVars = { ...BaseVars, ...ParsedLangConfig }
-	ConsoleSuccess('Building "' + BaseVars[Var.SiteName] + '" website.')
-	ConsoleMessage('"' + Var.Root + '" set to "' + BaseVars[Var.Root] + '".');
-	ConsoleMessage('"' + Var.DefaultLang + '" set to "' + BaseVars[Var.DefaultLang] + '".');
-	ConsoleMessage('"' + Var.MainPage + '" set to "' + BaseVars[Var.MainPage] + '".\n');
+	BaseVars =
+	{
+		[VarName.Root]: DefaultValue.Root,
+		[VarName.DefaultLang]: DefaultValue.DefaultLang,
+		[VarName.Direction]: DefaultValue.Direction,
+		[VarName.MainPage]: DefaultValue.MainPage,
+		...(await ParseJsonFile(RootPath, SiteVarFile))
+	};
 	
-	// TODO: finish it!
+	ConsoleHeader('Building "' + BaseVars[VarName.SiteName] + '" website...');
+	ConsoleMessage('"' + VarName.Root + '" set to "' + BaseVars[VarName.Root] + '"');
+	ConsoleMessage('"' + VarName.DefaultLang + '" set to "' + BaseVars[VarName.DefaultLang] + '"');
+	ConsoleMessage('"' + VarName.MainPage + '" set to "' + BaseVars[VarName.MainPage] + '"');
+	ConsoleSuccess('Base variables have been set!\n');
+	
+	ConsoleHeader('Collecting a list of languages...');
+	await ParseAllLangs();
+	ConsoleSuccess('Total languages found: ' + LangList.length + '\n');
+	
+	// TODO: продолжать тут
 	
 	ConsoleHeader('===================================\n');
 }
