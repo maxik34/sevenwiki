@@ -1,7 +1,7 @@
 @font-face
 {
 	font-family: 'Inter';
-	src: url('/sevenwiki/inter.woff2') format('woff2');
+	src: url('inter.woff2') format('woff2');
 	font-weight: 100 900;
 	font-style: normal;
 	font-display: swap;
@@ -10,7 +10,7 @@
 @font-face
 {
 	font-family: 'Inter';
-	src: url('/sevenwiki/inter-italic.woff2') format('woff2');
+	src: url('inter-italic.woff2') format('woff2');
 	font-weight: 100 900;
 	font-style: italic;
 	font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face
 {
-	font-family: 'SevenBrains Mono';
-	src: url('/sevenwiki/sevenbrainsmono.woff2') format('woff2');
+	font-family: 'WikiBrains Mono';
+	src: url('wikibrainsmono.woff2') format('woff2');
 	font-weight: 100 800;
 	font-style: normal;
 	font-display: swap;
@@ -27,8 +27,8 @@
 
 @font-face
 {
-	font-family: 'SevenBrains Mono';
-	src: url('/sevenwiki/sevenbrainsmono-italic.woff2') format('woff2');
+	font-family: 'WikiBrains Mono';
+	src: url('wikibrainsmono-italic.woff2') format('woff2');
 	font-weight: 100 800;
 	font-style: italic;
 	font-display: swap;
@@ -70,14 +70,12 @@ html
 	--bg-color-1: color-mix(in oklab, var(--primary-color) 1%, #202020);
 	--bg-color-2: color-mix(in oklab, var(--primary-color) 2%, #262626);
 	--bg-color-3: color-mix(in oklab, var(--primary-color) 3%, #2D2D2D);
-	--overlay-color-1: #0003;
-	--overlay-color-2: #0004;
 	
 	--text-color-0: color-mix(in oklab, var(--contrast-color) 1%, #888);
 	--text-color-1: color-mix(in oklab, var(--contrast-color) 2%, #CCC);
 	--text-color-2: color-mix(in oklab, var(--contrast-color) 3%, #EEE);
 	
-	--shadow: 0 0 0.25rem 0.125rem var(--overlay-color-1);
+	--shadow: 0 0 0.25rem 0.125rem #0003;
 	--duration: 0s;
 	
 	@media print
@@ -96,8 +94,6 @@ html
 		--bg-color-1: #FFF;
 		--bg-color-2: #FFF;
 		--bg-color-3: #FFF;
-		--overlay-color-1: #FFF;
-		--overlay-color-2: #FFF;
 		
 		--text-color-0: #000;
 		--text-color-1: #000;
@@ -274,7 +270,7 @@ h1, h2
 {
 	:is(h1, h2)::after, hr
 	{
-		box-shadow: 0 0 4px 0 var(--overlay-color-1);
+		box-shadow: 0 0 0.25rem #0003;
 		min-block-size: var(--border-size);
 		border: none;
 		border-radius: var(--border-size);
@@ -380,7 +376,7 @@ dt + dt, dd + dd
 
 dt, code, kbd, pre, samp, time, .mono
 {
-	font-family: 'SevenBrains Mono', monospace;
+	font-family: 'WikiBrains Mono', monospace;
 }
 
 code
@@ -393,7 +389,7 @@ code
 		padding-block: 0.0625rem;
 	}
 	
-	background-color: var(--overlay-color-1);
+	background-color: #0003;
 	box-decoration-break: clone;
 }
 
@@ -402,7 +398,7 @@ code
 	border: var(--border-2);
 	border-radius: var(--radius-2);
 	box-shadow: inset var(--shadow);
-	background-color: var(--overlay-color-2);
+	background-color: #0004;
 }
 
 .pre > div
@@ -455,7 +451,7 @@ kbd > kbd
 	
 	&:not(:active)
 	{
-		box-shadow: 0 0.125rem var(--border-color-1), 0 0.125rem 0.25rem 0 var(--overlay-color-1);
+		box-shadow: 0 0.125rem var(--border-color-1), 0 0.125rem 0.25rem #0003;
 		transform: translateY(-0.125rem);
 	}
 }
@@ -536,16 +532,18 @@ a
 {
 	a[href^="http"]
 	{
-		position: relative;
-		padding-inline-end: 1.1em;
+		&:not(.button)::after
+		{
+			margin-inline: 0.125rem 0;
+		}
 		
 		&::after
 		{
 			content: '';
-			position: absolute;
+			display: inline-block;
 			inline-size: 0.875em;
-			block-size: 1lh;
-			margin-inline-start: 0.2em;
+			block-size: 0.875em;
+			margin-block: 0 -0.0625rem;
 			background-color: currentColor;
 			mask: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"%3E%3Cpath d="M9 4l2 2V1H6L8 3 4 7 5 8ZM2 3Q1 3 1 4v6q0 1 1 1H8q1 0 1-1V8H8v2H2V4H4V3Z"/%3E%3C/svg%3E') center / contain no-repeat;
 		}
@@ -816,6 +814,7 @@ button
 	border-radius: var(--radius-1);
 	padding-inline: 0.3125rem;
 	background-color: var(--bg-color-2);
+	vertical-align: bottom;
 	color: var(--text-color-1);
 	user-select: none;
 	cursor: pointer;
@@ -892,26 +891,24 @@ button
 	inline-size: fit-content;
 	block-size: fit-content;
 	margin: 0;
-	box-shadow: 0 0 10px #0009;
+	box-shadow: 0 0 0.625rem #0009;
 	border: var(--border-size) solid var(--border-color-3);
-	border-radius: 0.5rem;
-	padding: 0.25rem;
+	border-radius: var(--radius-2);
+	padding: 0.125rem;
 	background-color: var(--bg-color-2);
 	user-select: none;
 	
 	> a
 	{
-		--color: var(--text-color-1);
-		border: var(--border-size) solid #0000;
-		padding-inline: 0.5rem;
-		padding-block: 0.25rem;
-		transition-property: border-color, background-color, color;
-		transition-duration: var(--duration);
+		outline-offset: -0.0625rem;
+		padding-inline: 0.625rem;
+		padding-block: 0.375rem;
+		color: var(--text-color-2);
+		transition: background-color var(--duration);
 		
 		&:hover
 		{
-			border-color: var(--border-color-2);
-			background-color: var(--bg-color-3);
+			background-color: var(--border-color-2);
 			text-decoration: none;
 		}
 	}
@@ -968,7 +965,7 @@ button
 	margin-inline: 0 auto;
 	text-decoration: none;
 	font-size: 1.25rem;
-	filter: drop-shadow(0 0 2px #0009);
+	filter: drop-shadow(0 0 0.125rem #0009);
 }
 
 #menu, #toc
