@@ -106,7 +106,7 @@ html
 	scroll-padding-block-start: calc(var(--header-block) + 1.5rem);
 	scrollbar-color: color-mix(in oklab, var(--primary-color) 4%, #555) #0000;
 	background-color: var(--bg-color-1);
-	background-image: linear-gradient(var(--bg-color-1) var(--header-block), var(--bg-color-0) 256px, var(--bg-color-0) 100%);
+	background-image: linear-gradient(var(--bg-color-1) var(--header-block), var(--bg-color-0) 16rem, var(--bg-color-0) 100%);
 	line-height: 1.5;
 	text-size-adjust: 100%;
 	font-family: 'Inter', sans-serif;
@@ -186,13 +186,12 @@ header
 		content: '';
 		position: fixed;
 		z-index: -1;
-		inset-inline: 0;
-		inset-block: 0 auto;
+		inset: 0;
+		inset-block-end: auto;
 		block-size: var(--header-block);
 		box-shadow: var(--shadow);
 		border-block-end: var(--border-2);
-		background-color: var(--bg-color-1);
-		background-image: repeating-linear-gradient(315deg, #0000, #0000 0.1875rem, #FFFFFF05 0.25rem, #FFFFFF05 0.4375rem, #0000 0.5rem);
+		background: repeating-linear-gradient(315deg, #0000, #0000 0.1875rem, #FFFFFF05 0.25rem, #FFFFFF05 0.4375rem, #0000 0.5rem), var(--bg-color-1);
 	}
 	
 	[popovertarget="lang-list"]
@@ -358,8 +357,8 @@ dt
 
 dd
 {
-	margin-inline-start: 1.5rem;
-	margin-block-start: 0.25rem;
+	margin-inline: 1.5rem 0;
+	margin-block: 0.25rem 0;
 }
 
 dt + dt, dd + dd
@@ -385,7 +384,7 @@ code
 	
 	@media not print
 	{
-		padding-inline: 0.3rem;
+		padding-inline: 0.25rem;
 		padding-block: 0.0625rem;
 	}
 	

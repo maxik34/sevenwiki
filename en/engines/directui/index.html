@@ -85,6 +85,7 @@
 <li>AuxiliaryDisplayCpl.dll</li>
 <li>biocpl.dll</li>
 <li>CertEnrollUI.dll</li>
+<li>ExplorerFrame.dll</li>
 </ol>
 
 
@@ -105,6 +106,8 @@
 <li><code>&lt;CCRadioButton></code></li>
 <li><code>&lt;Edit></code></li>
 <li><code>&lt;if></code></li>
+<li><code>&lt;ifgreaterequal></code></li>
+<li><code>&lt;unless></code></li>
 <li><code>&lt;PText></code></li>
 <li><code>&lt;TaskbarCniCplPage></code></li>
 <li><code>&lt;TaskbarScaCplPage></code></li>
@@ -148,9 +151,12 @@
 <li><code>&lt;WHCRepeater></code></li>
 <li><code>&lt;arpframe></code></li>
 <li><code>&lt;ARPSelector></code></li>
+<li><code>&lt;Selector></code></li>
 <li><code>&lt;arpexpando></code></li>
+<li><code>&lt;Expando></code></li>
 <li><code>&lt;ARPAutoButton></code></li>
 <li><code>&lt;arpclipper></code></li>
+<li><code>&lt;Clipper></code></li>
 <li><code>&lt;gradientline></code></li>
 <li><code>&lt;clientblock></code></li>
 <li><code>&lt;clientpicker></code></li>
@@ -170,42 +176,101 @@
 <li><code>&lt;ComboBoxEx></code></li>
 <li><code>&lt;AuxCplPage></code></li>
 <li><code>&lt;BiometricsPage></code></li>
+<li><code>&lt;Expandable></code></li>
+<li><code>&lt;HWNDElement></code></li>
+<li><code>&lt;SearchEditBox></code></li>
+<li><code>&lt;SearchEditBoxHost></code></li>
+<li><code>&lt;UIGroupItem></code></li>
+<li><code>&lt;UIGroupHeader></code></li>
+<li><code>&lt;UIExpandoButton></code></li>
+<li><code>&lt;UIProperty></code></li>
+<li><code>&lt;UICount></code></li>
+<li><code>&lt;UIBase></code></li>
+<li><code>&lt;UICollection></code></li>
+<li><code>&lt;ItemRowLayout></code></li>
+<li><code>&lt;UIItem></code></li>
+<li><code>&lt;UIItemsView></code></li>
+<li><code>&lt;UICheckbox></code></li>
+<li><code>&lt;UIImage></code></li>
+<li><code>&lt;ItemGridLayout></code></li>
+<li><code>&lt;UIRootItem></code></li>
+<li><code>&lt;LineScroller></code></li>
+<li><code>&lt;LineHScrollBar></code></li>
+<li><code>&lt;LineVScrollBar></code></li>
+<li><code>&lt;UIViewHeader></code></li>
+<li><code>&lt;UISmartProperty></code></li>
+<li><code>&lt;UISmartPropertyCollection></code></li>
+<li><code>&lt;FadeElement></code></li>
+<li><code>&lt;PaintSurrogate></code></li>
+<li><code>&lt;UIDetailsPropertyCollection></code></li>
+<li><code>&lt;UIColumnHeader></code></li>
+<li><code>&lt;UIColumnHeaderCheckbox></code></li>
+<li><code>&lt;UISubsetFooter></code></li>
+<li><code>&lt;UITilesPropertyCollection></code></li>
+<li><code>&lt;UIMarqueeSelector></code></li>
+<li><code>&lt;UIRenameTextElement></code></li>
+<li><code>&lt;UITryHarder></code></li>
+<li><code>&lt;UITryHarderButton></code></li>
+<li><code>&lt;LineViewer></code></li>
+<li><code>&lt;LinkedViewer></code></li>
 </ul>
 
 
 <h2 id="dui-attributes">Attributes</h2>
 <ul class="columns">
+<li><code>AbsorbsShortcut</code> – true, false</li>
+<li><code>alpha</code></li>
 <li><code>accdefaction</code> (Accessibility Default Action?) – click</li>
 <li><code>accdesc</code></li>
 <li><code>accessible</code> – true, false</li>
 <li><code>acchelp</code></li>
 <li><code>accname</code></li>
-<li><code>accrole</code> – statictext, link, text, client, graphic, pane, PushButton</li>
+<li><code>accitemstatus</code></li>
+<li><code>accrole</code> – statictext, link, text, client, graphic, pane, PushButton, List, ListItem, Grouping, radiobutton, checkbutton</li>
 <li><code>accState</code></li>
-<li><code>active</code> – mouse, keyboard, inactive</li>
+<li><code>active</code> – mouse, keyboard, inactive, nosyncfocus, mouseandkeyboard</li>
 <li><code>AlwaysGetIconFromView</code></li>
+<li><code>alignmentmode</code> – jaggedbottom, baseline, justify</li>
 <li><code>animation</code></li>
 <li><code>background</code></li>
 <li><code>bordercolor</code></li>
 <li><code>borderstyle</code> – raised, solid, sunken</li>
 <li><code>borderthickness</code></li>
+<li><code>capabilities</code> – selectable, focusable, renameable, filenameoptional</li>
 <li><code>captured</code></li>
 <li><code>class</code></li>
 <li><code>clienttype</code></li>
 <li><code>connect</code></li>
 <li><code>content</code></li>
 <li><code>ContentType</code></li>
-<li><code>contentalign</code> – topleft, middleleft, middlecenter, focusrect, wrapleft, wrapcenter, endellipsis</li>
-<li><code>cursor</code> – hand, arrow</li>
+<li><code>contentalign</code> – topleft, bottomcenter, topcenter, middleleft, middlecenter, middleright, focusrect, wrapleft, wrapcenter, endellipsis, editcontrol, wordellipsis</li>
+<li><code>compressed</code> – true, false</li>
+<li><code>column</code></li>
+<li><code>ColumnIndex</code></li>
+<li><code>columncount</code></li>
+<li><code>columnpadding</code></li>
+<li><code>columnsmax</code></li>
+<li><code>columnspancount</code></li>
+<li><code>columnspercent</code></li>
+<li><code>columnwidth</code></li>
+<li><code>cursor</code> – hand, arrow, IBeam</li>
+<li><code>customlayout</code></li>
 <li><code>DownOrRightGrowsTarget</code></li>
+<li><code>DevirtualizeItems</code> – true, false</li>
+<li><code>drophighlight</code> – true, false</li>
+<li><code>DPI</code></li>
 <li><code>ElementZoomed</code> – true, false</li>
+<li><code>EnableActivation</code> – true, false</li>
 <li><code>enabled</code> – true, false</li>
+<li><code>EnableHitHighlighting</code> – true, false</li>
+<li><code>encrypted</code> – true, false</li>
 <li><code>expand</code></li>
+<li><code>expanded</code> – true, false</li>
 <li><code>firsttabtarget</code></li>
 <li><code>font</code></li>
 <li><code>fontface</code></li>
 <li><code>fontsize</code></li>
-<li><code>fontstyle</code> – underline</li>
+<li><code>fontstyle</code> – none, underline</li>
 <li><code>fontweight</code> – bold</li>
 <li><code>foreground</code></li>
 <li><code>FramePersistType</code></li>
@@ -213,19 +278,33 @@
 <li><code>height</code></li>
 <li><code>HideProperty</code></li>
 <li><code>HighDPI</code> – true, false</li>
+<li><code>hoveredover</code> – true, false</li>
 <li><code>id</code></li>
+<li><code>infotipcallback</code> – true, false</li>
+<li><code>initialbackground</code></li>
+<li><code>itemmaxsize</code></li>
+<li><code>itemminsize</code></li>
+<li><code>itemspacing</code></li>
 <li><code>keepmstext</code></li>
 <li><code>keeptext</code></li>
 <li><code>keyfocused</code> – true, false</li>
 <li><code>keywithin</code> – true, false</li>
 <li><code>layout</code></li>
-<li><code>layoutpos</code> – none, client, top, right, left, nineleft, nineclient</li>
+<li><code>layoutpos</code> – none, client, top, right, left, bottom, nineleft, nineclient, nineright, ninebottom, ninetopleft, absolute</li>
+<li><code>LogicalImageSize</code></li>
 <li><code>margin</code></li>
+<li><code>maxnumtextlines</code></li>
 <li><code>MaxThumbSize</code></li>
+<li><code>maxwidth</code></li>
+<li><code>minwidth</code></li>
+<li><code>minimumicontextwidth</code></li>
 <li><code>minsize</code></li>
+<li><code>minvisiblewidth</code></li>
 <li><code>maxlength</code></li>
+<li><code>MaxPixelWidth</code></li>
 <li><code>ModuleID</code></li>
 <li><code>mousefocused</code> – true, false</li>
+<li><code>mousewithin</code> – true, false</li>
 <li><code>navigationtargetrelative</code></li>
 <li><code>navigationtargetroot</code></li>
 <li><code>NullSelectPropertyString</code></li>
@@ -234,30 +313,65 @@
 <li><code>padding</code></li>
 <li><code>passwordcharacter</code></li>
 <li><code>picktext</code></li>
+<li><code>pinning</code> – pinvert, pinboth</li>
 <li><code>pressed</code> – true, false</li>
 <li><code>PrioritySizer</code></li>
 <li><code>property</code></li>
+<li><code>propertycanonicalname</code></li>
+<li><code>propertyindex</code></li>
+<li><code>propwidthpattern</code></li>
 <li><code>ReservedTarget</code></li>
 <li><code>resid</code></li>
+<li><code>Resizable</code> – true, false</li>
+<li><code>realxanchor</code></li>
+<li><code>realxtarget</code></li>
+<li><code>realyanchor</code></li>
+<li><code>realytarget</code></li>
+<li><code>row</code></li>
+<li><code>rowcount</code></li>
+<li><code>rowspancount</code></li>
+<li><code>scrollticks</code></li>
 <li><code>selected</code> – true, false</li>
 <li><code>shadowintensity</code></li>
 <li><code>sheet</code></li>
 <li><code>shortcut</code> – auto</li>
+<li><code>showcheckboxes</code> – true, false</li>
+<li><code>ShowSelectedHeader</code> – true, false</li>
+<li><code>ShowLabel</code> – true, false</li>
+<li><code>SeparatorLineHeight</code></li>
+<li><code>SeparatorPadding</code></li>
 <li><code>sizingtarget</code></li>
 <li><code>SlidesUpAndDown</code></li>
+<li><code>ShowFocusRect</code> – true, false</li>
+<li><code>SortedBy</code> – true, false</li>
+<li><code>SortDirection</code> – Ascending, Descending</li>
 <li><code>themedborder</code> – true, false</li>
 <li><code>ThumbnailId</code></li>
 <li><code>TileZoomed</code> – true, false</li>
 <li><code>tooltip</code> – true, false</li>
+<li><code>tooltipmaxwidth</code></li>
 <li><code>transparent</code> – true, false</li>
-<li><code>Vertical</code></li>
+<li><code>TopCollection</code> – true, false</li>
+<li><code>UIItemCreationPropMap</code></li>
+<li><code>UICollectionCreationPropMap</code></li>
+<li><code>UseGroupZoom</code> – true, false</li>
+<li><code>UseRootScope</code> – true, false</li>
+<li><code>UseImageHeight</code> – true, false</li>
+<li><code>UseItemWidth</code> – true, false</li>
+<li><code>UnderlineMode</code> – Hover, Always, Never</li>
+<li><code>Vertical</code> – true, false</li>
 <li><code>visible</code> – true, false</li>
+<li><code>virtualdirection</code> – horizontal</li>
 <li><code>width</code></li>
+<li><code>widthpattern</code></li>
+<li><code>widthpatternmap</code></li>
+<li><code>WindowActive</code> – true, false</li>
 <li><code>windowsclient</code></li>
 <li><code>xbarvisibility</code></li>
 <li><code>xscrollable</code> – true, false</li>
 <li><code>ybarvisibility</code></li>
-<li><code>yscrollable</code></li>
+<li><code>yscrollable</code> – true, false</li>
+<li><code>ZeroText</code></li>
 </ul>
 
 
@@ -286,10 +400,17 @@
 <li><code>dfc(3, 0x0001 | 0x1000)</code></li>
 <li><code>gtmet(TaskDialog, 13, 0, 2417)</code></li>
 <li><code>gridlayout(1,2)</code> <br> <code>gridlayout(1,-1)</code></li>
-<li><code>rowlayout(24,3,3)</code> <br> <code>rowlayout(23)</code></li>
+<li><code>rowlayout(23)</code> <br> <code>rowlayout(24,3,3)</code></li>
 <li><code>gradient(rgb(0,132,217), rgb(0,36,58), 1)</code> <br> <code>gradient(argb(100,140,180,180),argb(160,140,160,220),argb(60,140,220,240),3)</code></li>
 <li><code>resbmp(205)</code> <br> <code>resbmp(12224,2,-1,0,0,1,1)</code></li>
 <li><code>NineGridLayout()</code></li>
+<li><code>graphic(0x8709,2,-1,0,0,0,0,library(explorerframe.dll))</code></li>
+<li><code>viewareaawarelayout(borderlayout)</code> <br> <code>viewareaawarelayout(filllayout)</code> <br> <code>viewareaawarelayout(verticalflowlayout,1,0,0,0)</code></li>
+<li><code>centeringlayout()</code></li>
+<li><code>overflowlayout()</code></li>
+<li><code>floatingheaderlayout()</code></li>
+<li><code>horizontalborderlayout()</code></li>
+<li><code>baselinelayout()</code></li>
 </ul>
 </article>
 
