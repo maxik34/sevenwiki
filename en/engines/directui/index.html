@@ -96,6 +96,12 @@
 <li>DXPTaskRingtone.dll</li>
 <li>DxpTaskSync.dll</li>
 <li>ExplorerFrame.dll</li>
+<li>FirewallControlPanel.dll</li>
+<li>fontext.dll</li>
+<li>fvecpl.dll</li>
+<li>fvewiz.dll</li>
+<li>gameux.dll</li>
+<li>hgcpl.dll</li>
 </ol>
 
 
@@ -144,10 +150,16 @@
 <li><code>&lt;Expandable></code></li>
 <li><code>&lt;Expando></code></li>
 <li><code>&lt;FadeElement></code></li>
+<li><code>&lt;FirewallCplPage></code></li>
+<li><code>&lt;FirstRunElement></code></li>
 <li><code>&lt;FocusIndicator></code></li>
 <li><code>&lt;FolderBandModule></code></li>
+<li><code>&lt;FontSettingsPage></code></li>
+<li><code>&lt;FveCplPage></code></li>
+<li><code>&lt;GamePreviewModule></code></li>
 <li><code>&lt;gradientline></code></li>
 <li><code>&lt;HealthCenterCPLPage></code></li>
+<li><code>&lt;HgCplPage></code></li>
 <li><code>&lt;HWNDElement></code></li>
 <li><code>&lt;hwndview></code></li>
 <li><code>&lt;if></code></li>
@@ -182,6 +194,7 @@
 <li><code>&lt;ProperTreeModule></code></li>
 <li><code>&lt;PText></code></li>
 <li><code>&lt;pushbutton></code></li>
+<li><code>&lt;RadioSelector></code></li>
 <li><code>&lt;ReadingPaneModule></code></li>
 <li><code>&lt;repeatbutton></code></li>
 <li><code>&lt;repeater></code></li>
@@ -238,6 +251,7 @@
 <li><code>&lt;WebBrowserModule></code></li>
 <li><code>&lt;WHCExpando></code></li>
 <li><code>&lt;WHCRepeater></code></li>
+<li><code>&lt;wizardedit></code></li>
 <li><code>&lt;ZoomableElement></code></li>
 </ul>
 
@@ -251,7 +265,7 @@
 <li><code>acchelp</code></li>
 <li><code>accitemstatus</code></li>
 <li><code>accname</code></li>
-<li><code>accrole</code> – statictext, link, text, client, graphic, pane, PushButton, List, ListItem, Grouping, radiobutton, checkbutton</li>
+<li><code>accrole</code> – statictext, link, text, client, graphic, pane, PushButton, List, ListItem, Grouping, radiobutton, checkbutton, window, titlebar</li>
 <li><code>accState</code></li>
 <li><code>active</code> – mouse, keyboard, inactive, nosyncfocus, mouseandkeyboard</li>
 <li><code>alignmentmode</code> – jaggedbottom, baseline, justify</li>
@@ -277,7 +291,7 @@
 <li><code>compressed</code> – true, false</li>
 <li><code>connect</code></li>
 <li><code>content</code></li>
-<li><code>contentalign</code> – topleft, bottomcenter, topcenter, middleleft, middlecenter, middleright, focusrect, wrapleft, wrapcenter, endellipsis, editcontrol, wordellipsis</li>
+<li><code>contentalign</code> – topleft, bottomcenter, topcenter, middleleft, middlecenter, middleright, focusrect, wrapleft, wrapcenter, endellipsis, editcontrol, wordellipsis, noprefix</li>
 <li><code>ContentType</code></li>
 <li><code>cursor</code> – hand, arrow, IBeam</li>
 <li><code>customlayout</code></li>
@@ -297,10 +311,11 @@
 <li><code>fontface</code></li>
 <li><code>fontsize</code></li>
 <li><code>fontstyle</code> – none, underline</li>
-<li><code>fontweight</code> – bold</li>
+<li><code>fontweight</code> – normal, bold</li>
+<li><code>ForceUseIcon</code> – true, false</li>
 <li><code>foreground</code></li>
 <li><code>FramePersistType</code></li>
-<li><code>GrowTargetFirst</code></li>
+<li><code>GrowTargetFirst</code> – true, false</li>
 <li><code>height</code></li>
 <li><code>HideProperty</code></li>
 <li><code>HighDPI</code> – true, false</li>
@@ -310,6 +325,7 @@
 <li><code>infotipcallback</code> – true, false</li>
 <li><code>initialbackground</code></li>
 <li><code>InitialSize</code></li>
+<li><code>InitialVisibility</code> – true, false</li>
 <li><code>itemmaxsize</code></li>
 <li><code>itemminsize</code></li>
 <li><code>itemspacing</code></li>
@@ -318,7 +334,7 @@
 <li><code>keyfocused</code> – true, false</li>
 <li><code>keywithin</code> – true, false</li>
 <li><code>layout</code></li>
-<li><code>layoutpos</code> – none, client, top, right, left, bottom, nineleft, nineclient, nineright, ninebottom, ninetopleft, absolute</li>
+<li><code>layoutpos</code> – none, client, top, right, left, bottom, nineleft, nineclient, nineright, ninebottom, ninebottomleft, ninetop, ninetopleft, absolute</li>
 <li><code>LogicalImageSize</code></li>
 <li><code>margin</code></li>
 <li><code>maxlength</code></li>
@@ -350,6 +366,7 @@
 <li><code>propertycanonicalname</code></li>
 <li><code>propertyindex</code></li>
 <li><code>propwidthpattern</code></li>
+<li><code>ReadOnly</code> – true, false</li>
 <li><code>realxanchor</code></li>
 <li><code>realxtarget</code></li>
 <li><code>realyanchor</code></li>
@@ -375,6 +392,8 @@
 <li><code>SlidesUpAndDown</code> – true, false</li>
 <li><code>SortDirection</code> – Ascending, Descending</li>
 <li><code>SortedBy</code> – true, false</li>
+<li><code>SplitButtonSheet</code></li>
+<li><code>TaskButtonSheet</code></li>
 <li><code>themedborder</code> – true, false</li>
 <li><code>ThumbnailId</code></li>
 <li><code>TileZoomed</code> – true, false</li>
@@ -397,6 +416,7 @@
 <li><code>widthpatternmap</code></li>
 <li><code>WindowActive</code> – true, false</li>
 <li><code>windowsclient</code></li>
+<li><code>winstyle</code></li>
 <li><code>xbarvisibility</code></li>
 <li><code>xscrollable</code> – true, false</li>
 <li><code>ybarvisibility</code></li>
