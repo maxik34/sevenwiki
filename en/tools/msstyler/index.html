@@ -5,11 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preload" href="/sevenwiki/inter.woff2" type="font/woff2" as="font" crossorigin fetchpriority="high">
 <meta name="color-scheme" content="dark only">
-<title>KB2505438 – Seven Wiki</title>
-<link rel="canonical" href="https://maxik34.github.io/sevenwiki/en/updates/kb2505438/">
+<title>MSStyler – Seven Wiki Tools</title>
+<link rel="canonical" href="https://maxik34.github.io/sevenwiki/en/tools/msstyler/">
 <link rel="stylesheet" href="/sevenwiki/style.css">
 <link rel="icon" href="data:," sizes="any">
 <link rel="icon" href="/sevenwiki/icon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="extra-style.css">
+<script>
+function updateAllButtonsText(newText)
+{
+	const buttons = document.querySelectorAll('.pushbutton .content');
+	
+	buttons.forEach(button =>
+	{
+		button.textContent = newText;
+	});
+}
+</script>
+
 </head>
 <body>
 <div id="a11y">
@@ -40,8 +54,8 @@
 </button>
 
 <div id="lang-list" popover translate="no">
-<a href="/sevenwiki/en/updates/kb2505438/" lang="en">English</a>
-<a href="/sevenwiki/ru/updates/kb2505438/" lang="ru">Русский</a>
+<a href="/sevenwiki/en/tools/msstyler/" lang="en">English</a>
+<a href="/sevenwiki/ru/tools/msstyler/" lang="ru">Русский</a>
 </div>
 </header>
 
@@ -60,67 +74,41 @@
 
 <aside id="toc" class="block-trim s-hide m-hide" aria-label="Table of contents">
 <h2>Contents</h2>
-<a href="#main-content">KB2505438 Update</a>
-<a href="#update-details">Update Details</a>
-<a href="#links">Links</a>
+<a href="#main-content">MSStyler</a>
 </aside>
 </div>
 
 <main>
 <nav id="crumbs" aria-label="Breadcrumbs">
-<a href="../">Updates</a> <a href="./" aria-current="page">KB2505438</a>
+<a>Tools</a> <a href="./" aria-current="page">MSStyler</a>
 </nav>
 
 <article id="main-content" class="block-trim" lang="en">
-<h1>KB2505438 Update</h1>
-<p>Released March 22, 2011, improves the DirectWrite API's interaction with the system font caching service.</p>
+<h1>MSStyler</h1>
+<p>Note: This tool is at the concept stage; everything here is subject to change.</p>
 
+<div id="preview">
+<div class="pushbutton"><div class="content">Sample Text</div></div>
+<div class="pushbutton hot"><div class="content">Sample Text</div></div>
+<div class="pushbutton pressed"><div class="content">Sample Text</div></div>
+<div class="pushbutton disabled"><div class="content">Sample Text</div></div>
+</div>
 
-<h2 id="update-details">Update Details</h2>
-<table class="fixed">
-<thead>
-<tr>
-<th>Target OS and architecture</th>
-<th>Size</th>
-<th>SHA-1</th>
-<th>UpdateID</th>
-<th>Direct Link</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Windows 7 <br> <small>64-bit</small></td>
-<td class="mono">1.68 MB <br> <small>1,768,589 bytes</small></td>
-<td class="mono">Bo2dYOEDyQRLGGxd09n12pyerZg=</td>
-<td class="mono">071adfe6-d0ac-4600-a7b0-45d90c648bdd</td>
-<td><a href="https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/03/windows6.1-kb2505438-x64_068d9d60e103c9044b186c5dd3d9f5da9c9ead98.msu" rel="noopener nofollow">Download .msu</a></td>
-</tr>
-<tr>
-<td>Windows Server 2008 R2 <br> <small>64-bit</small></td>
-<td class="mono">1.68 MB <br> <small>1,768,589 bytes</small></td>
-<td class="mono">Bo2dYOEDyQRLGGxd09n12pyerZg=</td>
-<td class="mono">7a69e2be-7ad1-48f4-a190-c71990ee0db1</td>
-<td><a href="https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/03/windows6.1-kb2505438-x64_068d9d60e103c9044b186c5dd3d9f5da9c9ead98.msu" rel="noopener nofollow">Download .msu</a></td>
-</tr>
-<tr>
-<td>Windows 7 <br> <small>32-bit</small></td>
-<td class="mono">926 KB <br> <small>948,786 bytes</small></td>
-<td class="mono">GjoUQxzOVfrP3pqjdn+/Ij6qOOU=</td>
-<td class="mono">7dc986c8-f48b-45d5-b56f-16c13cfa82aa</td>
-<td><a href="https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/03/windows6.1-kb2505438-x86_1a3a14431cce55facfde9aa3767fbf223eaa38e5.msu" rel="noopener nofollow">Download .msu</a></td>
-</tr>
-</tbody>
-</table>
+<fieldset>
+	<legend>Preview Settings</legend>
+	<p>Background color: <input type="color" value="#FFFFFF" oninput="document.getElementById('preview').style.backgroundColor = this.value"/></p>
+	
+	<p>Text: <input type="text" value="Sample Text" oninput="updateAllButtonsText(this.value)"></p>
 
+	<p>Font size (in pt): <input type="number" value="9" oninput="document.getElementById('preview').style.setProperty('--font-size', this.value + 'pt')"/></p>
 
-<h2 id="links">Links</h2>
-<ul>
-<li><a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB2505438" rel="noopener nofollow">KB2505438 in the Microsoft Update Catalog</a></li>
-<li><a href="https://support.microsoft.com/kb/2505438" rel="noopener nofollow">Official update article</a></li>
-</ul>
+	<p>Button Width (in px): <input type="number" value="80" oninput="document.getElementById('preview').style.setProperty('--width', this.value + 'px')"/></p>
+
+	<p>Button Height (in px): <input type="number" value="23" oninput="document.getElementById('preview').style.setProperty('--height', this.value + 'px')"/></p>
+	
+	<p><input id="text-wrap" type="checkbox" checked> No Wrap</p>
+</fieldset>
 </article>
-
-<nav id="categories" aria-label="Page categories">Categories: <a href="/sevenwiki/en/updates/">Updates</a></nav>
 
 <footer role="contentinfo" class="block-trim">
 <p>© 2026. Seven Wiki is an independent fan resource. Content is available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" rel="noopener nofollow">CC BY-SA 4.0</a> license.</p>

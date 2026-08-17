@@ -1,0 +1,77 @@
+#preview
+{
+	--font-size: 9pt;
+	--width: 80px;
+	--height: 23px;
+	
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-block: 1rem;
+	border-radius: var(--radius-1);
+	padding: 1rem;
+	background: white;
+}
+
+.pushbutton
+{
+	position: relative;
+	z-index: 1;
+	width: fit-content;
+	color: rgb(0 0 0);
+	font-family: system-ui;
+	font-size: var(--font-size);
+}
+
+article:has(#text-wrap:checked) .pushbutton
+{
+	white-space: nowrap;
+}
+
+.pushbutton.disabled
+{
+	color: rgb(131 131 131);
+}
+
+.pushbutton .content
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 3px solid #0000;
+	overflow: hidden;
+	text-align: center;
+	line-height: 1.25;
+	user-select: none;
+	width: var(--width);
+	height: var(--height);
+}
+
+.pushbutton::before
+{
+	content: '';
+	image-rendering: pixelated;
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	border: 6px solid transparent;
+	border-block-width: 5px;
+	border-image-source: url('pushbutton-1.png');
+	border-image-slice: 5 6 5 6 fill;
+	border-image-repeat: stretch;
+}
+
+.pushbutton.hot::before
+{
+	border-image-source: url('pushbutton-2.png');
+}
+
+.pushbutton.pressed::before
+{
+	border-image-source: url('pushbutton-3.png');
+}
+
+.pushbutton.disabled::before
+{
+	border-image-source: url('pushbutton-4.png');
+}

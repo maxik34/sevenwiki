@@ -109,7 +109,7 @@ html
 	background-image: linear-gradient(var(--bg-color-1) var(--header-block), var(--bg-color-0) 16rem, var(--bg-color-0) 100%);
 	line-height: 1.5;
 	text-size-adjust: 100%;
-	font-family: 'Inter', sans-serif;
+	font-family: 'Inter', system-ui;
 	font-synthesis: none;
 	color: var(--text-color-1);
 	-webkit-tap-highlight-color: #0000;
