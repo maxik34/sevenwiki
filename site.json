@@ -1,5 +1,6 @@
 {
 	"baseurl": "https://maxik34.github.io",
 	"root": "/sevenwiki",
-	"sitename": "Seven Wiki"
+	"sitename": "Seven Wiki",
+	"sitetoolsname": "Seven Wiki Tools"
 }

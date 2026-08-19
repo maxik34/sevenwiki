@@ -21,11 +21,12 @@
 	color: rgb(0 0 0);
 	font-family: system-ui;
 	font-size: var(--font-size);
+	white-space: pre-wrap;
 }
 
 article:has(#text-wrap:checked) .pushbutton
 {
-	white-space: nowrap;
+	white-space: pre;
 }
 
 .pushbutton.disabled

@@ -107,6 +107,7 @@
 <li>fvewiz.dll</li>
 <li>gameux.dll</li>
 <li>hgcpl.dll</li>
+<li>ieframe.dll</li>
 </ol>
 
 
@@ -258,6 +259,10 @@
 <li><code>&lt;WHCRepeater></code></li>
 <li><code>&lt;wizardedit></code></li>
 <li><code>&lt;ZoomableElement></code></li>
+<li><code>&lt;IETab></code></li>
+<li><code>&lt;IETabOverlay></code></li>
+<li><code>&lt;IETabBand></code></li>
+<li><code>&lt;IEActivity></code></li>
 </ul>
 
 
@@ -296,11 +301,12 @@
 <li><code>compressed</code> – true, false</li>
 <li><code>connect</code></li>
 <li><code>content</code></li>
-<li><code>contentalign</code> – topleft, bottomcenter, topcenter, middleleft, middlecenter, middleright, focusrect, wrapleft, wrapcenter, endellipsis, editcontrol, wordellipsis, noprefix</li>
+<li><code>contentalign</code> – topleft, bottomleft, bottomcenter, topcenter, middleleft, middlecenter, middleright, focusrect, wrapleft, wrapcenter, endellipsis, editcontrol, wordellipsis, noprefix</li>
 <li><code>ContentType</code></li>
 <li><code>cursor</code> – hand, arrow, IBeam</li>
 <li><code>customlayout</code></li>
 <li><code>DevirtualizeItems</code> – true, false</li>
+<li><code>direction</code></li>
 <li><code>DownOrRightGrowsTarget</code> – true, false</li>
 <li><code>DPI</code></li>
 <li><code>drophighlight</code> – true, false</li>
@@ -402,6 +408,7 @@
 <li><code>themedborder</code> – true, false</li>
 <li><code>ThumbnailId</code></li>
 <li><code>TileZoomed</code> – true, false</li>
+<li><code>tint</code></li>
 <li><code>tooltip</code> – true, false</li>
 <li><code>tooltipmaxwidth</code></li>
 <li><code>TopCollection</code> – true, false</li>
@@ -440,7 +447,7 @@
 <li><code>borderlayout()</code></li>
 <li><code>centeringlayout()</code></li>
 <li><code>dfc(3, 0x0001 | 0x1000)</code></li>
-<li><code>dtb(TaskDialog, 1, 0)</code></li>
+<li><code>dtb(TaskDialog, 1, 0)</code> <br> <code>dtb(BrowserTabBar::Rebar;Rebar,6,0)</code></li>
 <li><code>filllayout()</code> <br> <code>flowlayout(0,0,1)</code></li>
 <li><code>floatingheaderlayout()</code></li>
 <li><code>flowlayout()</code> <br> <code>FlowLayout(0, 2, 2, 2)</code></li>
@@ -461,7 +468,8 @@
 <li><code>rowlayout(23)</code> <br> <code>rowlayout(24,3,3)</code></li>
 <li><code>shellborderlayout()</code></li>
 <li><code>size(76rp,23rp)</code></li>
-<li><code>sysmetric(71)</code></li>
+<li><code>sysmetric(71)</code> <br> <code>sysmetric(-4)</code></li>
+<li><code>sysmetricstr(2)</code></li>
 <li><code>tablelayout(0,0,0,2,-50,0,2,-50)</code></li>
 <li><code>themeable(dtb(TaskDialog, 1, 0), threedface)</code></li>
 <li><code>verticalflowlayout(0)</code> <br> <code>verticalflowlayout(0,0,3)</code> <br> <code>verticalflowlayout(1,1,1,2)</code></li>
