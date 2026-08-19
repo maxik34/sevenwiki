@@ -61,7 +61,7 @@
 <aside id="toc" class="block-trim s-hide m-hide" aria-label="Table of contents">
 <h2>Contents</h2>
 <a href="#main-content">DirectUI and duixml Format</a>
-<a href="#files-with-uifile">Files containing a UIFILE section</a>
+<a href="#files-with-uifile">Files with UIFILE section</a>
 <a href="#dui-tags">Tags</a>
 <a href="#dui-attributes">Attributes</a>
 <a href="#dui-functions">Functions</a>
@@ -79,7 +79,7 @@
 <p>Note that, at this stage, this article contains a manually written dump of various data from the <code>duixml</code> markup format used by this engine; much remains unexplored, and the lists are incomplete.</p>
 
 
-<h2 id="files-with-uifile">Files containing a UIFILE section</h2>
+<h2 id="files-with-uifile">Files with UIFILE section</h2>
 <ol class="columns">
 <li>accessibilitycpl.dll</li>
 <li>ActionCenter.dll</li>
@@ -108,6 +108,20 @@
 <li>gameux.dll</li>
 <li>hgcpl.dll</li>
 <li>ieframe.dll</li>
+<li>ieui.dll</li>
+<li>Magnify.exe</li>
+<li>mmc.exe</li>
+<li>msdt.exe</li>
+<li>? mspaint.exe</li>
+<li>ncryptui.dll</li>
+<li>networkmap.dll</li>
+<li>OnLineIDCpl.dll</li>
+<li>OobeFldr.dll</li>
+<li>osk.exe</li>
+<li>pcaui.dll</li>
+<li>PerfCenterCPL.dll</li>
+<li>pnpui.dll</li>
+<li>powercpl.dll</li>
 </ol>
 
 
@@ -115,24 +129,30 @@
 <ul class="columns">
 <li><code>&lt;AccessibilityCplPage></code></li>
 <li><code>&lt;accessiblebutton></code></li>
+<li><code>&lt;actclipper></code></li>
+<li><code>&lt;actexpando></code></li>
 <li><code>&lt;ARPAutoButton></code></li>
 <li><code>&lt;arpclipper></code></li>
 <li><code>&lt;arpexpando></code></li>
 <li><code>&lt;arpframe></code></li>
 <li><code>&lt;ARPSelector></code></li>
 <li><code>&lt;AutoplayCplPage></code></li>
+<li><code>&lt;AutoScrollViewer></code></li>
 <li><code>&lt;AuxCplPage></code></li>
 <li><code>&lt;bind></code></li>
 <li><code>&lt;BiometricsPage></code></li>
 <li><code>&lt;button></code></li>
+<li><code>&lt;CCAVI></code></li>
 <li><code>&lt;CCCheckBox></code></li>
 <li><code>&lt;CCCommandLink></code></li>
 <li><code>&lt;CCHScrollBar></code></li>
 <li><code>&lt;cclistview></code></li>
+<li><code>&lt;CColumnOverflowElement></code></li>
 <li><code>&lt;CCProgressBar></code></li>
 <li><code>&lt;CCPushButton></code> (Common Control Push Button) – essentially just a standard Win32 button.</li>
 <li><code>&lt;ccpushbutton></code></li>
 <li><code>&lt;CCRadioButton></code></li>
+<li><code>&lt;CCRichEdit></code></li>
 <li><code>&lt;CCSysLink></code></li>
 <li><code>&lt;CCTrackBar></code></li>
 <li><code>&lt;CCVScrollBar></code></li>
@@ -143,6 +163,7 @@
 <li><code>&lt;ComboBoxEx></code></li>
 <li><code>&lt;ControlPanelCategoryModule></code></li>
 <li><code>&lt;ControlPanelNavPane></code></li>
+<li><code>&lt;CreateKeyDialog></code></li>
 <li><code>&lt;DefaultLocationCplPage></code></li>
 <li><code>&lt;DeviceBrandingModule></code></li>
 <li><code>&lt;DeviceImage></code></li>
@@ -168,12 +189,17 @@
 <li><code>&lt;HgCplPage></code></li>
 <li><code>&lt;HWNDElement></code></li>
 <li><code>&lt;hwndview></code></li>
+<li><code>&lt;IEActivity></code></li>
+<li><code>&lt;IETab></code></li>
+<li><code>&lt;IETabBand></code></li>
+<li><code>&lt;IETabOverlay></code></li>
 <li><code>&lt;if></code></li>
 <li><code>&lt;ifgreaterequal></code></li>
 <li><code>&lt;InfoBarHostModule></code></li>
 <li><code>&lt;InfoPane></code></li>
 <li><code>&lt;ItemGridLayout></code></li>
 <li><code>&lt;ItemRowLayout></code></li>
+<li><code>&lt;KeyDescArea></code></li>
 <li><code>&lt;LibraryPaneModule></code></li>
 <li><code>&lt;LineHScrollBar></code></li>
 <li><code>&lt;LineScroller></code></li>
@@ -183,21 +209,29 @@
 <li><code>&lt;LogoFrame></code></li>
 <li><code>&lt;Macro></code></li>
 <li><code>&lt;MainFrame></code></li>
+<li><code>&lt;MapCplPage></code></li>
 <li><code>&lt;MetadataElement></code></li>
 <li><code>&lt;MetadataLabel></code></li>
 <li><code>&lt;MonitorElement></code></li>
+<li><code>&lt;msdtedit></code></li>
+<li><code>&lt;msdtlistview></code></li>
 <li><code>&lt;NavigateButton></code></li>
+<li><code>&lt;NetworkMap></code></li>
 <li><code>&lt;ocmframe></code></li>
 <li><code>&lt;OCMTreeView></code></li>
+<li><code>&lt;OnlineIDPage></code></li>
 <li><code>&lt;PageAssignClip></code></li>
 <li><code>&lt;PageDeviceSettings></code></li>
 <li><code>&lt;PaintSurrogate></code></li>
 <li><code>&lt;PercentFull></code></li>
+<li><code>&lt;PerfCenterCplPage></code></li>
+<li><code>&lt;PowerCplPage></code></li>
 <li><code>&lt;PreviewBackground></code></li>
 <li><code>&lt;PreviewMetadata></code></li>
 <li><code>&lt;PreviewThumbnail></code></li>
 <li><code>&lt;ProperTreeHost></code></li>
 <li><code>&lt;ProperTreeModule></code></li>
+<li><code>&lt;ProvLinkButton></code></li>
 <li><code>&lt;PText></code></li>
 <li><code>&lt;pushbutton></code></li>
 <li><code>&lt;RadioSelector></code></li>
@@ -220,6 +254,7 @@
 <li><code>&lt;stylesheets></code></li>
 <li><code>&lt;TaskbarCniCplPage></code></li>
 <li><code>&lt;TaskbarScaCplPage></code></li>
+<li><code>&lt;taskbutton></code></li>
 <li><code>&lt;TemplateBackground></code></li>
 <li><code>&lt;thumb></code></li>
 <li><code>&lt;ThumbnailControlHost></code></li>
@@ -248,21 +283,20 @@
 <li><code>&lt;UITryHarderButton></code></li>
 <li><code>&lt;UIViewHeader></code></li>
 <li><code>&lt;unless></code></li>
+<li><code>&lt;UseKeyDialog></code></li>
 <li><code>&lt;UserList></code></li>
+<li><code>&lt;UserOobePreviewModule></code></li>
 <li><code>&lt;UserTile></code></li>
 <li><code>&lt;viewer></code></li>
 <li><code>&lt;ViewHost></code></li>
 <li><code>&lt;VolumeHandlerSetting></code></li>
 <li><code>&lt;Watermark></code></li>
+<li><code>&lt;webbrowser></code></li>
 <li><code>&lt;WebBrowserModule></code></li>
 <li><code>&lt;WHCExpando></code></li>
 <li><code>&lt;WHCRepeater></code></li>
 <li><code>&lt;wizardedit></code></li>
 <li><code>&lt;ZoomableElement></code></li>
-<li><code>&lt;IETab></code></li>
-<li><code>&lt;IETabOverlay></code></li>
-<li><code>&lt;IETabBand></code></li>
-<li><code>&lt;IEActivity></code></li>
 </ul>
 
 
@@ -275,14 +309,16 @@
 <li><code>acchelp</code></li>
 <li><code>accitemstatus</code></li>
 <li><code>accname</code></li>
-<li><code>accrole</code> – statictext, link, text, client, graphic, pane, PushButton, List, ListItem, Grouping, radiobutton, checkbutton, window, titlebar</li>
+<li><code>accrole</code> – statictext, link, text, client, graphic, pane, PushButton, List, ListItem, Grouping, radiobutton, checkbutton, window, titlebar, buttondropdown</li>
 <li><code>accState</code></li>
+<li><code>accvalue</code></li>
 <li><code>active</code> – mouse, keyboard, inactive, nosyncfocus, mouseandkeyboard</li>
 <li><code>alignmentmode</code> – jaggedbottom, baseline, justify</li>
-<li><code>alpha</code></li>
+<li><code>alpha</code> – from 0 to 255</li>
 <li><code>AlwaysGetIconFromView</code></li>
-<li><code>animation</code> – rectanglev, s, fast</li>
+<li><code>animation</code> – rectanglev, s, fast, linear, 0, alpha, slow, sizev, delayshort, rectangle, exp, veryfast</li>
 <li><code>background</code></li>
+<li><code>BackgroundOwnerID</code></li>
 <li><code>bordercolor</code></li>
 <li><code>borderstyle</code> – raised, solid, sunken</li>
 <li><code>borderthickness</code></li>
@@ -301,7 +337,7 @@
 <li><code>compressed</code> – true, false</li>
 <li><code>connect</code></li>
 <li><code>content</code></li>
-<li><code>contentalign</code> – topleft, bottomleft, bottomcenter, topcenter, middleleft, middlecenter, middleright, focusrect, wrapleft, wrapcenter, endellipsis, editcontrol, wordellipsis, noprefix</li>
+<li><code>contentalign</code> – topleft, bottomleft, bottomcenter, bottomright, topcenter, middleleft, middlecenter, middleright, focusrect, wrapleft, wrapcenter, wrapright, endellipsis, editcontrol, wordellipsis, noprefix, pathellipsis</li>
 <li><code>ContentType</code></li>
 <li><code>cursor</code> – hand, arrow, IBeam</li>
 <li><code>customlayout</code></li>
@@ -321,7 +357,7 @@
 <li><code>font</code></li>
 <li><code>fontface</code></li>
 <li><code>fontsize</code></li>
-<li><code>fontstyle</code> – none, underline</li>
+<li><code>fontstyle</code> – none, underline, shadow</li>
 <li><code>fontweight</code> – normal, bold</li>
 <li><code>ForceUseIcon</code> – true, false</li>
 <li><code>foreground</code></li>
@@ -330,6 +366,7 @@
 <li><code>height</code></li>
 <li><code>HideProperty</code></li>
 <li><code>HighDPI</code> – true, false</li>
+<li><code>highlightcolor</code></li>
 <li><code>HostedSiteTask</code> – true, false</li>
 <li><code>hoveredover</code> – true, false</li>
 <li><code>id</code></li>
@@ -364,6 +401,7 @@
 <li><code>multiline</code> – true, false</li>
 <li><code>navigationtargetrelative</code></li>
 <li><code>navigationtargetroot</code></li>
+<li><code>note</code></li>
 <li><code>NullSelectPropertyString</code></li>
 <li><code>othermsclients</code></li>
 <li><code>overhang</code> – true, false</li>
@@ -429,9 +467,11 @@
 <li><code>WindowActive</code> – true, false</li>
 <li><code>windowsclient</code></li>
 <li><code>winstyle</code></li>
-<li><code>xbarvisibility</code></li>
+<li><code>x</code></li>
+<li><code>xbarvisibility</code> – never, asneeded</li>
 <li><code>xscrollable</code> – true, false</li>
-<li><code>ybarvisibility</code></li>
+<li><code>y</code></li>
+<li><code>ybarvisibility</code> – asneeded, always</li>
 <li><code>yscrollable</code> – true, false</li>
 <li><code>ZeroText</code></li>
 </ul>
@@ -466,6 +506,7 @@
 <li><code>resbmp(205)</code> <br> <code>resbmp(12224,2,-1,0,0,1,1)</code></li>
 <li><code>resstr(1101)</code> <br> <code>resstr(0x9564, library(shell32.dll))</code> <br> <code>resstr(IDS_HELP)</code></li>
 <li><code>rowlayout(23)</code> <br> <code>rowlayout(24,3,3)</code></li>
+<li><code>sgraphic(59)</code></li>
 <li><code>shellborderlayout()</code></li>
 <li><code>size(76rp,23rp)</code></li>
 <li><code>sysmetric(71)</code> <br> <code>sysmetric(-4)</code></li>
