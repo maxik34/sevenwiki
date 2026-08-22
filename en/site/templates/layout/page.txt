@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="{{#var:lang}}" dir="{{#var:dir}}">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="{{#var:root}}/inter.woff2" type="font/woff2" as="font" crossorigin fetchpriority="high">
+		<meta name="color-scheme" content="dark only">
+		
+		{{#if: {{#var:noindex}} }}
+		<meta name="robots" content="noindex, nofollow">
+		{{#endif}}
+		
+		<title>{{#if:{{#var:title}}}}{{#var:title}}{{#else}}{{#var:pagename}}{{#endif}} – {{#var:sitename}}</title>
+		
+		{{#if: {{#var:description}} }}
+		<meta name="description" content="{{#var:description}}">
+		{{#endif}}
+		
+		<link rel="canonical" href="{{#var:baseurl}}{{#var:root}}/{{#var:lang}}/{{#var:fullpagename}}/">
+		<link rel="stylesheet" href="{{#var:root}}/style.css">
+		<link rel="icon" href="data:," sizes="any">
+		<link rel="icon" href="{{#var:root}}/icon.svg" type="image/svg+xml">
+	</head>
+	<body>
+		<nav id="skip-links" aria-label="{{ui/skip-links}}">
+			<ul>
+				<li><a href="#main-content">{{ui/skip-to-main}}</a></li>
+				<li><a href="#toc" class="s-hide m-hide">{{ui/skip-to-toc}}</a></li>
+			</ul>
+		</nav>
+		
+		<div id="ui-layer">
+			<header>
+				<button class="button l-hide" onclick="document.getElementById('menu').showModal()" aria-label="{{ui/menu-open}}"><svg viewBox="0 0 20 20" width="1.25rem" height="1.25rem" aria-hidden="true"><path d="M3 2A1 1 0 003 6 1 1 0 003 2M3 8a1 1 0 000 4A1 1 0 003 8m0 6a1 1 0 000 4 1 1 0 000-4m16 3V15H7v2Zm0-6V9H7v2Zm0-6V3H7V5Z"/></svg></button>
+				
+				<a id="logo" translate="no" href="{{#var:root}}/{{#var:lang}}/{{#var:mainpage}}/"><svg viewBox="0 0 32 32" width="2rem" height="2rem" fill="currentColor" aria-hidden="true"><path d="M11 29.5Q14.1 32 18 32t6.6-1.6L28 18.5Q24.5 20 21 20t-6.6-2.2Zm6-27Q13.5 0 10 0T3.4 1.5L0 13.6Q3.5 12 7 12t6.4 2.3ZM32 5q0-.3-.3-.3Q28.3 6 25 6T18.6 3.8L15 15.5Q18 18 21.5 18t7.1-1.6Z"/></svg>{{#var:sitename}}</a>
+				
+				<button class="dropdown" popovertarget="lang-list" aria-label="{{ui/lang-menu}}">
+					<svg viewBox="0 0 20 20" width="1.25rem" height="1.25rem" aria-hidden="true"><path d="M8.4 3.5V2.7a.8.8 90 00-1.8 0v.8H2.1a.8.8 90 000 1.7H9.8c-.4 1.1-1 2.7-2.1 4.3C6.5 7.8 6.1 7 6 6.8a.8.8 90 00-1.6.6c.1.2.6 1.4 2.2 3.5C5.2 12.5 3.7 13.7 3 14a.8.8 90 10.8 1.5c.4-.2 1.8-1.1 3.9-3.3.6.7 1.3 1.3 1.5 1.4a.9.9 90 001.1-1.4L8.8 10.8c1.6-2.1 2.5-4.4 2.8-5.6h1.3a.8.8 90 000-1.7Zm6 7.5 1.3 3.2H13.1Zm.8-2.6a.8.8 90 00-1.5 0l-3.6 8.5a.8.8 90 101.6.7l.7-1.7h4l.7 1.7a.8.8 90 001.6-.7Z"/></svg>
+					<span class="s-hide">{{#var:langname}}</span>
+				</button>
+				
+				<ul id="lang-list" popover translate="no">
+					{{#langlinks}}
+				</ul>
+			</header>
+			
+			<dialog role="navigation" id="menu" class="block-trim s-hide m-hide" tabindex="-1" aria-label="{{ui/navigation}}">
+				<h2 aria-label="{{ui/navigation}}">
+					<button class="button" onclick="document.getElementById('menu').close()" aria-label="{{ui/menu-close}}"><svg viewBox="0 0 20 20" width="1.25rem" height="1.25rem" aria-hidden="true"><path d="M3 1l7 7 7-7 2 2-7 7 7 7-2 2-7-7-7 7-2-2 7-7L1 3Z"/></svg></button> {{ui/navigation}}
+				</h2>
+				{{navigation}}
+			</dialog>
+			
+			<aside id="toc" class="block-trim s-hide m-hide" aria-label="{{ui/toc}}">
+				<h2>{{ui/contents}}</h2>
+				{{#toc}}
+			</aside>
+		</div>
+		
+		<main>
+			<nav id="breadcrumbs" aria-label="{{ui/breadcrumbs}}">{{#breadcrumbs}}</nav>
+			
+			<article id="main-content" class="block-trim" {{#if:{{#var:notranslation}}}}lang="{{#var:defaultlang}}"{{#endif}}>
+				{{#if: {{#var:notranslation}} }} <div class="notice">{{ui/notranslation}}</div> {{#endif}}
+				{{#page}}
+			</article>
+			
+			<nav id="categories" aria-label="{{ui/categories}}">{{ui/categories-text}} {{#categories}}</nav>
+			
+			<footer role="contentinfo" class="block-trim">{{ui/footer}}</footer>
+		</main>
+	</body>
+</html>

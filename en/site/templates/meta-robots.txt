@@ -1,5 +1,0 @@
-{{#if: {{#var:noindex}} }}
-<meta name="robots" content="noindex, nofollow">
-{{#else-if: {{#var:notranslation}} }}
-<meta name="robots" content="noindex, follow">
-{{#endif}}

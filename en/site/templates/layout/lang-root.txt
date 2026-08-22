@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="dark only">
+<meta name="robots" content="noindex, nofollow">
+<title>{{#var:sitename}}</title>
+<link rel="icon" href="data:," sizes="any">
+<link rel="icon" href="{{#var:root}}/icon.svg" type="image/svg+xml">
+<meta http-equiv="refresh" content="0; url={{#var:root}}/{{#var:lang}}/{{#var:mainpage}}/">
+</head><body></body>
+</html>

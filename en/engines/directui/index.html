@@ -23,13 +23,7 @@
 <svg viewBox="0 0 20 20" width="1.25rem" height="1.25rem" aria-hidden="true"><path d="M3 2A1 1 0 003 6 1 1 0 003 2M3 8a1 1 0 000 4A1 1 0 003 8m0 6a1 1 0 000 4 1 1 0 000-4m16 3V15H7v2Zm0-6V9H7v2Zm0-6V3H7V5Z"/></svg>
 </button>
 
-<a id="logo" href="/sevenwiki/en/main-page/">
-<svg viewBox="0 0 32 32" width="2rem" height="2rem" aria-hidden="true">
-<path d="M11 29.5Q14.1 32 18 32t6.6-1.6L28 18.5Q24.5 20 21 20t-6.6-2.2Zm6-27Q13.5 0 10 0T3.4 1.5L0 13.6Q3.5 12 7 12t6.4 2.3ZM32 5q0-.3-.3-.3Q28.3 6 25 6T18.6 3.8L15 15.5Q18 18 21.5 18t7.1-1.6Z"/>
-</svg>
-
-<span translate="no">Seven Wiki</span>
-</a>
+<a id="logo" translate="no" href="/sevenwiki/en/main-page/"><svg viewBox="0 0 32 32" width="2rem" height="2rem" fill="currentColor" aria-hidden="true"><path d="M11 29.5Q14.1 32 18 32t6.6-1.6L28 18.5Q24.5 20 21 20t-6.6-2.2Zm6-27Q13.5 0 10 0T3.4 1.5L0 13.6Q3.5 12 7 12t6.4 2.3ZM32 5q0-.3-.3-.3Q28.3 6 25 6T18.6 3.8L15 15.5Q18 18 21.5 18t7.1-1.6Z"/></svg>Seven Wiki</a>
 
 <button class="dropdown" popovertarget="lang-list" aria-label="Change language">
 <svg viewBox="0 0 20 20" width="1.25rem" height="1.25rem" aria-hidden="true">
@@ -112,8 +106,8 @@
 <li>Magnify.exe</li>
 <li>mmc.exe</li>
 <li>msdt.exe</li>
-<li>? mspaint.exe</li>
 <li>ncryptui.dll</li>
+<li>netcenter.dll</li>
 <li>networkmap.dll</li>
 <li>OnLineIDCpl.dll</li>
 <li>OobeFldr.dll</li>
@@ -122,8 +116,43 @@
 <li>PerfCenterCPL.dll</li>
 <li>pnpui.dll</li>
 <li>powercpl.dll</li>
+<li>racpldlg.dll</li>
+<li>recovery.dll</li>
+<li>sdcpl.dll</li>
+<li>SensorsCpl.dll</li>
+<li>sethc.exe</li>
+<li>sharemediacpl.dll</li>
+<li>shell32.dll</li>
+<li>shellstyle.dll</li>
+<li>StikyNot.exe</li>
+<li>stobject.dll</li>
+<li>sud.dll</li>
+<li>SyncCenter.dll</li>
+<li>systemcpl.dll</li>
+<li>taskbarcpl.dll</li>
+<li>themecpl.dll</li>
+<li>timedate.cpl</li>
+<li>TSWorkspace.dll</li>
+
+<li>UserAccountControlSettings.dll</li>
+<li>usercpl.dll</li>
+<li>Utilman.exe</li>
+<li>VAN.dll</li>
+<li>Vault.dll</li>
+<li>wdc.dll</li>
+<li>werconcpl.dll</li>
+<li>WindowsAnytimeUpgradeResults.exe</li>
+<li>wlanpref.dll</li>
+<li>WmpDui.dll</li>
+<li>wpccpl.dll</li>
+<li>wucltux.dll</li>
+<li>xwtpdui.dll</li>
 </ol>
 
+<ul>
+<li>mspaint.exe</li>
+<li>UIRibbonRes.dll</li>
+</ul>
 
 <h2 id="dui-tags">Tags</h2>
 <ul class="columns">
@@ -131,22 +160,33 @@
 <li><code>&lt;accessiblebutton></code></li>
 <li><code>&lt;actclipper></code></li>
 <li><code>&lt;actexpando></code></li>
+<li><code>&lt;AppControlHost></code></li>
+<li><code>&lt;AppControlsModule></code></li>
+<li><code>&lt;AppControlsModuleInner></code></li>
 <li><code>&lt;ARPAutoButton></code></li>
 <li><code>&lt;arpclipper></code></li>
 <li><code>&lt;arpexpando></code></li>
 <li><code>&lt;arpframe></code></li>
 <li><code>&lt;ARPSelector></code></li>
+<li><code>&lt;autobutton></code></li>
 <li><code>&lt;AutoplayCplPage></code></li>
 <li><code>&lt;AutoScrollViewer></code></li>
 <li><code>&lt;AuxCplPage></code></li>
 <li><code>&lt;bind></code></li>
 <li><code>&lt;BiometricsPage></code></li>
+<li><code>&lt;browser></code></li>
+<li><code>&lt;BrowserFrame></code></li>
 <li><code>&lt;button></code></li>
+<li><code>&lt;Button3d></code></li>
+<li><code>&lt;CCAnalogClock></code></li>
 <li><code>&lt;CCAVI></code></li>
 <li><code>&lt;CCCheckBox></code></li>
 <li><code>&lt;CCCommandLink></code></li>
+<li><code>&lt;CCDigitalClock></code></li>
 <li><code>&lt;CCHScrollBar></code></li>
 <li><code>&lt;cclistview></code></li>
+<li><code>&lt;CCListViewEx></code></li>
+<li><code>&lt;CCMonthCal></code></li>
 <li><code>&lt;CColumnOverflowElement></code></li>
 <li><code>&lt;CCProgressBar></code></li>
 <li><code>&lt;CCPushButton></code> (Common Control Push Button) – essentially just a standard Win32 button.</li>
@@ -156,12 +196,16 @@
 <li><code>&lt;CCSysLink></code></li>
 <li><code>&lt;CCTrackBar></code></li>
 <li><code>&lt;CCVScrollBar></code></li>
+<li><code>&lt;CIDGroupControl></code></li>
 <li><code>&lt;clientblock></code></li>
 <li><code>&lt;clientpicker></code></li>
 <li><code>&lt;Clipper></code></li>
 <li><code>&lt;ComboBox></code></li>
 <li><code>&lt;ComboBoxEx></code></li>
+<li><code>&lt;contact></code></li>
+<li><code>&lt;contactlist></code></li>
 <li><code>&lt;ControlPanelCategoryModule></code></li>
+<li><code>&lt;ControlPanelLink></code></li>
 <li><code>&lt;ControlPanelNavPane></code></li>
 <li><code>&lt;CreateKeyDialog></code></li>
 <li><code>&lt;DefaultLocationCplPage></code></li>
@@ -173,12 +217,14 @@
 <li><code>&lt;duixml></code> – the main tag containing everything.</li>
 <li><code>&lt;Edit></code></li>
 <li><code>&lt;element></code></li>
+<li><code>&lt;ElevatedCPLPage></code></li>
 <li><code>&lt;EmptyLibraryPage></code></li>
 <li><code>&lt;Expandable></code></li>
 <li><code>&lt;Expando></code></li>
 <li><code>&lt;FadeElement></code></li>
 <li><code>&lt;FirewallCplPage></code></li>
 <li><code>&lt;FirstRunElement></code></li>
+<li><code>&lt;flyoutscrollviewer></code></li>
 <li><code>&lt;FocusIndicator></code></li>
 <li><code>&lt;FolderBandModule></code></li>
 <li><code>&lt;FontSettingsPage></code></li>
@@ -195,8 +241,10 @@
 <li><code>&lt;IETabOverlay></code></li>
 <li><code>&lt;if></code></li>
 <li><code>&lt;ifgreaterequal></code></li>
+<li><code>&lt;iflesser></code></li>
 <li><code>&lt;InfoBarHostModule></code></li>
 <li><code>&lt;InfoPane></code></li>
+<li><code>&lt;InPlaceEdit></code></li>
 <li><code>&lt;ItemGridLayout></code></li>
 <li><code>&lt;ItemRowLayout></code></li>
 <li><code>&lt;KeyDescArea></code></li>
@@ -210,22 +258,27 @@
 <li><code>&lt;Macro></code></li>
 <li><code>&lt;MainFrame></code></li>
 <li><code>&lt;MapCplPage></code></li>
+<li><code>&lt;MetadataDisplayElement></code></li>
 <li><code>&lt;MetadataElement></code></li>
 <li><code>&lt;MetadataLabel></code></li>
 <li><code>&lt;MonitorElement></code></li>
+<li><code>&lt;movie></code></li>
 <li><code>&lt;msdtedit></code></li>
 <li><code>&lt;msdtlistview></code></li>
 <li><code>&lt;NavigateButton></code></li>
 <li><code>&lt;NetworkMap></code></li>
+<li><code>&lt;NoteControl></code></li>
 <li><code>&lt;ocmframe></code></li>
 <li><code>&lt;OCMTreeView></code></li>
 <li><code>&lt;OnlineIDPage></code></li>
 <li><code>&lt;PageAssignClip></code></li>
 <li><code>&lt;PageDeviceSettings></code></li>
+<li><code>&lt;pages></code></li>
 <li><code>&lt;PaintSurrogate></code></li>
 <li><code>&lt;PercentFull></code></li>
 <li><code>&lt;PerfCenterCplPage></code></li>
 <li><code>&lt;PowerCplPage></code></li>
+<li><code>&lt;PowerFlyout></code></li>
 <li><code>&lt;PreviewBackground></code></li>
 <li><code>&lt;PreviewMetadata></code></li>
 <li><code>&lt;PreviewThumbnail></code></li>
@@ -236,6 +289,7 @@
 <li><code>&lt;pushbutton></code></li>
 <li><code>&lt;RadioSelector></code></li>
 <li><code>&lt;ReadingPaneModule></code></li>
+<li><code>&lt;RecoveryPage></code></li>
 <li><code>&lt;repeatbutton></code></li>
 <li><code>&lt;repeater></code></li>
 <li><code>&lt;ResolutionControl></code></li>
@@ -248,14 +302,18 @@
 <li><code>&lt;SearchPageText></code></li>
 <li><code>&lt;Selector></code></li>
 <li><code>&lt;SelectorNoDefault></code></li>
+<li><code>&lt;ShareMediaCplPage></code></li>
 <li><code>&lt;Sizer></code></li>
 <li><code>&lt;style></code></li>
 <li><code>&lt;StyledScrollviewer></code></li>
 <li><code>&lt;stylesheets></code></li>
+<li><code>&lt;sudCplPage></code></li>
+<li><code>&lt;SystemCPLPage></code></li>
 <li><code>&lt;TaskbarCniCplPage></code></li>
 <li><code>&lt;TaskbarScaCplPage></code></li>
 <li><code>&lt;taskbutton></code></li>
 <li><code>&lt;TemplateBackground></code></li>
+<li><code>&lt;ThemeCplPage></code></li>
 <li><code>&lt;thumb></code></li>
 <li><code>&lt;ThumbnailControlHost></code></li>
 <li><code>&lt;UIBase></code></li>
@@ -287,15 +345,20 @@
 <li><code>&lt;UserList></code></li>
 <li><code>&lt;UserOobePreviewModule></code></li>
 <li><code>&lt;UserTile></code></li>
+<li><code>&lt;VanUiAdapterTileButton></code></li>
+<li><code>&lt;VanUiAdapterTileButton></code></li>
+<li><code>&lt;VanUiNetworkTileButton></code></li>
 <li><code>&lt;viewer></code></li>
 <li><code>&lt;ViewHost></code></li>
 <li><code>&lt;VolumeHandlerSetting></code></li>
 <li><code>&lt;Watermark></code></li>
+<li><code>&lt;WallpaperPage></code></li>
 <li><code>&lt;webbrowser></code></li>
 <li><code>&lt;WebBrowserModule></code></li>
 <li><code>&lt;WHCExpando></code></li>
 <li><code>&lt;WHCRepeater></code></li>
 <li><code>&lt;wizardedit></code></li>
+<li><code>&lt;WorkspacesPage></code></li>
 <li><code>&lt;ZoomableElement></code></li>
 </ul>
 
@@ -303,24 +366,26 @@
 <h2 id="dui-attributes">Attributes</h2>
 <ul class="columns">
 <li><code>AbsorbsShortcut</code> – true, false</li>
-<li><code>accdefaction</code> (Accessibility Default Action?) – click, press</li>
+<li><code>accdefaction</code> (Accessibility Default Action?) – click, press, invoke</li>
 <li><code>accdesc</code></li>
 <li><code>accessible</code> – true, false</li>
 <li><code>acchelp</code></li>
 <li><code>accitemstatus</code></li>
 <li><code>accname</code></li>
-<li><code>accrole</code> – statictext, link, text, client, graphic, pane, PushButton, List, ListItem, Grouping, radiobutton, checkbutton, window, titlebar, buttondropdown</li>
+<li><code>accrole</code> – statictext, text, graphic, PushButton, buttondropdown, link, List, ListItem, radiobutton, checkbutton, pane, Grouping, window, client, titlebar, ColumnHeader, scrollbar, row, cell, Table, combobox, clock, slider, application</li>
 <li><code>accState</code></li>
 <li><code>accvalue</code></li>
 <li><code>active</code> – mouse, keyboard, inactive, nosyncfocus, mouseandkeyboard</li>
 <li><code>alignmentmode</code> – jaggedbottom, baseline, justify</li>
 <li><code>alpha</code> – from 0 to 255</li>
-<li><code>AlwaysGetIconFromView</code></li>
-<li><code>animation</code> – rectanglev, s, fast, linear, 0, alpha, slow, sizev, delayshort, rectangle, exp, veryfast</li>
+<li><code>AlwaysGetIconFromView</code> – true, false</li>
+<li><code>animation</code> – alpha, position, sizev, rectangle, rectanglev, linear, s, exp, veryfast, fast, medium, slow, delayshort, 0</li>
+<li><code>AutoStart</code> – true, false</li>
+<li><code>AutoStop</code> – true, false</li>
 <li><code>background</code></li>
 <li><code>BackgroundOwnerID</code></li>
 <li><code>bordercolor</code></li>
-<li><code>borderstyle</code> – raised, solid, sunken</li>
+<li><code>borderstyle</code> – raised, solid, sunken, 0, 1, 2</li>
 <li><code>borderthickness</code></li>
 <li><code>capabilities</code> – selectable, focusable, renameable, filenameoptional</li>
 <li><code>captured</code> – true, false</li>
@@ -337,12 +402,13 @@
 <li><code>compressed</code> – true, false</li>
 <li><code>connect</code></li>
 <li><code>content</code></li>
-<li><code>contentalign</code> – topleft, bottomleft, bottomcenter, bottomright, topcenter, middleleft, middlecenter, middleright, focusrect, wrapleft, wrapcenter, wrapright, endellipsis, editcontrol, wordellipsis, noprefix, pathellipsis</li>
+<li><code>contentalign</code> – topleft, topcenter, topright, middleleft, middlecenter, middleright, bottomleft, bottomcenter, bottomright, wrapleft, wrapcenter, wrapright, wordellipsis, endellipsis, pathellipsis, editcontrol, focusrect, noprefix</li>
 <li><code>ContentType</code></li>
-<li><code>cursor</code> – hand, arrow, IBeam</li>
+<li><code>cursor</code> – hand, arrow, IBeam, sizens, sizewe</li>
 <li><code>customlayout</code></li>
 <li><code>DevirtualizeItems</code> – true, false</li>
-<li><code>direction</code></li>
+<li><code>direction</code> – 0</li>
+<li><code>DisablingPolicy</code></li>
 <li><code>DownOrRightGrowsTarget</code> – true, false</li>
 <li><code>DPI</code></li>
 <li><code>drophighlight</code> – true, false</li>
@@ -351,13 +417,16 @@
 <li><code>enabled</code> – true, false</li>
 <li><code>EnableHitHighlighting</code> – true, false</li>
 <li><code>encrypted</code> – true, false</li>
+<li><code>EvaluatingAsyncState</code> – true, false</li>
 <li><code>expand</code></li>
 <li><code>expanded</code> – true, false</li>
+<li><code>ExplorerVisibility</code></li>
 <li><code>firsttabtarget</code></li>
 <li><code>font</code></li>
 <li><code>fontface</code></li>
+<li><code>fontquality</code> – cleartype</li>
 <li><code>fontsize</code></li>
-<li><code>fontstyle</code> – none, underline, shadow</li>
+<li><code>fontstyle</code> – none, underline, shadow, italic</li>
 <li><code>fontweight</code> – normal, bold</li>
 <li><code>ForceUseIcon</code> – true, false</li>
 <li><code>foreground</code></li>
@@ -372,6 +441,7 @@
 <li><code>id</code></li>
 <li><code>infotipcallback</code> – true, false</li>
 <li><code>initialbackground</code></li>
+<li><code>InitialMaxxedOut</code> – true, false</li>
 <li><code>InitialSize</code></li>
 <li><code>InitialVisibility</code> – true, false</li>
 <li><code>itemmaxsize</code></li>
@@ -382,7 +452,7 @@
 <li><code>keyfocused</code> – true, false</li>
 <li><code>keywithin</code> – true, false</li>
 <li><code>layout</code></li>
-<li><code>layoutpos</code> – none, client, top, right, left, bottom, nineleft, nineclient, nineright, ninebottom, ninebottomleft, ninetop, ninetopleft, absolute</li>
+<li><code>layoutpos</code> – left, top, right, bottom, client, ninetopleft, ninetop, ninetopright, nineleft, nineclient, nineright, ninebottomleft, ninebottom, none, absolute, 2</li>
 <li><code>LogicalImageSize</code></li>
 <li><code>margin</code></li>
 <li><code>maxlength</code></li>
@@ -411,6 +481,7 @@
 <li><code>pinning</code> – pinvert, pinboth</li>
 <li><code>pressed</code> – true, false</li>
 <li><code>PrioritySizer</code></li>
+<li><code>PressedPaddingShift</code></li>
 <li><code>property</code></li>
 <li><code>propertycanonicalname</code></li>
 <li><code>propertyindex</code></li>
@@ -420,6 +491,9 @@
 <li><code>realxtarget</code></li>
 <li><code>realyanchor</code></li>
 <li><code>realytarget</code></li>
+<li><code>repeat</code> – true, false</li>
+<li><code>ReservedMaster</code></li>
+<li><code>ReservedSpace</code></li>
 <li><code>ReservedTarget</code></li>
 <li><code>resid</code></li>
 <li><code>Resizable</code> – true, false</li>
@@ -432,18 +506,25 @@
 <li><code>SeparatorPadding</code></li>
 <li><code>shadowintensity</code></li>
 <li><code>sheet</code></li>
-<li><code>shortcut</code> – auto</li>
+<li><code>shortcut</code> – none, auto, -1, 115, 80</li>
 <li><code>showcheckboxes</code> – true, false</li>
 <li><code>ShowFocusRect</code> – true, false</li>
 <li><code>ShowLabel</code> – true, false</li>
 <li><code>ShowSelectedHeader</code> – true, false</li>
+<li><code>shellexecute</code></li>
+<li><code>shellexecuteparams</code></li>
+<li><code>shellexecuteverb</code> – runas</li>
 <li><code>sizingtarget</code></li>
 <li><code>SlidesUpAndDown</code> – true, false</li>
+<li><code>SmoothingMode</code> – high</li>
+<li><code>sortcolumn</code></li>
 <li><code>SortDirection</code> – Ascending, Descending</li>
 <li><code>SortedBy</code> – true, false</li>
 <li><code>SplitButtonSheet</code></li>
+<li><code>subtext</code></li>
 <li><code>TaskButtonSheet</code></li>
 <li><code>themedborder</code> – true, false</li>
+<li><code>ThemeSubApp</code></li>
 <li><code>ThumbnailId</code></li>
 <li><code>TileZoomed</code> – true, false</li>
 <li><code>tint</code></li>

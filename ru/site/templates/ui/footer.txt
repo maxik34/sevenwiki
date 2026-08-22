@@ -1,0 +1,3 @@
+<p>© 2026. Seven Wiki — независимый фанатский ресурс. Содержимое доступно по лицензии <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ru">CC BY-SA 4.0</a>.</p>
+<p>Microsoft, Windows, Windows 7 и сопутствующие логотипы являются зарегистрированными товарными знаками <a href="https://www.microsoft.com/ru-ru">Microsoft Corporation</a>. Данный сайт не является официальным ресурсом Microsoft и никак не связан с корпорацией. Все инструкции предоставляются «как есть» на ваш страх и риск.</p>
+<p><a href="https://github.com/maxik34/sevenwiki">GitHub репозиторий</a></p>

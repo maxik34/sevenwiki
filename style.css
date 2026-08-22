@@ -334,7 +334,7 @@ ul
 
 li
 {
-	padding-block: 0.2rem;
+	padding-block: 0.125rem;
 	
 	&::marker
 	{
@@ -1202,9 +1202,9 @@ button
 
 @container (inline-size < 23rem)
 {
-	#logo > span
+	#logo
 	{
-		display: none !important;
+		font-size: 0;
 	}
 }
 

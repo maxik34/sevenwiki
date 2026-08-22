@@ -1,3 +1,0 @@
-{{#if: {{#var:description}} }}
-<meta name="description" content="{{#var:description}}">
-{{#endif}}

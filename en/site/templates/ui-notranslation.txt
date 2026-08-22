@@ -1,3 +1,0 @@
-{{#if: {{#var:notranslation}} }}
-<div class="notice" lang="en">This page has not yet been translated, the English version is displayed.</div>
-{{#endif}}

@@ -1,5 +1,0 @@
-{{#if: {{#var:notranslation}} }}
-{{#var:defaultlang}}
-{{#else}}
-{{#var:lang}}
-{{#endif}}
