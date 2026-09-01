@@ -1153,7 +1153,7 @@ button
 	}
 }
 
-@container (45rem < inline-size <= 74rem)
+@container (44rem < inline-size <= 74rem)
 {
 	body
 	{
@@ -1166,7 +1166,7 @@ button
 	}
 }
 
-@container (inline-size <= 45rem)
+@container (inline-size <= 44rem)
 {
 	body
 	{
