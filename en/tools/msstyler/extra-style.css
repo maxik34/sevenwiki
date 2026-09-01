@@ -76,3 +76,13 @@ article:has(#text-wrap:checked) .pushbutton
 {
 	border-image-source: url('pushbutton-4.png');
 }
+
+.pushbutton.animated-1::before
+{
+	border-image-source: url('pushbutton-5.png');
+}
+
+.pushbutton.animated-2::before
+{
+	border-image-source: url('pushbutton-6.png');
+}

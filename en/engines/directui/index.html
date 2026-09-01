@@ -40,9 +40,9 @@
 </header>
 
 <dialog role="navigation" id="menu" class="block-trim s-hide m-hide" tabindex="-1" aria-label="Navigation">
-<h2 aria-label="Navigation"><button class="button" onclick="document.getElementById('menu').close()" aria-label="Close navigation menu">
+<h2 aria-label="Navigation"><button class="button l-hide" onclick="document.getElementById('menu').close()" aria-label="Close navigation menu">
 <svg viewBox="0 0 20 20" width="1.25rem" height="1.25rem" aria-hidden="true"><path d="M3 1l7 7 7-7 2 2-7 7 7 7-2 2-7-7-7 7-2-2 7-7L1 3Z"/></svg>
-</button>Navigation</h2>
+</button> Navigation</h2>
 <a href="/sevenwiki/en/updates/">Updates</a>
 <a href="/sevenwiki/en/files/">Files</a>
 <a>Folders</a>
@@ -154,6 +154,11 @@
 <li>UIRibbonRes.dll</li>
 </ul>
 
+<ol>
+<li>WMPDMC.exe</li>
+<li>comctl32.dll (v. 6)</li>
+</ol>
+
 <h2 id="dui-tags">Tags</h2>
 <ul class="columns">
 <li><code>&lt;AccessibilityCplPage></code></li>
@@ -196,6 +201,7 @@
 <li><code>&lt;CCSysLink></code></li>
 <li><code>&lt;CCTrackBar></code></li>
 <li><code>&lt;CCVScrollBar></code></li>
+<li><code>&lt;checkboxglyph></code></li>
 <li><code>&lt;CIDGroupControl></code></li>
 <li><code>&lt;clientblock></code></li>
 <li><code>&lt;clientpicker></code></li>
@@ -221,6 +227,7 @@
 <li><code>&lt;EmptyLibraryPage></code></li>
 <li><code>&lt;Expandable></code></li>
 <li><code>&lt;Expando></code></li>
+<li><code>&lt;expandobuttonglyph></code></li>
 <li><code>&lt;FadeElement></code></li>
 <li><code>&lt;FirewallCplPage></code></li>
 <li><code>&lt;FirstRunElement></code></li>
@@ -358,6 +365,11 @@
 <li><code>&lt;WHCExpando></code></li>
 <li><code>&lt;WHCRepeater></code></li>
 <li><code>&lt;wizardedit></code></li>
+<li><code>&lt;WMPDMCButtonHC></code></li>
+<li><code>&lt;WMPDMCElementHC></code></li>
+<li><code>&lt;WMPDMCPlaylistButton></code></li>
+<li><code>&lt;WMPDMCThumbHC></code></li>
+<li><code>&lt;wmpdmcslider></code></li>
 <li><code>&lt;WorkspacesPage></code></li>
 <li><code>&lt;ZoomableElement></code></li>
 </ul>
@@ -380,6 +392,7 @@
 <li><code>alpha</code> – from 0 to 255</li>
 <li><code>AlwaysGetIconFromView</code> – true, false</li>
 <li><code>animation</code> – alpha, position, sizev, rectangle, rectanglev, linear, s, exp, veryfast, fast, medium, slow, delayshort, 0</li>
+<li><code>autogrouping</code> – true, false</li>
 <li><code>AutoStart</code> – true, false</li>
 <li><code>AutoStop</code> – true, false</li>
 <li><code>background</code></li>
@@ -405,6 +418,7 @@
 <li><code>contentalign</code> – topleft, topcenter, topright, middleleft, middlecenter, middleright, bottomleft, bottomcenter, bottomright, wrapleft, wrapcenter, wrapright, wordellipsis, endellipsis, pathellipsis, editcontrol, focusrect, noprefix</li>
 <li><code>ContentType</code></li>
 <li><code>cursor</code> – hand, arrow, IBeam, sizens, sizewe</li>
+<li><code>custom</code></li>
 <li><code>customlayout</code></li>
 <li><code>DevirtualizeItems</code> – true, false</li>
 <li><code>direction</code> – 0</li>
@@ -434,6 +448,7 @@
 <li><code>GrowTargetFirst</code> – true, false</li>
 <li><code>height</code></li>
 <li><code>HideProperty</code></li>
+<li><code>highcontrast</code></li>
 <li><code>HighDPI</code> – true, false</li>
 <li><code>highlightcolor</code></li>
 <li><code>HostedSiteTask</code> – true, false</li>
@@ -444,9 +459,11 @@
 <li><code>InitialMaxxedOut</code> – true, false</li>
 <li><code>InitialSize</code></li>
 <li><code>InitialVisibility</code> – true, false</li>
+<li><code>IsStatusBarStyle</code> – true, false</li>
 <li><code>itemmaxsize</code></li>
 <li><code>itemminsize</code></li>
 <li><code>itemspacing</code></li>
+<li><code>JumpToClick</code> – true, false</li>
 <li><code>keepmstext</code></li>
 <li><code>keeptext</code></li>
 <li><code>keyfocused</code> – true, false</li>
@@ -460,7 +477,9 @@
 <li><code>MaxPixelWidth</code></li>
 <li><code>MaxThumbSize</code></li>
 <li><code>MaxVisibleItems</code></li>
+<li><code>maximum</code></li>
 <li><code>maxwidth</code></li>
+<li><code>minimum</code></li>
 <li><code>minimumicontextwidth</code></li>
 <li><code>minsize</code></li>
 <li><code>minvisiblewidth</code></li>
@@ -476,6 +495,7 @@
 <li><code>othermsclients</code></li>
 <li><code>overhang</code> – true, false</li>
 <li><code>padding</code></li>
+<li><code>page</code></li>
 <li><code>passwordcharacter</code></li>
 <li><code>picktext</code></li>
 <li><code>pinning</code> – pinvert, pinboth</li>
@@ -485,6 +505,7 @@
 <li><code>property</code></li>
 <li><code>propertycanonicalname</code></li>
 <li><code>propertyindex</code></li>
+<li><code>proportional</code> – true, false</li>
 <li><code>propwidthpattern</code></li>
 <li><code>ReadOnly</code> – true, false</li>
 <li><code>realxanchor</code></li>
@@ -523,6 +544,7 @@
 <li><code>SplitButtonSheet</code></li>
 <li><code>subtext</code></li>
 <li><code>TaskButtonSheet</code></li>
+<li><code>TextGlowSize</code></li>
 <li><code>themedborder</code> – true, false</li>
 <li><code>ThemeSubApp</code></li>
 <li><code>ThumbnailId</code></li>
@@ -552,7 +574,7 @@
 <li><code>xbarvisibility</code> – never, asneeded</li>
 <li><code>xscrollable</code> – true, false</li>
 <li><code>y</code></li>
-<li><code>ybarvisibility</code> – asneeded, always</li>
+<li><code>ybarvisibility</code> – never, asneeded, always</li>
 <li><code>yscrollable</code> – true, false</li>
 <li><code>ZeroText</code></li>
 </ul>
@@ -567,6 +589,7 @@
 <li><code>baselinelayout()</code></li>
 <li><code>borderlayout()</code></li>
 <li><code>centeringlayout()</code></li>
+<li><code>composited(themeable(gtmar(AeroWizard, 1, 0, 3602), rect(0rp, 0rp, 30rp, 2rp)), rect(0rp, 0rp, 30rp, 2rp))</code></li>
 <li><code>dfc(3, 0x0001 | 0x1000)</code></li>
 <li><code>dtb(TaskDialog, 1, 0)</code> <br> <code>dtb(BrowserTabBar::Rebar;Rebar,6,0)</code></li>
 <li><code>filllayout()</code> <br> <code>flowlayout(0,0,1)</code></li>
@@ -587,7 +610,7 @@
 <li><code>resbmp(205)</code> <br> <code>resbmp(12224,2,-1,0,0,1,1)</code></li>
 <li><code>resstr(1101)</code> <br> <code>resstr(0x9564, library(shell32.dll))</code> <br> <code>resstr(IDS_HELP)</code></li>
 <li><code>rowlayout(23)</code> <br> <code>rowlayout(24,3,3)</code></li>
-<li><code>sgraphic(59)</code></li>
+<li><code>sgraphic(59)</code> <br> <code>sgraphic(300,2)</code> <br> <code>sgraphic(299,2,-1,0,0,1,1)</code></li>
 <li><code>shellborderlayout()</code></li>
 <li><code>size(76rp,23rp)</code></li>
 <li><code>sysmetric(71)</code> <br> <code>sysmetric(-4)</code></li>

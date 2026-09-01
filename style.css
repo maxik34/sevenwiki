@@ -270,6 +270,7 @@ h1, h2
 	:is(h1, h2)::after, hr
 	{
 		box-shadow: 0 0 0.25rem #0003;
+		inline-size: 100%;
 		min-block-size: var(--border-size);
 		border: none;
 		border-radius: var(--border-size);
@@ -1031,11 +1032,6 @@ button
 	}
 }
 
-#menu:not(:modal) button
-{
-	display: none;
-}
-
 #menu:modal
 {
 	position: fixed;
@@ -1134,7 +1130,7 @@ button
 
 
 
-@container (inline-size > 75rem)
+@container (inline-size > 74rem)
 {
 	@media not print
 	{
@@ -1157,7 +1153,7 @@ button
 	}
 }
 
-@container (50rem < inline-size <= 75rem)
+@container (45rem < inline-size <= 74rem)
 {
 	body
 	{
@@ -1170,7 +1166,7 @@ button
 	}
 }
 
-@container (inline-size <= 50rem)
+@container (inline-size <= 45rem)
 {
 	body
 	{
@@ -1224,6 +1220,7 @@ button
 	
 	article
 	{
+		box-shadow: none;
 		border: none;
 	}
 	
